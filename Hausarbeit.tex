@@ -29,7 +29,6 @@
 
 \begin{document}
 \parindent 0pt
-
 \maketitle
 \tableofcontents
 
@@ -58,5 +57,21 @@ und das Zustandsdichtemaß \(\overline{L_N} = \EE[L_N]\). Dann gilt die Konverge
 	\[\overline{L_N} \xrightarrow{\text{w}} f_{\alpha}(x)dx \quad(N\to\infty)\]
 im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 	\[f_{\alpha}(x)=\frac{1}{2\pi x}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \]
+
+\newpage
+\begin{equation*}
+	\begin{split}
+		N^{l+1} \langle \overline{L_N}, x^l \rangle\ 
+		&= N^{l+1} \cdot \int x^l \overline{L_N}(dx) 
+		= N^{l+1} \cdot \frac{1}{N} \cdot \EE[tr(W^l_N)] 
+		= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l W_{j_p,j_{p+1}}\right] \\
+		&= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l \frac{1}{N} \sum_{k = 1}^N Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right] \\
+		&= \EE \left[\left(\sum_{k = 1}^M Y_N(j_1,k) \cdot Y_N(j_2,k)\right) \cdot \left(\prod_{p = 2}^l \sum_{k = 1}^N Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right) \right] \\
+		&= \EE\left[	\prod_{p = 2}^l \sum_{k_1,k_2 = 1}^N Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_p,k_2) \cdot Y_N(j_{p+1},k_2) \right] \\
+		&= ... \\
+		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_2,k_2) \cdot Y_N(j_3,k_2) ... Y_N(j_l,k_l) \cdot Y_N(j_1,k_l)]
+	\end{split}
+\end{equation*}
+
 
 \end{document}
