@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  4 MAR 2014 16:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  5 MAR 2014 16:30
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -493,7 +493,11 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-\c@defi=\count103
+(C:\Users\Dominik\Documents\GitHub\Fallstudien\marginnote.sty
+Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
+\c@mn@abspage=\count103
+)
+\c@defi=\count104
 
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -515,18 +519,20 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Program Files (x86)\MikTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
+\scratchcounter=\count105
 \scratchdimen=\dimen115
 \scratchbox=\box29
-\nofMPsegments=\count105
-\nofMParguments=\count106
+\nofMPsegments=\count106
+\nofMParguments=\count107
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count107
+\MPscratchCnt=\count108
 \MPscratchDim=\dimen116
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks23
 )
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 34.
  ("C:\Program Files (x86)\MikTeX\tex\latex\lm\t1lmss.fd"
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -595,44 +601,40 @@ Kapitel 1.
 
 ]
 Kapitel 2.
-! Undefined control sequence.
-\student #1->\marginnote 
-                         {{\normalfont \bf #1}}
-l.46 ...ambacher, Dominik Otto, Andreas Wiedemann}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Package marginnote Info: right page because not two side mode on input line 47.
 
+Package marginnote Info: xpos not known,
+(marginnote)             using \marginnoterightadjust on input line 47.
 [4
 
-] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
+] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4258 strings out of 493921
- 58358 string characters out of 3146475
- 135986 words of memory out of 3000000
- 7460 multiletter control sequences out of 15000+200000
+ 4307 strings out of 493921
+ 59174 string characters out of 3146475
+ 137580 words of memory out of 3000000
+ 7506 multiletter control sequences out of 15000+200000
  56042 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  38i,11n,47p,251b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program F
-iles (x86)/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTeX/f
-onts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/
-lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C
-:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}<C:/Program Files
- (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MikTeX/f
-onts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/publ
-ic/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi6.pfb
-><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Fil
-es (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MikTeX/
-fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/publ
-ic/lm/lmr8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pf
-b><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program F
-iles (x86)/MikTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MikTe
-X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Hausarbeit.pdf (4 pages, 171344 bytes).
+{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files
+ (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MikTeX/f
+onts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/l
+m-mathex.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}<C
+:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files
+ (x86)/MikTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/f
+onts/type1/public/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/publ
+ic/lm/lmmi6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb>
+<C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program File
+s (x86)/MikTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/f
+onts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public
+/lm/lmssbx10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy10.pf
+b><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fi
+les (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Hausarbeit.pdf (4 pages, 171759 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
