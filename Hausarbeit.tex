@@ -17,6 +17,10 @@
 \newtheorem{koro}[defi]{Korollar}
 \newtheorem{lemma}[defi]{Lemma}
 
+\newenvironment{beweis}[1][Beweis]{\begin{trivlist}
+	\item[\hskip \labelsep {\bfseries #1}]}
+	{\end{trivlist}}
+
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\EE}{\mathbb{E}}
 \newcommand{\NN}{\mathbb{N}}
@@ -38,12 +42,9 @@
 \section{Proof of the Theorem}
 \section{Meaning, real-life applications and limitations}
 
-%DJ Loco ist der beste
-
 \chapter{Das Marchenko-Pastur-Gesetz}
 
 \section{Das Marchenko-Pastur-Gesetz}
-\student{Manuela Lambacher, Dominik Otto, Andreas Wiedemann}
 
 Sei \(Y_N\) eine \(N\times M(N)\)-Matrix mit unabhängigen zentrierten Einträgen mit Varianz \(1\),
 	\[\sup_{j,k,N} \EE\left[ | Y_N(j,k)|^q\right] = C_q < \infty \qquad \forall q \in \NN\]
@@ -59,19 +60,22 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 	\[f_{\alpha}(x)=\frac{1}{2\pi x}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \]
 
 \newpage
-\begin{equation*}
-	\begin{split}
-		N^{l+1} \langle \overline{L_N}, x^l \rangle\ 
-		&= N^{l+1} \cdot \int x^l \overline{L_N}(dx) 
+\begin{beweis}
+\begin{align*}
+		N^{l+1} &\langle \overline{L_N}, x^l \rangle\ 
+		= N^{l+1} \cdot \int x^l \overline{L_N}(dx) 
 		= N^{l+1} \cdot \frac{1}{N} \cdot \EE[tr(W^l_N)] 
 		= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l W_{j_p,j_{p+1}}\right] \\
 		&= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l \frac{1}{N} \sum_{k = 1}^{M(N)} Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right] \\
 		&= \sum_{j_1,...,j_l = 1}^N \EE \left[\left(\sum_{k = 1}^{M(N)} Y_N(j_1,k) \cdot Y_N(j_2,k)\right) \cdot \left(\prod_{p = 2}^l \sum_{k = 1}^{M(N)} Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right) \right] \\
 		&= \sum_{j_1,...,j_l = 1}^N \EE\left[	\prod_{p = 2}^l \sum_{k_1,k_2 = 1}^{M(N)} Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_p,k_2) \cdot Y_N(j_{p+1},k_2) \right] \\
 		&= ... \\
-		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_2,k_2) \cdot Y_N(j_3,k_2) ... Y_N(j_l,k_l) \cdot Y_N(j_1,k_l)]
-	\end{split}
-\end{equation*}
+		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) Y_N(j_2,k_1) Y_N(j_2,k_2) Y_N(j_3,k_2) ... Y_N(j_l,k_l) Y_N(j_1,k_l)]
+\end{align*}
+
+
+
+\end{beweis}
 
 
 \end{document}
