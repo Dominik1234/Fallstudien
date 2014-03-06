@@ -1,0 +1,77 @@
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amstext,amsfonts,mathrsfs}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{marginnote}
+
+\pagestyle{headings}
+
+\newtheorem{defi}{Definition}[section]
+\newtheorem{prop}[defi]{Proposition}
+\newtheorem{satz}[defi]{Satz}
+\newtheorem{koro}[defi]{Korollar}
+\newtheorem{lemma}[defi]{Lemma}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\NN}{\mathbb{N}}
+
+\newcommand{\student}[1]{\marginnote{{\normalfont\bf #1}}}
+
+\title{Fallstudien der math. Modellbildung}
+\author{Manuela Lambacher, Dominik Otto, Andreas Wiedemann}
+\date{\today}
+
+\begin{document}
+\parindent 0pt
+\maketitle
+\tableofcontents
+
+\chapter{Wittaker-Shannon-Sampling Theorem}
+
+\section{The Wittaker-Shannon-Sampling Theorem}
+\section{Proof of the Theorem}
+\section{Meaning, real-life applications and limitations}
+
+%DJ Loco ist der beste
+
+\chapter{Das Marchenko-Pastur-Gesetz}
+
+\section{Das Marchenko-Pastur-Gesetz}
+\student{Manuela Lambacher, Dominik Otto, Andreas Wiedemann}
+
+Sei \(Y_N\) eine \(N\times M(N)\)-Matrix mit unabhängigen zentrierten Einträgen mit Varianz \(1\),
+	\[\sup_{j,k,N} \EE\left[ | Y_N(j,k)|^q\right] = C_q < \infty \qquad \forall q \in \NN\]
+und \(M(N) \in \NN\) so, dass
+	\[\lim_{N\to\infty} \frac{M(N)}{N} = \alpha \in[1,\infty). \]
+Sei weiterhin die Wishart-Matrix gegeben als 
+	\[W_N = \frac{1}{N}Y_NY_N^T,\]
+und habe die empirische Eigenwertverteilung
+	\[L_N = \frac{1}{n} \sum_{j=1}^{N} \delta_{\lambda_j} \]
+und das Zustandsdichtemaß \(\overline{L_N} = \EE[L_N]\). Dann gilt die Konvergenz
+	\[\overline{L_N} \xrightarrow{\text{w}} f_{\alpha}(x)dx \quad(N\to\infty)\]
+im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
+	\[f_{\alpha}(x)=\frac{1}{2\pi x}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \]
+
+\newpage
+\begin{equation*}
+	\begin{split}
+		N^{l+1} \langle \overline{L_N}, x^l \rangle\ 
+		&= N^{l+1} \cdot \int x^l \overline{L_N}(dx) 
+		= N^{l+1} \cdot \frac{1}{N} \cdot \EE[tr(W^l_N)] 
+		= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l W_{j_p,j_{p+1}}\right] \\
+		&= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l \frac{1}{N} \sum_{k = 1}^N Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right] \\
+		&= \EE \left[\left(\sum_{k = 1}^M Y_N(j_1,k) \cdot Y_N(j_2,k)\right) \cdot \left(\prod_{p = 2}^l \sum_{k = 1}^N Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right) \right] \\
+		&= \EE\left[	\prod_{p = 2}^l \sum_{k_1,k_2 = 1}^N Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_p,k_2) \cdot Y_N(j_{p+1},k_2) \right] \\
+		&= ... \\
+		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_2,k_2) \cdot Y_N(j_3,k_2) ... Y_N(j_l,k_l) \cdot Y_N(j_1,k_l)]
+	\end{split}
+\end{equation*}
+
+
+\end{document}
