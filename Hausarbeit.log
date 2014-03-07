@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  6 MAR 2014 21:11
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  7 MAR 2014 12:57
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -608,35 +608,63 @@ Overfull \hbox (13.30453pt too wide) in paragraph at lines 74--74
 [] 
  []
 
-[5] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 84.
+("C:\Program Files (x86)\MikTeX\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+[5]
+Overfull \hbox (16.89066pt too wide) in paragraph at lines 108--108
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+
+ []
+
+
+Overfull \hbox (41.72136pt too wide) in paragraph at lines 117--119
+\T1/lmr/m/n/10.95 Die be-trach-te-ten Dop-pel-bäu-me ha-ben im Li-mes ein kom-b
+i-na-to-ri-sches Ge-wicht von $\OML/lmm/m/it/10.95 N[]M\OT1/lmr/m/n/10.95 (\OML
+/lmm/m/it/10.95 N\OT1/lmr/m/n/10.95 )[]$\T1/lmr/m/n/10.95 .
+ []
+
+[6] [7] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 4312 strings out of 493921
- 59218 string characters out of 3146475
- 139632 words of memory out of 3000000
- 7510 multiletter control sequences out of 15000+200000
+ 4332 strings out of 493921
+ 59557 string characters out of 3146475
+ 143632 words of memory out of 3000000
+ 7527 multiletter control sequences out of 15000+200000
  59067 words of font info for 63 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,11n,47p,251b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program
- Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX
-/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm
-/lm-mathit.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}
-{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}<C:/Program Fil
-es (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MikTeX
-/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/pu
-blic/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi6.p
-fb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program F
-iles (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MikTe
-X/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/pu
-blic/lm/lmr6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr8.pfb>
-<C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmro10.pfb><C:/Program Fil
-es (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MikT
-eX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/
-public/lm/lmsy8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb>
-Output written on Hausarbeit.pdf (5 pages, 220627 bytes).
+ 38i,14n,47p,444b,313s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Pro
+gram Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/Mi
+kTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvip
+s/lm/lm-mathit.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.
+enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}<C:/Program
+ Files (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/Mi
+kTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/type
+1/public/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmm
+i6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Progr
+am Files (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/M
+ikTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/fonts/type
+1/public/lm/lmr6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr8.
+pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmro10.pfb><C:/Program
+ Files (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/
+MikTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/ty
+pe1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on Hausarbeit.pdf (7 pages, 236226 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
