@@ -106,7 +106,7 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 	&\cdot \#\{\text{Doppelbäume mit }l+1-r\ j\text{-Knoten und } r\ k\text{-Knoten}\} \\
 	&= \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot C_l
 \end{align*}
-Ein Doppelbaum mit \(r\  k\)-Knoten und \(l+1-r\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
+Ein Doppelbaum mit \((r)\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
 Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
 \begin{itemize}
 	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke
@@ -114,14 +114,21 @@ Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen,
 	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \(-1\)
 	\item Die restlichen Kanten sind alle Flächstücke
 \end{itemize}
-Aus dieser Konstruktion ergibt sich, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind. Lässt man die Wurzel außen vor, bleiben \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück\\
+Aus dieser Konstruktion ergibt sich, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind. Lässt man die Wurzel außen vor, bleiben \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück. (müsste man hier zeigen, dass diese Zuweisung eine Bijektion ist?)\\
 Die betrachteten Doppelbäume haben im Limes ein kombinatorisches Gewicht von \(N^{l+1-r}M(N)^r\). Damit folgt:
 	\[\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r \to \alpha^r\]
 und damit:
 	\[\beta_l=\sum_{p\in C_l} \alpha^r\]
-wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\}\).
+wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\}\). (An der Herleitung der Formel für \(\beta_l\) hakts noch ziemlich, sie sollte aber stimmen)
 
-Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie), ich hänge aber noch beim Induktionsschritt. 
+Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie), ich hänge aber noch beim Induktionsschritt.  \\
+Induktionsanfang: \(l=1\): 
+	\[\beta_1 = \alpha\gamma_1=\alpha\beta_0 \gamma_0=\alpha\]
+	
+Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \(C_{l+1} = \sum_{k=0}^l C_kC_{l-k}\) folgt, dass
+	\[\beta_{l+1} = \sum_{k=0}^l \beta_k\beta_{l-k} = \alpha \sum_{k=0}^l \beta_k\gamma_{l-k}\]
+aber das ist eher wage...
+
 
 \end{beweis}
 
