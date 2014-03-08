@@ -102,9 +102,9 @@ Damit ergeben sich die drei Fälle (setze \(r = r_1+r_2\) )
 \textbf{Weitere Analyse von \(\beta_l\):}\\
 Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann folgt:
 \begin{align*}
-	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = \sum_{r=1}^{l}&\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
+	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = &\sum_{r=1}^{l}\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
 	&\cdot \#\{\text{Doppelbäume mit }l+1-r\ j\text{-Knoten und } r\ k\text{-Knoten}\} \\
-	&= \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot C_l
+	=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot C_l
 \end{align*}
 Ein Doppelbaum mit \((r)\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
 Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
@@ -114,18 +114,24 @@ Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen,
 	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \(-1\)
 	\item Die restlichen Kanten sind alle Flachstücke
 \end{itemize}
-Aus dieser Konstruktion ergibt sich, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind. Lässt man die Wurzel außen vor, bleiben \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
+Ich versuche, ein Bildchen zu machen ;) \\
+Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
 \\ Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion, da:
 \begin{itemize}
  \item[•]Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
  \item[•] Surjektivität:  für jeden Catalanpfad der Länge l der Form $\lbrace s_{i} \rbrace$, $ i \leq 2l, i \in \NN $ kann ein Doppelbaum als Urbild wie folgt konstruiert werden: für i gerade: $s_{i}=-1 \rightarrow $ gehe von $j_{i/2}$abwärts, bei $s_{i}=0  $ aufwärts; für i ungerade bei $s_{i}=1 $ aufwärts, bei $s_{i}=0 $ abwärts. 
 \item[•] Injektivität analog zur Übung (bzw muss man das unbedingt nochmal zeigen?)\\
 \end{itemize}
-Die betrachteten Doppelbäume haben s.o. ein kombinatorisches Gewicht von \\ $ \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! $ \\ für N hinreichend groß ist dies genähert \(N^{l+1-r}M(N)^r\). Damit folgt:
+Die betrachteten Doppelbäume haben s.o. ein kombinatorisches Gewicht von 
+	\[ \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \]
+Für N hinreichend groß ist dies genähert \(N^{l+1-r}M(N)^r\). Damit folgt:
 	\[\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r =~ \left( \dfrac{M(N)}{N}\right)^{r}\to \alpha^r\]
 und damit:
-	\[\beta_l= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ C_{l} \]\\ \[ = \sum_{p\in C_l} \alpha^r\]
-wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\). (An der Herleitung der Formel für \(\beta_l\) hakts noch ziemlich, sie sollte aber stimmen)
+	\begin{align*}
+		\beta_l &= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ C_{l} \\
+		&= \sum_{p\in C_l} \alpha^r
+	\end{align*}
+wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\).
 
 Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie /ebenfalls nicht, es schreit aber auch nach Induktion;), ich hänge aber noch beim Induktionsschritt.  \\
 $ \gamma_{l} $ sind die Aufstiege/Abstiege im Doppelbaum.\\
@@ -135,7 +141,22 @@ Induktionsanfang: \(l=1\):
 Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \(C_{l+1} = \sum_{k=0}^l C_kC_{l-k}\) folgt, dass
 	\[\beta_{l+1} = \sum_{k=0}^l \beta_k\beta_{l-k} = \alpha \sum_{k=0}^l \beta_k\gamma_{l-k}\]
 aber das ist eher wage...
-Wir brauchen wh sogar zweimal Induktion einmal für $ \beta = \alpha \gamma $ und einmal für $ \gamma= \sum \beta \gamma $..
+Wir brauchen wh sogar zweimal Induktion einmal für $ \beta = \alpha \gamma $ und einmal für $ \gamma= \sum \beta \gamma $..\\
+
+\textbf{Formel (12)}\\
+\begin{align}
+	Q_n =& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
+	 =& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{(x-(1-\sqrt{\alpha})^2)((1+\sqrt{\alpha})^2-x)} (x-\alpha -1)^n \,\mathrm{d}x\\
+	=& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{-\alpha^2+2\alpha x+2\alpha -x^2+2x-1}(x-\alpha-1)^n \,\mathrm{d}x\\
+	\overset{x=y+\alpha+1}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{-2\sqrt{\alpha}}^{2\sqrt{\alpha}} \sqrt{4\alpha -y^2} y^n \,\mathrm{d}y\\
+	\overset{y=2\sqrt{\alpha}z}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \cdot 2^n \alpha^{n/2}\cdot4\sqrt{\alpha}\int_{-1}^{1} \sqrt{1-z^2}z^n \,\mathrm{d}z = \frac{2}{\pi} \cdot 2^n\int_{-1}^{1} \sqrt{1-z^2}z^n\,\mathrm{d}z \\
+	\overset{\text{Übung 1}}{=}& \sigma(z^n) = \begin{cases} 0, &n\text{ ungerade}\\
+	C_{\frac l 2}, &n\text{gerade} \end{cases}
+\end{align}
+(Falls wir noch Platz füllen müssen, können wir hier die Rechnung aus der Übung auch wiederholen ;) )
+Bei den "`Verständnis-Fragen"' habe ich jedoch etwas Probleme: \(f_{\alpha}\) ist für x=0 gar nicht definiert? Durch die Rechnung ergibt sich aber der Bezug zu \(\sigma(x)\), wo man dann doch beim Halbkreisgesetz wäre.\\
+Zur Eindeutigkeit von \(f_{\alpha}\) sind diese "`verallgemeinerten Momente"' ein Problem. Habt ihr in der großen W-Theorie Vorlesung dazu was gemacht?
+
 
 
 \end{beweis}
