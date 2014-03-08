@@ -73,6 +73,61 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) Y_N(j_2,k_1) Y_N(j_2,k_2) Y_N(j_3,k_2) ... Y_N(j_l,k_l) Y_N(j_1,k_l)]
 \end{align*}
 
+Meine Ideen, wie es weiter geht. Hakt noch ein bisschen, sollte aber in die richtige Richtung gehen :)
+
+\begin{equation}
+ = \sum_{r_1,r_2 = 1}^l \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)]
+\end{equation}
+Die einzelnen Summanden können also als Eulergraphen auf \(r_1+r_2 \)Knoten und \(2l\) Kanten interpretiert werden.
+Damit ergeben sich die drei Fälle (setze \(r = r_1+r_2\) )
+\begin{itemize}
+	\item \(r < l+ 1\)\\
+		\begin{align*}
+			\EE[Y_N(J,k)] &\leq \prod_{n=1}^l \left(\sup_{j,k,N}\EE\left[|Y_N(j,k)|^l\right]\right)^{\frac 1 l} \\
+			& = \prod_{n=1}^l C_l^{\frac 1 l} = C_l
+			\end{align*}
+	Außerdem: 
+		\begin{align*}
+			\#\{J: v(J)=r_1\} &\leq \begin{pmatrix} N \\ r_1 \end{pmatrix} r_1^l \leq N^{r_1}r_1^l \\
+			\#\{K: v(K)=r_2\} &\leq \begin{pmatrix} M(N) \\ r_2 \end{pmatrix} r_2^l \leq M(N)^{r_2}r_2^l
+		\end{align*}
+	Somit gilt: 
+		\[\frac {1}{N^{l+1}} \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)] < C_l (l+1)^l \frac{N^{r_1} M(N)^{r_2}}{N{l+1}} \xrightarrow{N\to\infty} 0\]
+		
+	\item \(r> l+1\) \\
+		Nach Lemma aus der Vorlesung exisitert eine einfache, echte Kante und somit \(\EE[Y_N(J,K)]=0\)
+	\item \(r=l+1\)\\
+		Es tragen also nur die Graphen auf \(l+1\) verschiedenen Knoten zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) bei. Diese Graphen haben die Struktur eines Doppelbaumes.
+\end{itemize}
+\textbf{Weitere Analyse von \(\beta_l\):}\\
+Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann folgt:
+\begin{align*}
+	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = &\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
+	&\cdot \#\{\text{Doppelbäume mit }l+1-r\ j\text{-Knoten und } r\ k\text{-Knoten}\} \\
+	&= \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot C_l
+\end{align*}
+Ein Doppelbaum mit \((r)\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
+Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
+\begin{itemize}
+	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke
+	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \(+1\)
+	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \(-1\)
+	\item Die restlichen Kanten sind alle Flächstücke
+\end{itemize}
+Aus dieser Konstruktion ergibt sich, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind. Lässt man die Wurzel außen vor, bleiben \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück. (müsste man hier zeigen, dass diese Zuweisung eine Bijektion ist?)\\
+Die betrachteten Doppelbäume haben im Limes ein kombinatorisches Gewicht von \(N^{l+1-r}M(N)^r\). Damit folgt:
+	\[\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r \to \alpha^r\]
+und damit:
+	\[\beta_l=\sum_{p\in C_l} \alpha^r\]
+wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\}\). (An der Herleitung der Formel für \(\beta_l\) hakts noch ziemlich, sie sollte aber stimmen)
+
+Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie), ich hänge aber noch beim Induktionsschritt.  \\
+Induktionsanfang: \(l=1\): 
+	\[\beta_1 = \alpha\gamma_1=\alpha\beta_0 \gamma_0=\alpha\]
+	
+Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \(C_{l+1} = \sum_{k=0}^l C_kC_{l-k}\) folgt, dass
+	\[\beta_{l+1} = \sum_{k=0}^l \beta_k\beta_{l-k} = \alpha \sum_{k=0}^l \beta_k\gamma_{l-k}\]
+aber das ist eher wage...
 
 
 \end{beweis}
