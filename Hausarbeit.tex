@@ -146,10 +146,22 @@ Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \
 aber das ist eher wage...
 
 
-Wir brauchen zwei Beweise, einmal für $ \beta = \alpha \gamma $ und einmal für $ \gamma= \sum \beta \gamma $..\\
-1.:  $ \alpha \gamma_{l}= \sum_{p \in C_l} \alpha^{l+1-r} $
+Beweis von  $\beta_{l}= \alpha \gamma_{l}$:
+\begin{align*}
+\alpha \gamma_{l} = \sum_{p \in C_l} \alpha^{l+1-r}\\
+\beta_l - \alpha \gamma_l = \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} - \sum_{r=1}^{l} \alpha^{l+1-r}\ \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} C_{r-1}   
+\\ \underset{Symmetrie~ Binom.}{=} \sum_{r=1}^{l} \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} \left( C_{l-r} \alpha^r - C_{r-1}\alpha^{l+1-r} \right)\overset{!}{=} 0
+\\ \text{i-tes Summenglied:} \begin{pmatrix} 2l-2\\2l-2i\end{pmatrix} \left( C_{l-i} \alpha^i - C_{i-1}\alpha^{l+1-i} \right)
+\\ \text{(l+1-i)-tes Summenglied:} \begin{pmatrix} 2l-2\\2l-2-2l+2i\end{pmatrix} \left( C_{l-1-l+i} \alpha^{l+1-i} - C_{1+l-i-1}\alpha^{l+1-1-l+i} \right)= - \text{i-tes Summenglied}
+\\ \text{Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 0}
+\\ \text{für l ungerade bleibt das (l+1)/2-te Summenglied übrig:}\\ \begin{pmatrix} 2l-2\\l+1-2\end{pmatrix} \left( C_{l-\frac{l+1}{2}} \alpha^{\frac{l+1}{2}} - C_{\frac{l+1}{2} -1}\alpha^{l+1-\frac{l+1}{2}} \right)
+\\=\begin{pmatrix} 2l-2\\l-1\end{pmatrix} \left( C_{\frac{l-1}{2}} \alpha^{\frac{l+1}{2}} - C_{\frac{l-1}{2}}\alpha^{\frac{l+1}{2}} \right)=0
+\end{align*}
 
-Meine Ideen: Im Grunde ist das deshalb dasselbe wie $ \beta $, nur werden hier statt der r  Knoten aus M die l+1-r aus N betrachtet. Man kann für jeden Catalanpfad mit $  r_{i} $Flachstücken auch einen mit $  l+1-r_{i}$ finden, aber das ist leider nicht bijektiv. Wenn man wieder überlegt, wie viele Catalanpfade es gibt etc, ist irgendwann zu zeigen, dass $\sum_{r=1}^{l} \begin{pmatrix} 2l-2\\2r-2\end{pmatrix}  \left( C_{l-r} \alpha^r - C_{r-1} \alpha^{l+1-r} \right)  =0  $ ist. Bring das nur leider nicht raus.\\
+Fehlt noch Beweis der zweiten Hälfte von (10), da komm ich nicht weiter.\\
+Sorry dass das alles im rechten Rand verschwindet, ich kenn mich mit dieser Umgebung nicht aus, kann das einer von euch umbauen? Bzw mir sagen wie das ganze linksbündig wird?
+
+
 
 \textbf{Formel (12)}\\
 \begin{align}
