@@ -95,7 +95,7 @@ Damit ergeben sich die drei Fälle (setze \(r = r_1+r_2\) )
 		\[\frac {1}{N^{l+1}} \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)] < C_l (l+1)^l \frac{N^{r_1} M(N)^{r_2}}{N^{l+1}} \xrightarrow{N\to\infty} 0\]
 		
 	\item \(r> l+1\) \\
-		Nach Lemma aus der Vorlesung exisitert eine einfache, echte Kante und somit \(\EE[Y_N(J,K)]=0\)
+		Nach Lemma aus der Vorlesung exisitert eine einfache, echte Kante und somit \(\EE[Y_N(J,K)]=0\), da die Matrixeinträge unabhängig sind.
 	\item \(r=l+1\)\\
 		Es tragen also nur die Graphen auf \(l+1\) verschiedenen Knoten zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) bei. Diese Graphen haben die Struktur eines Doppelbaumes, denen man geordnete, nicht überkreuzende Paarzerlegungen und damit auch Catalanpfade zuordnen kann.
 \end{itemize}
@@ -104,8 +104,9 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 \begin{align*}
 	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = &\sum_{r=1}^{l}\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
 	&\cdot \#\{\text{Doppelbäume mit }l+1-r\ j\text{-Knoten und } r\ k\text{-Knoten}\} \\
-	=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot C_l
+	=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r}
 \end{align*}
+Formel für Anzahl der Doppelbäume folgt aus der folgenden Konstruktion (Anm: das -2 folgt immer, da die beiden Wurzelkanten fest 0 im Catalanpfad sind; Die Catalanzahl für l-r, weil von dem gesamten Pfad der Länge 2l 2r Stücke flach sind und die übrigen wie beim normalen Catalanpfad aufgeteilt werden können) \\ \\
 Ein Doppelbaum mit \((r)\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
 Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
 \begin{itemize}
@@ -129,20 +130,26 @@ Für N hinreichend groß ist dies genähert \(N^{l+1-r}M(N)^r\). Damit folgt:
 	\[\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r =~ \left( \dfrac{M(N)}{N}\right)^{r}\to \alpha^r\]
 und damit:
 	\begin{align*}
-		\beta_l &= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ C_{l} \\
-		&= \sum_{p\in C_l} \alpha^r
+		\beta_l &= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} \\
+		&= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r
 	\end{align*}
 wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\).
 
-Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie /ebenfalls nicht, es schreit aber auch nach Induktion;), ich hänge aber noch beim Induktionsschritt.  \\
-$ \gamma_{l} $ sind die Aufstiege/Abstiege im Doppelbaum.\\
+$ p_{r} $ sei Catalanpfad mit r Flächenstücken.\\
+Gleichung (10) würde ich versuchen per Induktion zu beweisen (Es geht sicher schöner, aber ich weiß nicht wie ), ich hänge aber noch beim Induktionsschritt.  \\
+$ l-r $ im Exponenten von $ \gamma_{l} $ sind die Aufstiege/Abstiege im Doppelbaum.\\
 Induktionsanfang: \(l=1\): 
 	\[\beta_1 = \alpha\gamma_1=\alpha\beta_0 \gamma_0=\alpha\]
 	
 Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \(C_{l+1} = \sum_{k=0}^l C_kC_{l-k}\) folgt, dass
 	\[\beta_{l+1} = \sum_{k=0}^l \beta_k\beta_{l-k} = \alpha \sum_{k=0}^l \beta_k\gamma_{l-k}\]
 aber das ist eher wage...
-Wir brauchen wh sogar zweimal Induktion einmal für $ \beta = \alpha \gamma $ und einmal für $ \gamma= \sum \beta \gamma $..\\
+
+
+Wir brauchen zwei Beweise, einmal für $ \beta = \alpha \gamma $ und einmal für $ \gamma= \sum \beta \gamma $..\\
+1.:  $ \alpha \gamma_{l}= \sum_{p \in C_l} \alpha^{l+1-r} $
+
+Meine Ideen: Im Grunde ist das deshalb dasselbe wie $ \beta $, nur werden hier statt der r  Knoten aus M die l+1-r aus N betrachtet. Man kann für jeden Catalanpfad mit $  r_{i} $Flachstücken auch einen mit $  l+1-r_{i}$ finden, aber das ist leider nicht bijektiv. Wenn man wieder überlegt, wie viele Catalanpfade es gibt etc, ist irgendwann zu zeigen, dass $\sum_{r=1}^{l} \begin{pmatrix} 2l-2\\2r-2\end{pmatrix}  \left( C_{l-r} \alpha^r - C_{r-1} \alpha^{l+1-r} \right)  =0  $ ist. Bring das nur leider nicht raus.\\
 
 \textbf{Formel (12)}\\
 \begin{align}
