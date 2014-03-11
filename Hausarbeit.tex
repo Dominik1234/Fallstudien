@@ -192,7 +192,20 @@ und damit:
 
 wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit r Flächenstücken.\\
 $ l-r $ im Exponenten von $ \gamma_{l} $ sind die Aufstiege/Abstiege im Doppelbaum.\\
+
+
 An Manu: kannst du diese Formel für \(\beta_l\) genauer erklären? Ich verstehe nicht wirklich, was du da machst...\\
+
+
+Mach ich. Also ich hab lang nicht verstanden, was das Kombinatorik-zeug vorne dran mit den Catalanpfaden zu tun hat. Du hattest glaub ich $C_l$ als Anzahl der Catalanpfade. Beim Überlegen für (10) dem nächsten Punkt hab ich mir dann die Formel für die Pfade gebaut, die im Grunde nur auf deiner Konstruktion basiert (und von der bist du ja hoffentlich überzeugt:) )\\
+$ \longrightarrow $Also wir brauchen die Anzahl der Catalanpfade, durch die wir unsere Doppelbäume beschreiben, weil's eine Bijektion ist. Nur haben wir andere Catalanpfade als die normalen:)\\
+Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (Catalanzahlen), sind dadurch definiert, dass du bei jedem Schritt + oder - 1 gehst, und das nichtüberkreuzend. \\ Bei unseren Catalanpfaden hast du aber noch deine "Flachstücke" mit 0 eingebaut! Und zwar r von denen. Also wie viele gibts von denen für ein bestimmtes r? Nach Konstruktion mit einem Knoten, sagen wir mal den j1, als Wurzel, sind der erste und letzte Schritt in dem Pfad auf jeden Fall flach, also 0. Da gibt's keine andere Möglichkeit. Von den restlichen 2l-2 Schritten im Pfad sind noch r-2 flach, die suchen wir als erstes raus. Das macht dann die $\begin{pmatrix} 2l-2\\2r-2\end{pmatrix} $.\\ 
+Bleiben uns noch l-2-(r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
+Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
+Jetzt verständlicher? Oder stimmt was nicht? Aber zumindest der erste Teil von (10) funktioniert ja gut mit der Formel, das sollte also schon passen. Sorry dass ich erst jetzt dazu gekommen bin, das zu schreiben. kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
+
+
+
 
 %Induktionsanfang: \(l=1\): 
 	%\[\beta_1 = \alpha\gamma_1=\alpha\beta_0 \gamma_0=\alpha\]
@@ -221,8 +234,7 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 \end{align*}
 
 Fehlt noch Beweis der zweiten Hälfte von (10), da komm ich nicht weiter.\\
-Sorry dass das alles im rechten Rand verschwindet, ich kenn mich mit dieser Umgebung nicht aus, kann das einer von euch umbauen? Bzw mir sagen wie das ganze linksbündig wird?\\
-->Du hattest einfach zu viel in einer Zeile stehen! Latex macht von sich aus keine Zeilenumbrüche bei Formeln, steht zu viel in einer Zeile, verzieht sich alles, da die align-Umgebung alles zentriert.
+Danke für die Formatierung :) aber Latex soll sich nicht so anstellen nur weil die Formeln ein bisschen lang sind..\\
 
 
 
