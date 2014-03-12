@@ -232,6 +232,20 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 \end{align*}
 
 Fehlt noch Beweis der zweiten Hälfte von (10), da komm ich nicht weiter.\\
+\textbf{Idee für den zweiten Teil von (10):}\\
+Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
+\begin{align*}
+	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
+	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
+\end{align*}
+Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
+Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen. \(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
+Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
+Also ergibt sich die Formel:
+	\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
+und damit
+	\[\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}\]
+(Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
 
 \textbf{Beweis Formel (12)}\\
 \begin{align*}
