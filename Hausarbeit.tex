@@ -23,7 +23,9 @@
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\EE}{\mathbb{E}}
+\newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathcal{F}}
 
 \newcommand{\student}[1]{\marginnote{{\normalfont\bf #1}}}
 
@@ -36,10 +38,70 @@
 \maketitle
 \tableofcontents
 
-\chapter{Wittaker-Shannon-Sampling Theorem}
+\chapter{Whittaker-Shannon Interpolation Theorem}
 
-\section{The Wittaker-Shannon-Sampling Theorem}
+\section{The Whittaker-Shannon Interpolation Theorem}
+If \(x \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\tau_0 > 0\) such that for all \(\tau \in \left(0,\tau_0\right]\)
+\[x(t) = \sum_{k \in \ZZ^d} x(\tau k) \prod_{i=1}^d sinc\left(\frac{t_i-k_i \tau_i}{\tau_i}\right).\]
+
 \section{Proof of the Theorem}
+Define \(\tau_0 = \frac{1}{\omega} := \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)\), \(\Omega_{\omega} := \prod_{i=1}^d \left(-\frac{1}{2}\omega_i ,\frac{1}{2}\omega_i\right)\) and choose \(\tau \in (0,\tau_0)\) arbitrarily.
+% \(X(f) := \FF(x)(f) = \int_{\RR^d} x(t) e^{-2\pi itf} dt\)
+
+\begin{equation}
+x \in L^2_w(\RR^d) \Rightarrow \forall f\notin \Omega_{\omega}: \FF(x)(f) = 0
+\end{equation}
+
+The consequence of this condition and of the linearity of \(\FF(x)\) is:
+
+\[\forall f\in \Omega_{\omega}, k \in \NN: \FF(x)\left(f+\frac{k}{\tau}\right) = \FF(x)(f) + k \FF(x)\underbrace{\left(\frac{1}{\tau}\right)}_{\notin \Omega_{\omega}} = \FF(x)(f)\]
+
+Thus the formula can be rewritten.
+
+\begin{equation}
+\forall f \in \Omega_{\omega}: \FF(x)(f) = \sum_{k=-\infty}^\infty \FF(x)\left( f+\frac{k}{\tau}\right)
+\end{equation} 
+
+(1.1) and (1.2) allow us to say:
+
+\[\FF(x)(f) = \chi_{\Omega_{1/\tau}}(f) \sum_{k=-\infty}^\infty \FF(x)\left(f+\frac{k}{\tau}\right)\]
+
+With the aid of the Poisson summation formula (Theorem 0.3) you can conclude:
+\begin{equation}
+\FF(x)(f) = \chi_{\Omega_1}(\tau f) \det(\tau) \sum_{n=-\infty}^\infty x(n\tau)e^{-2\pi i n\tau f}
+\end{equation}
+
+Mit dieser Poissonschen Summenformel habe ich ziemliche Probleme:\\
+Macht unsere Notation im Skript da Sinn, bzw. wie soll das mit \(k,n \in \ZZ^d\) fuktionieren? Außerdem haben wir auch ganz andere Vorraussetzungen, als z.B. bei Wikipedia, da muss die Funktion u.a. in \(C^{\infty}\) liegen! \\
+Wir müssen auch klären, ob wir die Poisson-Regel überhaupt anwenden dürfen, die Stetigkeit, bzw. die beliebige diff'barkeit ergeben sich mir jetzt nicht so, laut dieser Bemerkung am Ende von Übung 3 geht es ja aber...\\
+Und schließlich an Andi: Hast du die Formel richtig angewandt? Wo kommt das \(\det{\tau}\) her? Ich würde auch sagen, dass im Exponent kein Minus steht? \\
+Das ist echt ein kack, aber bis auf diesen Schritt finde ichs ziemlich gut :) Bist du da selbst drauf gekommen oder hast du das iwo aus dem Internet? Falls letzteres, könntest du uns den Link schicken?\\
+
+
+Now we want to prove that \(\FF\left( \prod_{j=1}^d sinc \left( \frac{t_j-n\tau_j}{\tau_j}\right)\right)(f) = \det(\tau)\chi_{\Omega_1}(\tau f)e^{-2\pi in\tau f}\).
+
+\begin{align*}
+\FF^{-1}\left( \det(\tau) \chi_{\Omega_1}(\tau f) e^{-2 \pi i n \tau f}\right) 
+&= \int_{\RR^d} \det(\tau) \chi_{\Omega_1}(\tau f) e^{-2 \pi i n \tau f} e^{2 \pi i f t} df \\
+&= \int_{\RR^d} \det(\tau) \chi_{\Omega_1}(\tau f) e^{2 \pi i f (t-n\tau) }df \\
+&= \int_{-\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \cdots \int_{-\frac{1}{2\tau_d}}^{\frac{1}{2\tau_d}} \prod_{j=1}^d \tau_j e^{2 \pi i f_j(t_j-n \tau_j)}df_1 \ldots df_d \\
+&= \prod_{j=1}^d \int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i f_j (t_j - n \tau_j)}df_j \\
+&= \prod_{j=1}^d \left[  \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} e^{2 \pi i f_j (t_j - n \tau_j)} \right]_{f_j = -\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \\
+&= \prod_{j=1}^d \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} \left( e^{\pi i \frac{t_j - n \tau_j}{\tau_j}} - e^{-\pi i \frac{t_j - n \tau_j}{\tau_j}} \right) \\
+&= \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
+\end{align*}
+
+Hence formula (1.3) is:
+
+\[\FF(x)(f) = \sum_{n = -\infty}^\infty x(n\tau) \FF\left(\prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right)(f)\]
+
+Through applying the inverse transform on both sides, the theorem is proved.
+
+\begin{align*}
+x(t) = \FF^{-1}(\FF(x))(t) &= \FF^{-1} \left( \sum_{n = -\infty}^\infty x(n \tau) \FF \left( \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right) \right) \\
+&= \sum_{n = -\infty}^\infty x(n\tau) \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
+\end{align*}
+
 \section{Meaning, real-life applications and limitations}
 
 \chapter{Das Marchenko-Pastur-Gesetz}
@@ -147,16 +209,8 @@ Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (C
 Bleiben uns noch l-2-(r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
 Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
 Jetzt verständlicher? Oder stimmt was nicht? Aber zumindest der erste Teil von (10) funktioniert ja gut mit der Formel, das sollte also schon passen. Sorry dass ich erst jetzt dazu gekommen bin, das zu schreiben. kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
-
-
-
-
-%Induktionsanfang: \(l=1\): 
-	%\[\beta_1 = \alpha\gamma_1=\alpha\beta_0 \gamma_0=\alpha\]
-	
-%Induktionsschritt: Ich denke, dass aus der Rekursionsformel für Catalanzahlen \(C_{l+1} = \sum_{k=0}^l C_kC_{l-k}\) folgt, dass
-	%\[\beta_{l+1} = \sum_{k=0}^l \beta_k\beta_{l-k} = \alpha \sum_{k=0}^l \beta_k\gamma_{l-k}\]
-%aber das ist eher wage...
+ -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\
+Müssten die \(p_r\) nicht auch die Catalen Pfade auf \textbf{2}r Flachstücken sein?
 
 \textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
 \begin{align*}
@@ -178,9 +232,20 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 \end{align*}
 
 Fehlt noch Beweis der zweiten Hälfte von (10), da komm ich nicht weiter.\\
-Danke für die Formatierung :) aber Latex soll sich nicht so anstellen nur weil die Formeln ein bisschen lang sind..\\
-
-
+\textbf{Idee für den zweiten Teil von (10):}\\
+Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
+\begin{align*}
+	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
+	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
+\end{align*}
+Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
+Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen. \(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
+Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
+Also ergibt sich die Formel:
+	\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
+und damit
+	\[\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}\]
+(Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
 
 \textbf{Beweis Formel (12)}\\
 \begin{align*}
