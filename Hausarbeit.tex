@@ -115,15 +115,17 @@ und \(M(N) \in \NN\) so, dass
 Sei weiterhin die Wishart-Matrix gegeben als 
 	\[W_N = \frac{1}{N}Y_NY_N^T,\]
 und habe die empirische Eigenwertverteilung
-	\[L_N = \frac{1}{n} \sum_{j=1}^{N} \delta_{\lambda_j} \]
+	\[L_N = \frac{1}{N} \sum_{j=1}^{N} \delta_{\lambda_j} \]
 und das Zustandsdichtemaß \(\overline{L_N} = \EE[L_N]\). Dann gilt die Konvergenz
 	\[\overline{L_N} \xrightarrow{\text{w}} f_{\alpha}(x)dx \quad(N\to\infty)\]
 im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 	\[f_{\alpha}(x)=\frac{1}{2\pi x}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \]
 
 \newpage
-\begin{beweis}
-\begin{align*}
+\section{Beweis des Marcenko-Pastur Gesetzes}
+Zuerst bringen wir \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form, die eine weitergehende Untersuchung ermöglicht:
+\begin{equation}
+\begin{split}
 		N^{l+1} &\langle \overline{L_N}, x^l \rangle\ 
 		= N^{l+1} \cdot \int x^l \overline{L_N}(dx) 
 		= N^{l+1} \cdot \frac{1}{N} \cdot \EE[tr(W^l_N)] 
@@ -132,50 +134,58 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 		&= \sum_{j_1,...,j_l = 1}^N \EE \left[\left(\sum_{k = 1}^{M(N)} Y_N(j_1,k) \cdot Y_N(j_2,k)\right) \cdot \left(\prod_{p = 2}^l \sum_{k = 1}^{M(N)} Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right) \right] \\
 		&= \sum_{j_1,...,j_l = 1}^N \EE\left[	\prod_{p = 2}^l \sum_{k_1,k_2 = 1}^{M(N)} Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_p,k_2) \cdot Y_N(j_{p+1},k_2) \right] \\
 		&= ... \\
-		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) Y_N(j_2,k_1) Y_N(j_2,k_2) Y_N(j_3,k_2) ... Y_N(j_l,k_l) Y_N(j_1,k_l)]
-\end{align*}
-
-Meine Ideen, wie es weiter geht. Hakt noch ein bisschen, sollte aber in die richtige Richtung gehen :)
-
-\begin{equation}
- = \sum_{r_1,r_2 = 1}^l \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)]
+		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) Y_N(j_2,k_1) Y_N(j_2,k_2) Y_N(j_3,k_2) ... Y_N(j_l,k_l) Y_N(j_1,k_l)]\\
+ &= \sum_{r_1,r_2 = 1}^l \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)]
+\end{split}
 \end{equation}
+wobei 
+\begin{align*}
+	&J=(j_1,j_2,j_2,...,j_l,j_l,j_1), K=(k_1,k_1,...,k_l,k_l),\\
+	&v: \NN^{2l}\to \NN,\ v(X) := \text{Anzahl der verschiedenen Indizes in X}
+\end{align*}
 Die einzelnen Summanden können also als Eulergraphen auf \(r_1+r_2 \)Knoten und \(2l\) Kanten interpretiert werden.
 Damit ergeben sich die drei Fälle (setze \(r = r_1+r_2\) )
 \begin{itemize}
 	\item \(r < l+ 1\)\\
-		\begin{align*}
+		\begin{equation}
+			\begin{split}
 			\EE[Y_N(J,k)] &\leq \prod_{n=1}^l \left(\sup_{j,k,N}\EE\left[|Y_N(j,k)|^l\right]\right)^{\frac 1 l} \\
 			& = \prod_{n=1}^l C_l^{\frac 1 l} = C_l
-			\end{align*}
-	Außerdem: 
-		\begin{align*}
+			\end{split}
+			\end{equation}
+	Außerdem gilt: 
+		\begin{align}
 			\#\{J: v(J)=r_1\} &\leq \begin{pmatrix} N \\ r_1 \end{pmatrix} r_1^l \leq N^{r_1}r_1^l \\
 			\#\{K: v(K)=r_2\} &\leq \begin{pmatrix} M(N) \\ r_2 \end{pmatrix} r_2^l \leq M(N)^{r_2}r_2^l
-		\end{align*}
-	Somit gilt: 
-		\[\frac {1}{N^{l+1}} \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)] < C_l (l+1)^l \frac{N^{r_1} M(N)^{r_2}}{N^{l+1}} \xrightarrow{N\to\infty} 0\]
+		\end{align}
+	Somit ergibt sich aus \((2.2) - (2.4)\): 
+	\begin{equation}
+		\frac {1}{N^{l+1}} \sum_{\substack{J:v(J)=r_1\\ K:v(K)=r_2 }} \EE[Y_N(J,K)] < C_l (l+1)^l \frac{N^{r_1} M(N)^{r_2}}{N^{l+1}} \xrightarrow{N\to\infty} 0
+	\end{equation}
 		
 	\item \(r> l+1\) \\
 		Nach Lemma aus der Vorlesung exisitert eine einfache, echte Kante und somit \(\EE[Y_N(J,K)]=0\), da die Matrixeinträge unabhängig sind.
 	\item \(r=l+1\)\\
-		Es tragen also nur die Graphen auf \(l+1\) verschiedenen Knoten zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) bei. Diese Graphen haben die Struktur eines Doppelbaumes, denen man geordnete, nicht überkreuzende Paarzerlegungen und damit auch Catalanpfade zuordnen kann.
+		Es tragen also nur die Graphen auf \(l+1\) verschiedenen Knoten zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) bei. Diese Graphen haben die Struktur eines Doppelbaumes%, denen man geordnete, nicht überkreuzende Paarzerlegungen und damit auch Catalanpfade zuordnen kann.
 \end{itemize}
-\textbf{Weitere Analyse von \(\beta_l\):}\\
+%\textbf{Weitere Analyse von \(\beta_l\):}\\
+Diese Doppelbaumstruktur lässt sich wie folgt nutzen:\\
 Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann folgt:
-\begin{align*}
+\begin{equation}
+	\begin{split}
 	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = &\sum_{r=1}^{l}\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
 	&\cdot \#\{\text{Doppelbäume mit }l+1-r\ j\text{-Knoten und } r\ k\text{-Knoten}\} \\
-	=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r}
-\end{align*}
-Formel für Anzahl der Doppelbäume folgt aus der folgenden Konstruktion (Anm: das -2 folgt immer, da die beiden Wurzelkanten fest 0 im Catalanpfad sind; Die Catalanzahl für l-r, weil von dem gesamten Pfad der Länge 2l 2r Stücke flach sind und die übrigen wie beim normalen Catalanpfad aufgeteilt werden können) \\ \\
-Ein Doppelbaum mit \((r)\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
+	%=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r}
+	\end{split}
+\end{equation}
+%Eine Formel für die Anzahl der Doppelbäume folgt aus der nachfolgenden Konstruktion (Anm: das -2 folgt immer, da die beiden Wurzelkanten fest 0 im Catalanpfad sind; Die Catalanzahl für l-r, weil von dem gesamten Pfad der Länge 2l 2r Stücke flach sind und die übrigen wie beim normalen Catalanpfad aufgeteilt werden können) \\ \\
+Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
 Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
 \begin{itemize}
-	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke (+0)
-	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \(+1\)
-	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \(-1\)
-	\item Die restlichen Kanten sind alle Flachstücke
+	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke: \((+0)\)
+	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \((+1)\)
+	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \((-1)\)
+	\item Die restlichen Kanten sind alle Flachstücke: \((+0)\)
 \end{itemize}
 Beispiel: \\
 \includegraphics{Catalan-Pfad}
@@ -187,14 +197,21 @@ Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen
 \item[•] Injektivität analog zur Übung (bzw muss man das unbedingt nochmal zeigen?)\\
 \end{itemize}
 Die betrachteten Doppelbäume haben s.o. ein kombinatorisches Gewicht von 
-	\[ \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \]
+	\begin{equation}
+		\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r!
+	\end{equation}
 Für N hinreichend groß ist dies genähert \(N^{l+1-r}M(N)^r\). Damit folgt:
-	\[\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r =~ \left( \dfrac{M(N)}{N}\right)^{r}\to \alpha^r\]
+	\begin{equation}
+		\frac {1}{N^{l+1}} N^{l+1-r}M(N)^r =~ \left( \dfrac{M(N)}{N}\right)^{r}\to \alpha^r
+	\end{equation}
 und damit:
-	\begin{align*}
-		\beta_l &= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} \\
+	\begin{equation}
+	\begin{split}
+		\beta_l &:= \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle\\
+		&= \lim_{N \to \infty} \sum_{J,K: v(J)+v(K) = l+1} \dfrac{1}{N^{l+1}}\EE[Y_N(J,K)] = \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} \\
 		&= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r
-	\end{align*}
+	\end{split}
+	\end{equation}
 
 wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit 2r Flächenstücken.\\
 
@@ -209,15 +226,27 @@ Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (C
 Bleiben uns noch 2l-2-(2r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die 2r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
 Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit 2r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle 2r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
 kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
- -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\ Jetzt mit richtiger Defintion von $ p_r $ klarer? 
+ -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\ Jetzt mit richtiger Defintion von $ p_r $ klarer? \\
 
-\textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
-\begin{align*}
+%\textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
+Mit \(\beta_0 :=1, \gamma_0:=1 \) und
+\begin{equation*}
+		\gamma_l:=\sum_{p\in C_l} \alpha^{l-r} \qquad (l\geq 1)
+\end{equation*}
+gelten die Relationen
+\begin{equation}
+	\beta_l = \alpha\gamma_l=\alpha\sum_{r=0}^{l-1}\beta_r \gamma_{l-1-r}
+\end{equation}
+für alle \(l\geq 1\):
+\begin{itemize}
+	\item \begin{equation}
+	\begin{split}
 \alpha \gamma_{l} =& \sum_{p \in C_l} \alpha^{l+1-r},\\
 \beta_l - \alpha \gamma_l =& \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} - \sum_{r=1}^{l} \alpha^{l+1-r}\ \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} C_{r-1}   \\ 
 \underset{\text{Symmetrie Binom.}}{=}& \sum_{r=1}^{l} \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} \left( C_{l-r} \alpha^r - C_{r-1}\alpha^{l+1-r} \right) \\
 \overset{!}{=}& 0 \\
-\end{align*}
+\end{split}
+\end{equation}
 Für die einzelnen Summenglieder folgt:
 \begin{align*}
 \text{i-tes Summenglied:} &\begin{pmatrix} 2l-2\\2l-2i\end{pmatrix} \left( C_{l-i} \alpha^i - C_{i-1}\alpha^{l+1-i} \right) \\
@@ -230,25 +259,30 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 &=\begin{pmatrix} 2l-2\\l-1\end{pmatrix} \left( C_{\frac{l-1}{2}} \alpha^{\frac{l+1}{2}} - C_{\frac{l-1}{2}}\alpha^{\frac{l+1}{2}} \right)=0
 \end{align*}
 
-Fehlt noch Beweis der zweiten Hälfte von (10), da komm ich nicht weiter.\\
-\textbf{Idee für den zweiten Teil von (10):}\\
+Damit gilt der erste Teil von \((2.10)\)\\
+\item
 Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
 \begin{align*}
 	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
 	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
 \end{align*}
 Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
-Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen. \(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
+Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen.\\
+\(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
 Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
-Also ergibt sich die Formel:
+Daraus ergibt sich die Formel:
 	\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
 und damit
-	\[\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}\]
+\begin{equation}
+	\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
+\end{equation}
+Also gilt auch die zweite Relation von \((2.10)\).\\
+\end{itemize}
 (Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
 
-\textbf{Beweis Formel (12)}\\
+\textbf{Beweis von Formel (12)}\\
 \begin{align*}
-	Q_n =& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
+	Q_n :=& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
 	 =& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{(x-(1-\sqrt{\alpha})^2)((1+\sqrt{\alpha})^2-x)} (x-\alpha -1)^n \,\mathrm{d}x\\
 	=& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{-\alpha^2+2\alpha x+2\alpha -x^2+2x-1}(x-\alpha-1)^n \,\mathrm{d}x\\
 	\overset{x=y+\alpha+1}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{-2\sqrt{\alpha}}^{2\sqrt{\alpha}} \sqrt{4\alpha -y^2} y^n \,\mathrm{d}y\\
@@ -260,9 +294,6 @@ und damit
 Bei den "`Verständnis-Fragen"' habe ich jedoch etwas Probleme: \(f_{\alpha}\) ist für x=0 gar nicht definiert? Durch die Rechnung ergibt sich aber der Bezug zu \(\sigma(x)\), wo man dann doch beim Halbkreisgesetz wäre.\\
 Zur Eindeutigkeit von \(f_{\alpha}\) sind diese "`verallgemeinerten Momente"' ein Problem. Habt ihr in der großen W-Theorie Vorlesung dazu was gemacht?
 
-
-
-\end{beweis}
 
 
 \end{document}
