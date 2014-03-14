@@ -196,8 +196,8 @@ und damit:
 		&= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r
 	\end{align*}
 
-wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit r Flächenstücken.\\
-$ l-r $ im Exponenten von $ \gamma_{l} $ sind die Aufstiege/Abstiege im Doppelbaum.\\
+wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit 2r Flächenstücken.\\
+
 
 
 An Manu: kannst du diese Formel für \(\beta_l\) genauer erklären? Ich verstehe nicht wirklich, was du da machst...\\
@@ -205,12 +205,11 @@ An Manu: kannst du diese Formel für \(\beta_l\) genauer erklären? Ich verstehe
 
 Mach ich. Also ich hab lang nicht verstanden, was das Kombinatorik-zeug vorne dran mit den Catalanpfaden zu tun hat. Du hattest glaub ich $C_l$ als Anzahl der Catalanpfade. Beim Überlegen für (10) dem nächsten Punkt hab ich mir dann die Formel für die Pfade gebaut, die im Grunde nur auf deiner Konstruktion basiert (und von der bist du ja hoffentlich überzeugt:) )\\
 $ \longrightarrow $Also wir brauchen die Anzahl der Catalanpfade, durch die wir unsere Doppelbäume beschreiben, weil's eine Bijektion ist. Nur haben wir andere Catalanpfade als die normalen:)\\
-Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (Catalanzahlen), sind dadurch definiert, dass du bei jedem Schritt + oder - 1 gehst, und das nichtüberkreuzend. \\ Bei unseren Catalanpfaden hast du aber noch deine "Flachstücke" mit 0 eingebaut! Und zwar r von denen. Also wie viele gibts von denen für ein bestimmtes r? Nach Konstruktion mit einem Knoten, sagen wir mal den j1, als Wurzel, sind der erste und letzte Schritt in dem Pfad auf jeden Fall flach, also 0. Da gibt's keine andere Möglichkeit. Von den restlichen 2l-2 Schritten im Pfad sind noch r-2 flach, die suchen wir als erstes raus. Das macht dann die $\begin{pmatrix} 2l-2\\2r-2\end{pmatrix} $.\\ 
-Bleiben uns noch l-2-(r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
-Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
-Jetzt verständlicher? Oder stimmt was nicht? Aber zumindest der erste Teil von (10) funktioniert ja gut mit der Formel, das sollte also schon passen. Sorry dass ich erst jetzt dazu gekommen bin, das zu schreiben. kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
- -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\
-Müssten die \(p_r\) nicht auch die Catalen Pfade auf \textbf{2}r Flachstücken sein?
+Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (Catalanzahlen), sind dadurch definiert, dass du bei jedem Schritt + oder - 1 gehst, und das nichtüberkreuzend. \\ Bei unseren Catalanpfaden hast du aber noch deine "Flachstücke" mit 0 eingebaut! Und zwar 2r von denen. Also wie viele gibts von denen für ein bestimmtes r? Nach Konstruktion mit einem Knoten, sagen wir mal den j1, als Wurzel, sind der erste und letzte Schritt in dem Pfad auf jeden Fall flach, also 0. Da gibt's keine andere Möglichkeit. Von den restlichen 2l-2 Schritten im Pfad sind noch 2r-2 flach, die suchen wir als erstes raus. Das macht dann die $\begin{pmatrix} 2l-2\\2r-2\end{pmatrix} $.\\ 
+Bleiben uns noch 2l-2-(2r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die 2r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
+Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit 2r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle 2r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
+kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
+ -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\ Jetzt mit richtiger Defintion von $ p_r $ klarer? 
 
 \textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
 \begin{align*}
