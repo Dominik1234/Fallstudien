@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  15 MAR 2014 16:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  15 MAR 2014 20:50
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Manuela\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -712,26 +712,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 292--296
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
 
  []
 
-[13] [14] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
+
+ []
+
+[14] [15] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 4505 strings out of 494045
- 63526 string characters out of 3145963
+ 4507 strings out of 494045
+ 63556 string characters out of 3145963
  167293 words of memory out of 3000000
- 7692 multiletter control sequences out of 15000+200000
+ 7694 multiletter control sequences out of 15000+200000
  63230 words of font info for 69 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  40i,21n,51p,734b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -754,9 +764,9 @@ nts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lms
 y8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on Hausarbeit.pdf (14 pages, 308534 bytes).
+Output written on Hausarbeit.pdf (15 pages, 312223 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

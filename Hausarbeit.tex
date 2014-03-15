@@ -288,11 +288,22 @@ Also gilt auch die zweite Relation von \((2.10)\).\\
 	\overset{x=y+\alpha+1}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{-2\sqrt{\alpha}}^{2\sqrt{\alpha}} \sqrt{4\alpha -y^2} y^n \,\mathrm{d}y\\
 	\overset{y=2\sqrt{\alpha}z}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \cdot 2^n \alpha^{n/2}\cdot4\sqrt{\alpha}\int_{-1}^{1} \sqrt{1-z^2}z^n \,\mathrm{d}z = \frac{2}{\pi} \cdot 2^n\int_{-1}^{1} \sqrt{1-z^2}z^n\,\mathrm{d}z \\
 	\overset{\text{Übung 1}}{=}& \sigma(z^n) = \begin{cases} 0, &n\text{ ungerade}\\
-	C_{\frac l 2}, &n\text{gerade} \end{cases}
+	C_{\frac n 2}, &n\text{gerade} \end{cases}
 \end{align*}
 (Falls wir noch Platz füllen müssen, können wir hier die Rechnung aus der Übung auch wiederholen ;) )
 Bei den "`Verständnis-Fragen"' habe ich jedoch etwas Probleme: \(f_{\alpha}\) ist für x=0 gar nicht definiert? Durch die Rechnung ergibt sich aber der Bezug zu \(\sigma(x)\), wo man dann doch beim Halbkreisgesetz wäre.\\
 Zur Eindeutigkeit von \(f_{\alpha}\) sind diese "`verallgemeinerten Momente"' ein Problem. Habt ihr in der großen W-Theorie Vorlesung dazu was gemacht?\\
+
+Finde nichts zu verallgemeinerten Momenten. Müssen wir am Dienstag fragen.\\
+Ann: Theorem der Vorlesung auch für verallgemeinerte Momente anwendbar: f eind. bestimmt wenn $ Q_n< \infty $ (folgt aus (12)) und $ \sum_{n=0}^{\infty} Q_n \dfrac{z^n}{n!}$ positiven Konvergenzradius besitzt.\\
+\[ \sum_{n=0}^{\infty} Q_n \dfrac{z^n}{n!}= \sum_{n=0}^{\infty} a_n \dfrac{z^n}{n!}\]\\
+wobei \[ a_n=\begin{cases} 0, &n\text{ ungerade}\\
+	\dfrac{C_{\frac n 2}}{n!}=((\frac{k}{2}+1)!\frac{k}{2}!)^{-1}, &n\text{ gerade} \end{cases} \]
+	Wurzelkriterium für Konvergenzradius: 
+	\[(\frac{k}{2}+1)!\frac{k}{2}! \geq 1 \Rightarrow \vert a_n \vert \leq 1 \Rightarrow \]
+	\[ r=(\limsup_{n \to \infty} \sqrt[n]{\vert a_n} \vert )^{-1} >1 \]
+	
+
 
 \textbf{Beweis von Formel (14)}\\
 \begin{equation}
@@ -325,8 +336,17 @@ Rekursion für $ Q_m: $
 \text{m ungerade:}& \sum_{n=0}^m Q_{m-n}Q_n= Q_0 \underbrace{Q_m}_{\substack{=0}} + \underbrace{Q_1}_{\substack{=0}}Q_{n-1}+....= 0=Q_{m+2}\\
 \text {m gerade:}&~ Q_{m+2}= C_{\frac{m}{2}+1}= \sum_{k=0}^{\frac{m}{2}} C_k C_{\frac{m}{2}-k}=\sum_{k=0}^{\frac{m}{2}} Q_{2k}Q_{m-2k}=\sum_{n=0}^{m}Q_n Q_{m-n}
 \end{align*}
-wobei der letzte Schritt aus $ Q_n Q_{m-n}=0 $ für $ n=2k+1 $ folgt.
+wobei der letzte Schritt aus $ Q_n Q_{m-n}=0 $ für $ n=2k+1 $ folgt.\\
 
+Bleibt zu zeigen, dass damit $ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~(N \rightarrow \infty) $. \\
+Unter der Annahme, dass diese seltsamen "verallgemeinerten Momente" genauso wie die normalen Momente verwendet werden können, können wir das Theorem aus der Vorlesung anwenden, um von der Konvergenz der Momente auf die schwache Konvergenz der W-maße zu kommen. \\
+Voraussetzungen: 1. $ f_\alpha $ ist durch $ Q_n $ eindeutig bestimmt, s.o. erfüllt;\\
+2. \[ \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} = \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \langle \overline{L_N}, x^{n+1-k} \rangle \] 
+\[= \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \EE [\dfrac{1}{N} tr(W_N^{n+1-k})]
+< \infty ~\forall N,n \in \NN_0 \]\\
+wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\
+(...okay sicher bin ich mir bei dem Ganzen nicht aber das hier ist alles mehr so als Idee aufzufassen)\\
+$ \Rightarrow $ Theorem (Woche 2, Seite 3 rechts) $ \Rightarrow $ schwache Konvergenz
 
 
 \end{document}
