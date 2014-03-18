@@ -261,25 +261,35 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 \end{align*}
 
 Damit gilt der erste Teil von \((2.10)\)\\
-\item
+\item Zweiter Versuch. Der erste ist auskommentiert noch im TeX-Dokument...\\
 Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
 \begin{align*}
 	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
 	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
 \end{align*}
-Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
-Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen.\\
-\(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
-Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
-Daraus ergibt sich die Formel:
-	\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
-und damit
+Seien dies die \(r\)- bzw. \(l-r\)-Kanten, die im zugehörigen Catalan-Pfad an ungerader bzw. gerader Position liegen.\\
+%Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
+Aus der Konstruktion der Catalan-Pfade aus der Doppelbaum-Struktur ergibt sich, dass das erste und letzte Element immer Flachstücke sind. Habe ein solcher Pfad der Länge l die Bezeichnung \(\tilde{C}_l\). Für so ein \(\tilde{C}_l\) gilt, dass die \(0\) zum ersten Mal (abgesehen von dem beginnenden Flachstück) nach einer ungeraden Anzahl von Schritten erreicht wird. Auf \(0\) kommt der Pfad nämlich immer nach erreichen eines Knotens in der ersten Ebene des erzeugenden Baumes, was nur nach einer ungeraden Anzahl von Kantendurchläufen möglich ist. Sei \(2j+1\) diese Position.\\
+Teile \(\tilde{C}_l\) in zwei Teilpfade wie folgt (für \(j>0\)):\\
+Sei \(P_1\) der Pfad von Position \(1\) bis \(2j+1\) und \(P_2\) der zusammengesetzte Pfad von Position \(0\) bis \(1\) und von \(2j+2\) bis \(2l\).\\
+ \(P_2\) hat also Länge \(2l-2j\) und hat die Eigenschaft, dass das erste und letzte Element Flachstücke sind, \(P_2\) ist also von der Form \(\tilde{C}_{l-j}\). \(P_1\) hat Länge \(2j\), wobei das erste und letzte Element als auf- bzw. absteigende Kante festgelegt sind, da die \(0\) erst an letzter Position erreicht werden soll. Löscht man nun diese beiden Kanten, hat \(P_1\) noch Länge \(2j-2\) und ist von der Form \(\tilde{C}_{j-1}\), da (falls \(j>1\)) nach einer aufsteigenden Kante stets ein Flachstück und vor einer absteigenden Kante ebenfalls stets ein Flachstück liegt. (vgl. Konstruktion). Habe dieser Pfad den Namen \(\tilde{P}_1\).\\
+Die Kanten, die in \(P_1\) an gerader/ungerader Postion lagen, liegen auch in \(\tilde{P}_1\) an gerader/ungerader Positon, wohingegen sich bei \(P_2\) diese Eigenschaft genau umgekehrt hat, die \(r\)- und \(l-r\)-Kanten haben ihre Positionen vertauscht. Aus der Definiton von \(\beta_l\) und \(\gamma_l\) ergibt sich somit die rekursive Formel 
 \begin{equation}
-	\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
+	\beta_l =\alpha\sum_{j=1}^l \beta_{j-1}\gamma_{l-j}=\alpha\sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
 \end{equation}
+Das zusätzliche \(\alpha\) wird durch das Löschen der Aufwärtskante bei der Konstruktion von \(\tilde{P}_1\) hervorgerufen.
+%Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen.\\
+%\(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
+%Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
+%Daraus ergibt sich die Formel:
+	%\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
+%und damit
+%\begin{equation}
+	%\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
+%\end{equation}
 Also gilt auch die zweite Relation von \((2.10)\).\\
 \end{itemize}
-(Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
+%(Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
 
 \textbf{Beweis von Formel (12)}\\
 \begin{align*}
