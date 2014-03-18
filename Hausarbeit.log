@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  18 MAR 2014 01:29
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  18 MAR 2014 12:15
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -635,107 +635,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
 
-<Catalan-Pfad.jpg, id=40, 441.90094pt x 103.13531pt>
-File: Catalan-Pfad.jpg Graphic file (type jpg)
- <use Catalan-Pfad.jpg>
-Package pdftex.def Info: Catalan-Pfad.jpg used on input line 192.
-(pdftex.def)             Requested size: 441.89986pt x 103.13504pt.
+<Catalan-Pfad.pdf, id=40, 380.84885pt x 89.0246pt>
+File: Catalan-Pfad.pdf Graphic file (type pdf)
+ <use Catalan-Pfad.pdf>
+Package pdftex.def Info: Catalan-Pfad.pdf used on input line 194.
+(pdftex.def)             Requested size: 397.34149pt x 92.8795pt.
 
-Overfull \hbox (23.6443pt too wide) in paragraph at lines 191--195
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
-[9 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Catalan-Pfad.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+[9 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Catalan-Pfad.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Overfull \hbox (72.95041pt too wide) in paragraph at lines 224--231
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+
+Overfull \hbox (72.95041pt too wide) in paragraph at lines 229--236
 \T1/lmr/m/n/10.95 chen wir sie ja erst mal nicht, des-halb wie-der um-cshrei-be
 n in $[][] \OML/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 #\OMS/lmsy/m/n/10.95 f[]g$
 \T1/lmr/m/n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--231
+Underfull \hbox (badness 10000) in paragraph at lines 229--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--231
+Underfull \hbox (badness 10000) in paragraph at lines 229--236
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 279--291
+Underfull \hbox (badness 10000) in paragraph at lines 284--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 303--307
+Underfull \hbox (badness 10000) in paragraph at lines 308--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 313--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 330--332
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 354--356
 
  []
 
 [14] [15] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 4360 strings out of 493921
- 59880 string characters out of 3146475
+ 4358 strings out of 493921
+ 59872 string characters out of 3146475
  145644 words of memory out of 3000000
  7547 multiletter control sequences out of 15000+200000
  63230 words of font info for 69 fonts, out of 3000000 for 9000
@@ -759,9 +754,9 @@ am Files (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86
 type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/
 lmsy8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on Hausarbeit.pdf (15 pages, 312554 bytes).
+Output written on Hausarbeit.pdf (15 pages, 298138 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

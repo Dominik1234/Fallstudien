@@ -188,8 +188,13 @@ Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen,
 	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \((-1)\)
 	\item Die restlichen Kanten sind alle Flachstücke: \((+0)\)
 \end{itemize}
-Beispiel: \\
-\includegraphics{Catalan-Pfad}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.95\textwidth]{Catalan-Pfad.pdf}
+	\caption{Doppelbaum mit 5 Knoten und dem zugehörigen Catalan-Pfad} 
+\end{figure}
+
 Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
 \\ Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion, da:
 \begin{itemize}
