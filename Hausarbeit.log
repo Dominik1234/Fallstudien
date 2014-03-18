@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  18 MAR 2014 12:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  18 MAR 2014 20:28
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -635,128 +635,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
 
-<Catalan-Pfad.pdf, id=40, 380.84885pt x 89.0246pt>
-File: Catalan-Pfad.pdf Graphic file (type pdf)
- <use Catalan-Pfad.pdf>
-Package pdftex.def Info: Catalan-Pfad.pdf used on input line 194.
-(pdftex.def)             Requested size: 397.34149pt x 92.8795pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
-
- []
-
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
-
- []
-
-[9 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Catalan-Pfad.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
  []
 
 
-Overfull \hbox (72.95041pt too wide) in paragraph at lines 229--236
+Overfull \hbox (72.95041pt too wide) in paragraph at lines 239--247
 \T1/lmr/m/n/10.95 chen wir sie ja erst mal nicht, des-halb wie-der um-cshrei-be
 n in $[][] \OML/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 #\OMS/lmsy/m/n/10.95 f[]g$
 \T1/lmr/m/n/10.95 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--236
+Underfull \hbox (badness 10000) in paragraph at lines 239--247
+
+ []
+
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--236
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
-
+Overfull \hbox (1.7757pt too wide) in paragraph at lines 281--286
+\T1/lmr/m/n/10.95 Die ge-ra-den/ungeraden Ni-ve-aus im ur-sprüng-li-chen Pfad s
+ind in $[]$ un-ge-ra-de/gerade
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 284--296
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 319--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 308--312
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--356
-
- []
-
-[14] [15] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
+[14] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 4358 strings out of 493921
- 59872 string characters out of 3146475
+ 4341 strings out of 493921
+ 59657 string characters out of 3146475
  145644 words of memory out of 3000000
- 7547 multiletter control sequences out of 15000+200000
- 63230 words of font info for 69 fonts, out of 3000000 for 9000
+ 7536 multiletter control sequences out of 15000+200000
+ 59067 words of font info for 63 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  38i,21n,47p,734b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/P
-rogram Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/
-MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MikTeX/fonts/en
-c/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathi
-t.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Progr
-am Files (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/
-MikTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/ty
-pe1/public/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/l
-mmi6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Pro
-gram Files (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)
-/MikTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/fonts/ty
-pe1/public/lm/lmr6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr
-8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmro10.pfb><C:/Progr
-am Files (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86
-)/MikTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/
-type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/
-lmsy8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb>
-Output written on Hausarbeit.pdf (15 pages, 298138 bytes).
+{C:/Progra
+m Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTe
+X/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvi
+ps/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathit.enc
+}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program Fi
+les (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MikTe
+X/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/p
+ublic/lm/lmmi10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi6.
+pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program 
+Files (x86)/MikTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MikT
+eX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/p
+ublic/lm/lmr6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr8.pfb
+><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmro10.pfb><C:/Program Fi
+les (x86)/MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/Mik
+TeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1
+/public/lm/lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8
+.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on Hausarbeit.pdf (14 pages, 294117 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

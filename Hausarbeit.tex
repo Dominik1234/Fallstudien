@@ -181,25 +181,34 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 \end{equation}
 %Eine Formel für die Anzahl der Doppelbäume folgt aus der nachfolgenden Konstruktion (Anm: das -2 folgt immer, da die beiden Wurzelkanten fest 0 im Catalanpfad sind; Die Catalanzahl für l-r, weil von dem gesamten Pfad der Länge 2l 2r Stücke flach sind und die übrigen wie beim normalen Catalanpfad aufgeteilt werden können) \\ \\
 Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
-Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die k-Knoten liegen also in ungeraden Ebenen, die j-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Konstruiere den Catalan-Pfad wie folgt:\\
+Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie bei der Tiefensuche durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:\\
 \begin{itemize}
-	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke: \((+0)\)
-	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \((+1)\)
-	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \((-1)\)
-	\item Die restlichen Kanten sind alle Flachstücke: \((+0)\)
+	\item Wird ein Knoten zum ersten Mal erreicht: \((+1)\)
+	\item Kehrt man zu einem bereits besuchten Knoten zurück :\((-1)\)
+	
 \end{itemize}
+Da der Baum durch Tiefensuche durchlaufen wird, gibt die Entfernung eines Knotens zur Wurzel die Anzahl der nötigen Schritte wieder, die benötigt werden, um ihn zum ersten Mal zu erreichen. Da die \(j\)-Knoten in den geraden Ebenen und die \(k\)-Knoten in den ungeraden Ebenen liegen, ergibt sich, dass sich die \(j\)-Knoten stets auf den geraden Niveaus und die \(k\)-Knoten stets auf den ungeraden Niveaus des Catalan-Pfades befinden. 
 
-\begin{figure}[htpb]
-	\centering
-	\includegraphics[width=0.95\textwidth]{Catalan-Pfad.pdf}
-	\caption{Doppelbaum mit 5 Knoten und dem zugehörigen Catalan-Pfad} 
-\end{figure}
 
-Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
-\\ Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion, da:
+%\begin{itemize}
+%	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke: \((+0)\)
+%	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \((+1)\)
+%	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \((-1)\)
+%	\item Die restlichen Kanten sind alle Flachstücke: \((+0)\)
+%\end{itemize}
+
+%\begin{figure}[htpb]
+%	\centering
+%	\includegraphics[width=0.95\textwidth]{Catalan-Pfad.pdf}
+%	\caption{Doppelbaum mit 5 Knoten und dem zugehörigen Catalan-Pfad} 
+%\end{figure}
+
+%Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
+Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion, da:
 \begin{itemize}
  \item[•]Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
- \item[•] Surjektivität:  für jeden Catalanpfad der Länge l der Form $\lbrace s_{i} \rbrace$, $ i \leq 2l, i \in \NN $ kann ein Doppelbaum als Urbild wie folgt konstruiert werden: für i gerade: $s_{i}=-1 \rightarrow $ gehe von $j_{i/2}$abwärts, bei $s_{i}=0  $ aufwärts; für i ungerade bei $s_{i}=1 $ aufwärts, bei $s_{i}=0 $ abwärts. 
+ \item[•] Surjektivität: Starte bei der Wurzel. Füge für jede Aufstiegskante einen Knoten in die nächst höhere Ebene und eine Kante als Verbindung hinzu. Füge für jede Abstiegskante eine Kante in die nächst niedriegere Ebene hinzu, bis die Doppelbaumstruktur vollständig ist. (Sollen wir das noch in Formeln übersetzen oder reicht das so?) 
+%für jeden Catalanpfad der Länge l der Form $\lbrace s_{i} \rbrace$, $ i \leq 2l, i \in \NN $ kann ein Doppelbaum als Urbild wie folgt konstruiert werden: für i gerade: $s_{i}=-1 \rightarrow $ gehe von $j_{i/2}$abwärts, bei $s_{i}=0  $ aufwärts; für i ungerade bei $s_{i}=1 $ aufwärts, bei $s_{i}=0 $ abwärts.
 \item[•] Injektivität analog zur Übung (bzw muss man das unbedingt nochmal zeigen?)\\
 \end{itemize}
 Die betrachteten Doppelbäume haben s.o. ein kombinatorisches Gewicht von 
@@ -219,7 +228,8 @@ und damit:
 	\end{split}
 	\end{equation}
 
-wobei \(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit 2r Flächenstücken.\\
+wobei \(r=\#\{\text{Abstiege von ungeraden auf gerade Niveaus in } C_l\}\), und \(p_r\) Catalan-Pfad mit \(r\) entsprechenden Abstiegen.
+%\(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit 2r Flächenstücken.\\
 
 
 
@@ -233,6 +243,7 @@ Bleiben uns noch 2l-2-(2r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und 
 Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit 2r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle 2r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
 kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
  -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\ Jetzt mit richtiger Defintion von $ p_r $ klarer? \\
+Die Erklärung muss man ein bisschen Anpassen, aber ich denke, dass die Rechnungen im Wesentlichen gleich bleiben oder?
 
 %\textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
 Mit \(\beta_0 :=1, \gamma_0:=1 \) und
@@ -243,7 +254,8 @@ gelten die Relationen
 \begin{equation}
 	\beta_l = \alpha\gamma_l=\alpha\sum_{r=0}^{l-1}\beta_r \gamma_{l-1-r}
 \end{equation}
-für alle \(l\geq 1\):
+für alle \(l\geq 1\):\\
+(\(l-r\) ist dabei die Anzahl der Abstiegskanten von geraden auf ungerade Niveaus im Catalan-Pfad.)
 \begin{itemize}
 	\item \begin{equation}
 	\begin{split}
@@ -266,36 +278,35 @@ Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 
 \end{align*}
 
 Damit gilt der erste Teil von \((2.10)\)\\
-\item Zweiter Versuch. Der erste ist auskommentiert noch im TeX-Dokument...\\
-Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
-\begin{align*}
-	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
-	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
-\end{align*}
-Seien dies die \(r\)- bzw. \(l-r\)-Kanten, die im zugehörigen Catalan-Pfad an ungerader bzw. gerader Position liegen.\\
-%Für die Catalan-Pfade ergibt sich dann, dass die zu \(r\) gehörigen Elemente immer an ungeraden Positionen und die zu \(l-r\) gehörigen Elemente immer an geraden Positionen liegen. (Wichtig für später).\\
-Aus der Konstruktion der Catalan-Pfade aus der Doppelbaum-Struktur ergibt sich, dass das erste und letzte Element immer Flachstücke sind. Habe ein solcher Pfad der Länge l die Bezeichnung \(\tilde{C}_l\). Für so ein \(\tilde{C}_l\) gilt, dass die \(0\) zum ersten Mal (abgesehen von dem beginnenden Flachstück) nach einer ungeraden Anzahl von Schritten erreicht wird. Auf \(0\) kommt der Pfad nämlich immer nach erreichen eines Knotens in der ersten Ebene des erzeugenden Baumes, was nur nach einer ungeraden Anzahl von Kantendurchläufen möglich ist. Sei \(2j+1\) diese Position.\\
-Teile \(\tilde{C}_l\) in zwei Teilpfade wie folgt (für \(j>0\)):\\
-Sei \(P_1\) der Pfad von Position \(1\) bis \(2j+1\) und \(P_2\) der zusammengesetzte Pfad von Position \(0\) bis \(1\) und von \(2j+2\) bis \(2l\).\\
- \(P_2\) hat also Länge \(2l-2j\) und hat die Eigenschaft, dass das erste und letzte Element Flachstücke sind, \(P_2\) ist also von der Form \(\tilde{C}_{l-j}\). \(P_1\) hat Länge \(2j\), wobei das erste und letzte Element als auf- bzw. absteigende Kante festgelegt sind, da die \(0\) erst an letzter Position erreicht werden soll. Löscht man nun diese beiden Kanten, hat \(P_1\) noch Länge \(2j-2\) und ist von der Form \(\tilde{C}_{j-1}\), da (falls \(j>1\)) nach einer aufsteigenden Kante stets ein Flachstück und vor einer absteigenden Kante ebenfalls stets ein Flachstück liegt. (vgl. Konstruktion). Habe dieser Pfad den Namen \(\tilde{P}_1\).\\
-Die Kanten, die in \(P_1\) an gerader/ungerader Postion lagen, liegen auch in \(\tilde{P}_1\) an gerader/ungerader Positon, wohingegen sich bei \(P_2\) diese Eigenschaft genau umgekehrt hat, die \(r\)- und \(l-r\)-Kanten haben ihre Positionen vertauscht. Aus der Definiton von \(\beta_l\) und \(\gamma_l\) ergibt sich somit die rekursive Formel 
+\item Dritter Versuch. :)\\
+Betrachte die Position im Pfad, an der zum ersten Mal die \(0\) erreicht wird. Diese ist immer gerade, da die \(0\) genau dann erreicht wird, wenn man im zugehörigen Doppelbaum zur Wurzel zurückkehrt. Sei also \(2j\), \(j\in\{1,...,l\}\), diese Position. \\
+Teile nun den Pfad in einen vorderen Teil \(P_1\) der Länge \(2j\) und einen hinteren Teil \(P_2\) der Länge \(2l-2j\). In dem erzeugenden Baum entspricht \(P_1\) dem äußersten Teilbaum, \(P_2\) dem restlichen Baum. \(P_2\) ist also ein beliebeiger Catalan-Pfad. \(P_1\) hat die besondere Struktur, dass die \(0\) erst an letzter Position erreicht wird, die erste und letzte Kante sind somit als Auftsiegs- bzw. Abstiegskante festgelegt und können für die kombinatorische Analyse vernächlässigt werden. Löscht man diese beiden Kanten und subtrahiert \(1\) von allen Elementen von \(P_1\) erhält man einen neuen Pfad \(\tilde{P}_1\), der ein beliebiger Catalan-Pfad der Länge \(2j-2\) ist.\\
+Die geraden/ungeraden Niveaus im ursprünglichen Pfad sind in \(\tilde{P}_1\) ungerade/gerade (Durch die Verschiebung um \(1\) nach unten). \(r\) und \(l-r\) haben sich also genau vertauscht!
+Damit ergibt sich aus den Definition für \(\beta_l\) und \(\gamma_l\) die Formel:
 \begin{equation}
-	\beta_l =\alpha\sum_{j=1}^l \beta_{j-1}\gamma_{l-j}=\alpha\sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
+	\begin{split}
+		\beta_l &= \alpha\sum_{j=1}^{l-1}\gamma_{j-1}\beta_{l-j} = \alpha\sum_{j=0}^l \gamma_j\beta_{l-j-1}\\
+		&=\alpha\sum_{k=0}^l \beta_k\gamma_{l-1-k}
+	\end{split}
 \end{equation}
-Das zusätzliche \(\alpha\) wird durch das Löschen der Aufwärtskante bei der Konstruktion von \(\tilde{P}_1\) hervorgerufen.
-%Die Konstruktion der Pfade bedingt, dass das erste und letzte Element immer Flachstücke sind, sie können für die folgenden Überlegungen also vernachlässigt werden (wir betrachten also Catalan-Pfade der Länge \(l-1\) und erhalten eine Formel für \(\beta_{l-1}\) ). Sei \(2j\) die Stelle, an der zum ersten Mal die \(0\) erreicht wird. Falls \(j\not=0\) lässt sich der Pfad in zwei Teilpfade \(P_1, P_2\) der Länge \(2j\) und \(2l-2-2j\) aufteilen.\\
-%\(P_2\) ist dabei ein beliebiger Catalan-Pfad, also von der Form \(C_{l-1-j}\). \(P_1\) hat die Besonderheit, dass er erst an der letzten Position zur \(0\) zurückkehrt. Damit folgt, dass das erste und letzte Element festgelegt sind als aufsteigende bzw. absteigende Kante. Löscht man diese ebenfalls und subtrahiert von allen übrigen Elementen \(1\), so bleibt ein beliebiger Catalan-Pfad \(\tilde{P}_1\) der Länge \(2j-2\), also von der Form \(C_{j-1}\) übrig. \\
-%Die Kanten, die im Pfad \(\tilde{P}_1\) an gerader/ungerader Position sind, sind auch im ursprünglichen Pfad an gerader/ungerader Position, da die ersten beiden Kanten gelöscht wurden. Für \(P_2\) hat sich diese Eigenschaft aber genau vertauscht, man betrachtet nicht mehr die \(r\), sondern die \(l-r\) Kanten!\\
-%Daraus ergibt sich die Formel:
-	%\[\beta_{l-1}=\alpha \sum_{j=1}^{l-1}\beta_{j-1}\gamma_{l-1-j}\]
-%und damit
+Das zusätzliche \(\alpha\) wird in der Formel durch das Löschen der Abwärtskante in \(P_1\) hervorgerufen.
+%Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
+%\begin{align*}
+%	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
+%	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
+%\end{align*}
+%Seien dies die \(r\)- bzw. \(l-r\)-Kanten, die im zugehörigen Catalan-Pfad an ungerader bzw. gerader Position liegen.\\
+%Aus der Konstruktion der Catalan-Pfade aus der Doppelbaum-Struktur ergibt sich, dass das erste und letzte Element immer Flachstücke sind. Habe ein solcher Pfad der Länge l die Bezeichnung \(\tilde{C}_l\). Für so ein \(\tilde{C}_l\) gilt, dass die \(0\) zum ersten Mal (abgesehen von dem beginnenden Flachstück) nach einer ungeraden Anzahl von Schritten erreicht wird. Auf \(0\) kommt der Pfad nämlich immer nach erreichen eines Knotens in der ersten Ebene des erzeugenden Baumes, was nur nach einer ungeraden Anzahl von Kantendurchläufen möglich ist. Sei \(2j+1\) diese Position.\\
+%Teile \(\tilde{C}_l\) in zwei Teilpfade wie folgt (für \(j>0\)):\\
+%Sei \(P_1\) der Pfad von Position \(1\) bis \(2j+1\) und \(P_2\) der zusammengesetzte Pfad von Position \(0\) bis \(1\) und von \(2j+2\) bis \(2l\).\\
+% \(P_2\) hat also Länge \(2l-2j\) und hat die Eigenschaft, dass das erste und letzte Element Flachstücke sind, \(P_2\) ist also von der Form \(\tilde{C}_{l-j}\). \(P_1\) hat Länge \(2j\), wobei das erste und letzte Element als auf- bzw. absteigende Kante festgelegt sind, da die \(0\) erst an letzter Position erreicht werden soll. Löscht man nun diese beiden Kanten, hat \(P_1\) noch Länge \(2j-2\) und ist von der Form \(\tilde{C}_{j-1}\), da (falls \(j>1\)) nach einer aufsteigenden Kante stets ein Flachstück und vor einer absteigenden Kante ebenfalls stets ein Flachstück liegt. (vgl. Konstruktion). Habe dieser Pfad den Namen \(\tilde{P}_1\).\\
+%Die Kanten, die in \(P_1\) an gerader/ungerader Postion lagen, liegen auch in \(\tilde{P}_1\) an gerader/ungerader Positon, wohingegen sich bei \(P_2\) diese Eigenschaft genau umgekehrt hat, die \(r\)- und \(l-r\)-Kanten haben ihre Positionen vertauscht. Aus der Definiton von \(\beta_l\) und \(\gamma_l\) ergibt sich somit die rekursive Formel 
 %\begin{equation}
-	%\beta_l=\alpha \sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
+%	\beta_l =\alpha\sum_{j=1}^l \beta_{j-1}\gamma_{l-j}=\alpha\sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
 %\end{equation}
-Also gilt auch die zweite Relation von \((2.10)\).\\
-\end{itemize}
-%(Ich muss zugeben, dass aus meiner Überlegung nicht klar wird, woher das zusätzliche \(\alpha\) kommt, daran arbeite ich noch ;) )
+%Das zusätzliche \(\alpha\) wird durch das Löschen der Aufwärtskante bei der Konstruktion von \(\tilde{P}_1\) hervorgerufen.
 
+\end{itemize}
 \textbf{Beweis von Formel (12)}\\
 \begin{align*}
 	Q_n :=& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
