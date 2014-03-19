@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  18 MAR 2014 20:28
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  19 MAR 2014 17:43
 entering extended mode
 **Hausarbeit.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.tex
@@ -597,11 +597,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Kapitel 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
-
- []
-
 [3
 
 ] [4] [5]
@@ -609,109 +604,105 @@ Kapitel 2.
 [6
 
 ]
-Overfull \hbox (13.30453pt too wide) in paragraph at lines 141--141
+Overfull \hbox (13.30453pt too wide) in paragraph at lines 144--144
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 150.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 153.
 
 ("C:\Program Files (x86)\MikTeX\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 150.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 153.
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
 [7]
-Overfull \hbox (16.89066pt too wide) in paragraph at lines 181--181
+Overfull \hbox (16.89066pt too wide) in paragraph at lines 184--184
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--185
+Underfull \hbox (badness 10000) in paragraph at lines 184--188
 
  []
+
+<Catalan-Pfad.pdf, id=40, 398.83002pt x 89.0246pt>
+File: Catalan-Pfad.pdf Graphic file (type pdf)
+ <use Catalan-Pfad.pdf>
+Package pdftex.def Info: Catalan-Pfad.pdf used on input line 205.
+(pdftex.def)             Requested size: 418.25555pt x 93.36444pt.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-
- []
-
-
-Overfull \hbox (72.95041pt too wide) in paragraph at lines 239--247
-\T1/lmr/m/n/10.95 chen wir sie ja erst mal nicht, des-halb wie-der um-cshrei-be
-n in $[][] \OML/lmm/m/it/10.95 []\OT1/lmr/m/n/10.95 #\OMS/lmsy/m/n/10.95 f[]g$
-\T1/lmr/m/n/10.95 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--247
+[9 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Catalan-Pfad.pdf>] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 
  []
 
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+<Rekursion-Visualisierung.pdf, id=58, 432.81857pt x 202.47118pt>
+File: Rekursion-Visualisierung.pdf Graphic file (type pdf)
 
- []
+<use Rekursion-Visualisierung.pdf>
+Package pdftex.def Info: Rekursion-Visualisierung.pdf used on input line 294.
+(pdftex.def)             Requested size: 418.25555pt x 195.65842pt.
 
-
-Overfull \hbox (1.7757pt too wide) in paragraph at lines 281--286
+Overfull \hbox (1.7757pt too wide) in paragraph at lines 289--298
 \T1/lmr/m/n/10.95 Die ge-ra-den/ungeraden Ni-ve-aus im ur-sprüng-li-chen Pfad s
 ind in $[]$ un-ge-ra-de/gerade
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+
+ []
+
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--323
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
+
+ []
+
+[12 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Rekursion-Visualisierung.pdf
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--352
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
 
  []
 
 [14] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Hausarbeit.aux) ) 
 Here is how much of TeX's memory you used:
- 4341 strings out of 493921
- 59657 string characters out of 3146475
- 145644 words of memory out of 3000000
- 7536 multiletter control sequences out of 15000+200000
+ 4349 strings out of 493921
+ 59885 string characters out of 3146475
+ 147644 words of memory out of 3000000
+ 7542 multiletter control sequences out of 15000+200000
  59067 words of font info for 63 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,21n,47p,734b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,21n,47p,921b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Progra
 m Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTe
 X/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvi
@@ -730,9 +721,9 @@ TeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1
 /public/lm/lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8
 .pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on Hausarbeit.pdf (14 pages, 294117 bytes).
+Output written on Hausarbeit.pdf (14 pages, 324036 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 135 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
