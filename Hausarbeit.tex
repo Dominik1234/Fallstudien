@@ -357,6 +357,53 @@ Anwendung des binomischen Lehrsatzes ergibt:
 \end{align*}
 
 wegen $\beta_l = \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle$ und der Linearität des Integrals.\\
+
+Um die Rekursionsformel zu zeigen benötigt man folgende Formel:
+\begin{equation}
+	\sum_{n \geq t} \binom{m-n}{m-u-t} \binom{n}{t} = \binom{m+1}{u}
+\end{equation}
+Dies kann man kombinatorisch begründen. Stellt man sich das Pascalsche Dreieck vor, so gibt t die Diagonale und der Index n die Zeile vor. Der Binomialkoeffizient \(\binom{m+1}{u}\) ist die Anzahl der Pfade im Baumdiagramm...Fortsetzung folgt. \\
+
+Nun betrachtet man:
+\begin{align*}
+\sum_{n=0}^m R_{m-n} R_m 
+&= \sum_{n=0}^m \sum_{k=0}^{m-n} \binom{m-n}{k} (-\alpha -1)^k \beta_{m-n+1-k} \alpha^{-1-\frac{m-n}{2}} \sum_{l=0}^n \binom{n}{l} (-\alpha -1)^l \beta_{n+1-l} \alpha^{-1-\frac{n}{2}} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{k=0}^{m-n} \binom{m-n}{k}  \binom{n}{l} (-\alpha -1)^{k+l} \beta_{m-n+1-k} \gamma_{n+1-l}	
+\end{align*}
+
+Für $ k > n$ gilt $ \binom{n}{k} = 0$. Dadurch kann man den Index $k$ durch $u:=k+l$ ersetzen.
+
+\[\sum_{n=0}^m R_{m-n} R_m = \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^\infty \sum_{u \geq l} \binom{m-n}{u-l}  \binom{n}{l} (-\alpha -1)^u \beta_{m-n+1+l-u} \gamma_{n+1-l}\]
+
+Mit $t:=n-l$ kann $l$ umgeschrieben werden.
+
+\begin{align*}
+\sum_{n=0}^m R_{m-n} R_m 
+&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t \le n} \sum_{u \geq n-t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t=0}^\infty \sum_{u=0}^\infty \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m+1-u} \sum_{u=0}^{m+1} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=0}^m \binom{m-n}{m-u-t}  \binom{n}{t}
+\end{align*}
+
+Mit Formel (2.14) gilt schließlich:
+
+\begin{align*}
+\sum_{n=0}^m R_{m-n} R_m 
+&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m+1-u} \sum_{u=0}^{m+1} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{t=0}^{m+1-u} \beta_{m+1-u-t} \gamma_{1+t}
+\end{align*}
+
+Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (10) ergibt sich folgendes:
+
+\begin{align*}
+\sum_{n=0}^m R_{m-n} R_m
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{r=0}^{m+1-u} \beta_r \gamma_{m+2-u-r} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left( - \beta_{m+2-u} + \sum_{r=0}^{m+2-u} \beta_r \gamma_{m+2-u-r} \right) \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left(\frac{1}{\alpha} \beta_{m+3-u} - \beta_{m+2-u} \right) \\
+\end{align*}
+
+Und jetzt geht es nicht mehr so recht weiter.
+
+
 Die Rekursionsformel sträubt sich noch ein bisschen, drei Summenformeln oder mehr ineinander verschachtelt, aber es sollte hoffentlich irgendwann aus der Darstellung von $ R_n $ und (10) folgen. \\
 
 
