@@ -13,8 +13,8 @@
 
 \newtheorem{defi}{Definition}[section]
 \newtheorem{prop}[defi]{Proposition}
-\newtheorem{satz}[defi]{Satz}
-\newtheorem{koro}[defi]{Korollar}
+\newtheorem{theorem}[defi]{Theorem}
+\newtheorem{coro}[defi]{Corollary}
 \newtheorem{lemma}[defi]{Lemma}
 
 \newenvironment{beweis}[1][Beweis]{\begin{trivlist}
@@ -38,11 +38,53 @@
 \maketitle
 \tableofcontents
 
-\chapter{Whittaker-Shannon Interpolation Theorem}
+\chapter{Whittaker-Shannon Interpolation formula}
 
-\section{The Whittaker-Shannon Interpolation Theorem}
+Sampling and reconstructing a signal from its samples are probably two of the most important properties of modern communication.   Even very simple things of our daily life, like making a phone call to our dear friend Massimo, are not possible without digitalizing analog signals, for example  our voice. \\
+Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
+ In the following, we’d like to try to give a small survey of the famous Whittacker-Shannon interpolation formula, ist applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
+
+
+\section{Preliminary notes}
+\begin{defi}[Fourier transform]
+The Fourier transform \(\FF(f)\) of a d-dimensional, integrable function \(f:\RR^d \to \RR\) is given by
+	\begin{equation}
+		\FF f(w)=\int_{\RR^d} f(x)e^{-2\pi iwx}\,\mathrm{d}x
+	\end{equation}
+
+\end{defi}
+If \(\FF f\in L^1(\RR^d)\), then we can define the inverse Fourier transform:
+\begin{defi}[Inverse Fourier transform]
+\begin{equation}
+	f(x) = \int_{\RR^d} \FF f(w) e^{2\pi iwx}\,\mathrm{d}w
+\end{equation}
+\end{defi}
+
+\begin{defi}[bandlimited function]
+	For \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2),\ \omega\in\RR^d\), we define
+	\begin{equation}
+		L_Q^2(\RR^d) = \{f\in L^2(\RR^d):\ supp(\FF f) \subset Q\}
+	\end{equation}
+	If \(f\in L_Q^2(\RR^d)\), then it is called \(\omega\)-bandlimited.
+\end{defi}
+
+The following theorem will be essential for our further work:
+\begin{theorem}[perturbed sampling in \(L^2\)]
+Let \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2)\) and \\
+ \({f\in C(\RR^d)\cap L^2(\RR^d)}\) such that \(f_{|\tau\ZZ^d} \in l^2\). We write \(f=\eta + \epsilon\), where \(\FF\eta = \FF f\) on \(Q\). Then it holds
+\begin{equation}
+	f(x) = \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\tau_i^{-1}x_i-k_i)+\epsilon(x), \qquad \text{in } L^2(\RR^d),
+\end{equation}
+where \(sinc(x) = \frac{sin(\pi x)}{x}\).
+\end{theorem}
+
+\section{The Whittaker-Shannon Interpolation formula}
 If \(x \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\tau_0 > 0\) such that for all \(\tau \in \left(0,\tau_0\right]\)
-\[x(t) = \sum_{k \in \ZZ^d} x(\tau k) \prod_{i=1}^d sinc\left(\frac{t_i-k_i \tau_i}{\tau_i}\right).\]
+\begin{equation}
+	x(t) = \sum_{k \in \ZZ^d} x(\tau k) \prod_{i=1}^d sinc\left(\frac{t_i-k_i \tau_i}{\tau_i}\right).
+\end{equation}
+In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is above the Nyquist rate! Holy Shit!\\
+(hier könnte man sich etwas über Nyquist auslassen...)
 
 \section{Proof of the Theorem}
 Define \(\tau_0 = \frac{1}{\omega} := \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)\) and choose \(\tau \in (0,\tau_0]\) arbitrarily. \\
