@@ -166,6 +166,24 @@ x(t) = \FF^{-1}(\FF(x))(t) &= \FF^{-1} \left( \sum_{n \in \ZZ^d} x(n \tau) \FF \
 
 \section{Meaning, real-life applications and limitations}
 
+\subsection{Uncertainty Principle}
+Warum haben wir das nur für d=1 gemacht??
+\begin{theorem}[Uncertainty principle]
+Let \(g\in L^2(\RR) \) and \(a,b \in\RR\) two arbitrary scalars. Then
+\begin{equation}
+\label{eq:uncertainty}
+\left(\int_{\RR} (x-a)^2|g(x)|^2 \,\mathrm{d}x\right)\left(\int_{\RR}(\omega-b)^2|\FF g(\omega)|^2\,\mathrm{d}\omega\right) \geq \frac{||g||_2^2}{4\pi}
+\end{equation}
+\end{theorem}
+(die hoch 1/2 im Skript sind falsch denke ich)\\
+Which means, that an analyzing function (window) cannot be arbitrarily concentrated in the time- and frequency-domain at the same time.\\
+If \(g\in L^2(\RR)\) with \(||g||_2=1\), then, because of the Plancherel equality \(||g||_2=||\FF g||_2\), both \(|g|^2\) and \(|\FF g|^2\) are probability distributions on \(\RR\). With this, (\ref{eq:uncertainty}) can be written as
+	\[var|g|^2 \cdot var|\FF g|^2 \geq \frac{1}{4\pi},\]
+the famous Heisenberg uncertainty principle!\\	
+Physically, this result says that position distribution and momentum distribution of a quantum particle cannot be sharply peaked at the same time. Mathematically, one can say that position and momentum are Fourier transforms of one another.\\
+If we return to our example of audio signals, (\ref{eq:uncertainty}) can be understood in the following way:\\
+If the signal \(f\) ist very short, it is not possible to determine the frequencies \(\lambda\) exactly, while on the other hand sound at one exact frequency corresponds to a perfect sine wave with no beginning or ending.
+
 \chapter{Das Marchenko-Pastur-Gesetz}
 
 \section{Das Marchenko-Pastur-Gesetz}
