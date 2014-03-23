@@ -1,0 +1,4 @@
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Das Marchenko-Pastur-Gesetz}{3}
+\contentsline {section}{\numberline {1.1}Das Marchenko-Pastur-Gesetz}{3}
+\contentsline {section}{\numberline {1.2}Beweis des Marcenko-Pastur Gesetzes}{4}

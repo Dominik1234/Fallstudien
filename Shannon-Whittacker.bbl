@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{fornasier03}
+Massimo Fornasier.
+\newblock Fallstudien der mathematischen modellbildung.
+\newblock 2013.
+
+\bibitem{marks02}
+Robert~J. Marks.
+\newblock {\em Introduction to Shannon Sampling and Interpolation Theory}.
+\newblock Springer-Verlag, New York, 1991.
+
+\bibitem{shannon01}
+Claude~E. Shannon.
+\newblock Communication in the presence of noise.
+\newblock {\em Proceedings of the IRE, 37.1}, pages 10--21, 1949.
+
+\end{thebibliography}

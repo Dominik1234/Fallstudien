@@ -1,0 +1,210 @@
+\documentclass[a4paper, 11pt]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amstext,amsfonts,mathrsfs, amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{marginnote}
+
+\pagestyle{headings}
+
+\newtheorem{defi}{Definition}[section]
+\newtheorem{prop}[defi]{Proposition}
+\newtheorem{theorem}[defi]{Theorem}
+\newtheorem{coro}[defi]{Corollary}
+\newtheorem{lemma}[defi]{Lemma}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathcal{F}}
+
+\newcommand{\student}[1]{\marginnote{{\normalfont\bf #1}}}
+
+\title{Abschlussarbeit Fallstudien der math. Modellbildung}
+\author{Manuela Lambacher, Dominik Otto, Andreas Wiedemann}
+\date{\today}
+
+\begin{document}
+\parindent 0pt
+\maketitle
+\tableofcontents
+
+\chapter{Whittaker-Shannon Interpolation formula}
+
+Sampling and reconstructing a signal from its samples are probably two of the most important properties of modern communication.   Even very simple things of our daily life, like making a phone call to our dear friend Massimo, are not possible without digitalizing analog signals, for example  our voice. \\
+Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
+In the following, we'd like to try to give a small survey of the famous Whittacker-Shannon interpolation formula, ist applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
+
+
+\section{Preliminary notes and Sampling}
+\begin{defi}[Fourier transform]
+The Fourier transform \(\FF(f)\) of a d-dimensional, integrable function \(f:\RR^d \to \RR\) is given by
+	\begin{equation}
+		\FF f(w)=\int_{\RR^d} f(x)e^{-2\pi iwx}\,\mathrm{d}x
+	\end{equation}
+
+\end{defi}
+So, the Fourier transform converts a time domain function into a frequency domain function. For example, the Fourier transform of an audio signal identifies the frequency spectrum as peaks in the frequency domain.\\
+If \(\FF f\in L^1(\RR^d)\), then we can define the inverse Fourier transform:
+\begin{defi}[Inverse Fourier transform]
+\begin{equation}
+	f(x) = \int_{\RR^d} \FF f(w) e^{2\pi iwx}\,\mathrm{d}w
+\end{equation}
+\end{defi}
+
+\begin{defi}[bandlimited function]
+	For \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2),\ \omega\in\RR^d\), we define
+	\begin{equation}
+		L_Q^2(\RR^d) = \{f\in L^2(\RR^d):\ supp(\FF f) \subset Q\}
+	\end{equation}
+	If \(f\in L_Q^2(\RR^d)\), then it is called \(\omega\)-bandlimited.
+\end{defi}
+
+\subsection{Sampling}
+To convert a continuous function \(f\) into a sequence of discrete values is called sampling. In a mathematical way, sampling can be described as a multiplication of \(f\) with a dirac-comb 
+\[s(t,\Delta T) = \sum_{n\in\ZZ} \delta(t-n\Delta T), \]
+where \(\Delta T\) is the sampling intervall and \(\delta\) is the Dirac-function.\\
+The sampled function \(\tilde{f}\) of our original \(f\) is denoted by
+\begin{equation}
+	\tilde{f} (t) = s(t,\Delta T) f(t) = \sum_{n\in\ZZ} f(t)\delta(t-n\Delta T)
+\end{equation}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.65\textwidth]{Sampling-Visualisierung.pdf}
+	\caption{(a) continuous function \(f\), (b) the dirac-comb, (c) sampled function as product of (a) and (b)}
+\end{figure}
+
+The following theorem will be essential for our further work:
+\begin{theorem}[perturbed sampling in \(L^2\)]
+\label{th:perturbed sampling}
+Let \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2)\) and \\
+ \({f\in C(\RR^d)\cap L^2(\RR^d)}\) such that \(f_{|\tau\ZZ^d} \in l^2\). We write \(f=\eta + \epsilon\), where \(\FF\eta = \FF f\) on \(Q\). Then it holds
+\begin{equation}
+	f(x) = \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\tau_i^{-1}x_i-k_i)+\epsilon(x), \qquad \text{in } L^2(\RR^d),
+\end{equation}
+where \(sinc(x) = \frac{sin(\pi x)}{x}\).
+\end{theorem}
+
+\section{The Whittaker-Shannon Interpolation formula}
+
+\begin{theorem}[Interpolation formula]
+\label{th:interpolation}
+If \(f \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\tau_0 > 0\) such that for all \(\tau \in \left(0,\tau_0\right]\)
+\begin{equation}
+	f(t) = \sum_{k \in \ZZ^d} f(\tau k) \prod_{i=1}^d sinc\left(\frac{t_i-k_i \tau_i}{\tau_i}\right).
+\end{equation}
+\end{theorem}
+In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is high enough! Holy Shit!\\
+Of course, this perfect reconstruction is only possible in a theoretical manner, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points.\\
+(Da der Beweis jetzt nicht mehr so umfangreich ist, ist ein eigenes Kapitel so viel denke ich, ich w"'urde ihn einfach direkt nach das Theorem setzen)\\
+\begin{proof}[Proof]
+Follows with theorem \ref{th:perturbed sampling}...
+\end{proof}
+
+\section{Proof of the Theorem}
+Define \(\tau_0 = \frac{1}{\omega} := \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)\) and choose \(\tau \in (0,\tau_0]\) arbitrarily. \\
+Besides denote \(\Omega := \prod_{i=1}^d \left[-\frac{1}{2}\omega_i ,\frac{1}{2}\omega_i\right]\) and \(T := \prod_{i=1}^d \left[-\frac{1}{2\tau_i} ,\frac{1}{2\tau_i}\right]\).
+
+\begin{equation}
+x \in L^2_w(\RR^d) \Rightarrow \forall f\notin \Omega: \FF(x)(f) = 0
+\end{equation}
+
+The consequence of this condition and of the linearity of \(\FF(x)\) is:
+
+\[\forall f\in T, k \in \ZZ^d: \FF(x)\left(f+\frac{k}{\tau}\right) = \FF(x)(f) + \FF(x)\underbrace{\left(\frac{k}{\tau}\right)}_{\notin \Omega} = \FF(x)(f)\]
+
+Thus the formula can be rewritten.
+
+\begin{equation}
+\forall f \in \Omega: \FF(x)(f) = \sum_{k \in \ZZ^d} \FF(x)\left( f+\frac{k}{\tau}\right)
+\end{equation} 
+
+(1.1) and (1.2) allow us to say:
+
+\[\FF(x)(f) = \chi_{T}(f) \sum_{k \in \ZZ^d} \FF(x)\left(f+\frac{k}{\tau}\right)\]
+
+For using the Poisson summation formula (Theorem 0.3) we have to check the requirements.
+
+\begin{itemize}
+	\item[i)] Since \(\FF(x)\) has a compact support and is continuous, \(\FF(x) \in L^1(\RR^d)\). Hence the fourier transform is reversible.
+	 \[x(t) = \FF^{-1}(\FF(x))(t) = \int_{\RR^d}\FF(x)(f) e^{2 \pi i f t} df\]
+	 With that in mind you can't make a secret of:
+	 \[x'(t) = \left(\int_{\RR^d} \FF(x)(f) e^{2 \pi i f t} 2 \pi i f_1 df, \ldots, \int_{\RR^d} \FF(x)(f) e^{2 \pi i f t} 2 \pi i f_d df \right)\]
+	 You can easily see now that \(x \in C^\infty(\RR^d)\)
+	 \item[ii)] Another implication of the compact support is \[\exists C,\varepsilon>0: |\FF(x)(f)| \le C (1+|f|)^{-d-\varepsilon}\]
+	 \item[iii)] Die dritte Bedingung ist schwieriger.
+\end{itemize}
+
+With the aid of the Poisson summation formula (Theorem 0.3) you can conclude:
+\begin{equation}
+\FF(x)(f) = \chi_{T}(f) \det(\tau) \sum_{n \in \ZZ^d} x(n\tau)e^{-2\pi i n\tau f}
+\end{equation}
+
+Now we want to prove that \(\FF\left( \prod_{j=1}^d sinc \left( \frac{t_j-n\tau_j}{\tau_j}\right)\right)(f) = \det(\tau)\chi_{T}(f)e^{-2\pi in\tau f}\).
+
+\begin{align*}
+\FF^{-1}\left( \det(\tau) \chi_{T}(f) e^{-2 \pi i n \tau f}\right) 
+&= \int_{\RR^d} \det(\tau) \chi_{T}(f) e^{-2 \pi i n \tau f} e^{2 \pi i f t} df \\
+&= \int_{\RR^d} \det(\tau) \chi_{T}(f) e^{2 \pi i f (t-n\tau) }df \\
+&= \int_{-\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \cdots \int_{-\frac{1}{2\tau_d}}^{\frac{1}{2\tau_d}} \prod_{j=1}^d \tau_j e^{2 \pi i f_j(t_j-n \tau_j)}df_1 \ldots df_d \\
+&= \prod_{j=1}^d \int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i f_j (t_j - n \tau_j)}df_j \\
+&= \prod_{j=1}^d \left[  \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} e^{2 \pi i f_j (t_j - n \tau_j)} \right]_{f_j = -\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \\
+&= \prod_{j=1}^d \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} \left( e^{\pi i \frac{t_j - n \tau_j}{\tau_j}} - e^{-\pi i \frac{t_j - n \tau_j}{\tau_j}} \right) \\
+&= \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
+\end{align*}
+Hence formula (1.3) is:
+
+\[\FF(x)(f) = \sum_{n \in \ZZ^d} x(n\tau) \FF\left(\prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right)(f)\]
+
+Through applying the inverse transform on both sides, the theorem is proved.
+
+\begin{align*}
+x(t) = \FF^{-1}(\FF(x))(t) &= \FF^{-1} \left( \sum_{n \in \ZZ^d} x(n \tau) \FF \left( \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right) \right) \\
+&= \sum_{n \in \ZZ^d} x(n\tau) \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
+\end{align*}
+
+\section{Meaning, real-life applications and limitations}
+
+\subsection{Meaning}
+
+Now we know, that a band-limited \(L^2\) function can be perfectly reconstructed with \(\tau_0\) small enough. Indeed, it is possible to determine \(\tau_0\) more precisely:
+\begin{theorem}[Shannon-Nyquist sampling theorem]
+\label{th:sampling}
+Let \(f\in L^2_Q(\RR^d)\), \(\lambda_{max}\) the highest frequency of \(f\), \(\frac{1}{\tau}\in \RR^d\) the sampling rate. If \(\frac{1}{\tau_0} \geq 2\cdot \lambda_{max}\), \(f\) can be reconstructed from its samples for all \(\tau \leq \tau_0\).\\
+\(\frac 1 2 \frac{1}{\tau_0}\) is called the Nyquist-rate or Nyquist-frequency.
+\end{theorem} 
+\begin{proof}
+See \cite{shannon01}.
+\end{proof}
+(den Beweis abzuschreiben waere gar zu klaegliche Platzverbraucherei oder? ;))\\
+\textbf{Remark:} The Whittacker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittacker sampling theorem".\\
+
+
+\subsection{Uncertainty Principle}
+Warum haben wir das nur fuer d=1 gemacht??
+\begin{theorem}[Uncertainty principle]
+Let \(g\in L^2(\RR) \) and \(a,b \in\RR\) two arbitrary scalars. Then
+\begin{equation}
+\label{eq:uncertainty}
+\left(\int_{\RR} (x-a)^2|g(x)|^2 \,\mathrm{d}x\right)\left(\int_{\RR}(\omega-b)^2|\FF g(\omega)|^2\,\mathrm{d}\omega\right) \geq \frac{||g||_2^2}{4\pi}
+\end{equation}
+\end{theorem}
+(die hoch 1/2 im Skript sind falsch denke ich)\\
+Which means, that an analyzing function (window) cannot be arbitrarily concentrated in the time- and frequency-domain at the same time.\\
+If \(g\in L^2(\RR^d)\) with \(||g||_2=1\), then, because of the Plancherel equality \(||g||_2=||\FF g||_2\), both \(|g|^2\) and \(|\FF g|^2\) are probability distributions on \(\RR^d\). With \(a=mean(g)\) and \(b=mean(\FF g)\), (\ref{eq:uncertainty}) can be written as
+	\[var|g|^2 \cdot var|\FF g|^2 \geq \frac{1}{4\pi},\]
+the famous Heisenberg uncertainty principle!\\	
+Physically, this result says that position distribution and momentum distribution of a quantum particle cannot be sharply peaked at the same time. Mathematically, one can say that position and momentum are Fourier transforms of one another.\\
+If we return to our example of audio signals, (\ref{eq:uncertainty}) can be understood in the following way:\\
+If the signal \(f\) ist very short, it is not possible to determine the frequencies \(\lambda\) exactly, while on the other hand sound at one exact frequency corresponds to a perfect sine wave with no beginning or ending.
+
+\nocite{marks02}
+\nocite{fornasier03}
+
+\bibliography{literature}
+\bibliographystyle{plain}
+\end{document}
