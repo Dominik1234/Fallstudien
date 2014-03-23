@@ -99,7 +99,6 @@ If \(f \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\
 \end{equation}
 \end{theorem}
 In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is high enough! Holy Shit!\\
-Of course, this perfect reconstruction is only possible in a theoretical manner, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points.\\
 (Da der Beweis jetzt nicht mehr so umfangreich ist, ist ein eigenes Kapitel so viel denke ich, ich w"'urde ihn einfach direkt nach das Theorem setzen)\\
 \begin{proof}[Proof]
 Follows with theorem \ref{th:perturbed sampling}...
@@ -182,9 +181,14 @@ See \cite{shannon01}.
 \end{proof}
 (den Beweis abzuschreiben waere gar zu klaegliche Platzverbraucherei oder? ;))\\
 \textbf{Remark:} The Whittacker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittacker sampling theorem".\\
+The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points.\\
+Even worse they cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
+With these restrictions, the theorems seem to be of no use at all in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
+(zumindest hoffe ich das)
 
 
 \subsection{Uncertainty Principle}
+\label{se:uncertainty}
 Warum haben wir das nur fuer d=1 gemacht??
 \begin{theorem}[Uncertainty principle]
 Let \(g\in L^2(\RR) \) and \(a,b \in\RR\) two arbitrary scalars. Then
@@ -194,13 +198,25 @@ Let \(g\in L^2(\RR) \) and \(a,b \in\RR\) two arbitrary scalars. Then
 \end{equation}
 \end{theorem}
 (die hoch 1/2 im Skript sind falsch denke ich)\\
-Which means, that an analyzing function (window) cannot be arbitrarily concentrated in the time- and frequency-domain at the same time.\\
+Which means, that an analyzing function (window) cannot be arbitrarily concentrated in the time- and frequency-domain at the same time. So a signal with compact support is not bandlimited, whereas a bandlimited signal can't be compactly supported (in particular not finite).\\
+If \(g\) is a Gaussian function, then it holds 
+	\[\left(\int_{\RR} (x-a)^2|g(x)|^2 \,\mathrm{d}x\right)\left(\int_{\RR}(\omega-b)^2|\FF g(\omega)|^2\,\mathrm{d}\omega\right) = \frac{||g||_2^2}{4\pi}\]
+So the Gaussian is the function with minimal uncertainty/  which is equally concentrated in time and frequency. This property of the Gaussian function is used for example in image editing via the Gaussian filter, which is smoothing parts of a picture. (Steht bei Wikipedia, aber eine Quelle, wo der Zusammenhang mathematisch erlaeutert wird, finde ich leider nicht)\\
 If \(g\in L^2(\RR^d)\) with \(||g||_2=1\), then, because of the Plancherel equality \(||g||_2=||\FF g||_2\), both \(|g|^2\) and \(|\FF g|^2\) are probability distributions on \(\RR^d\). With \(a=mean(g)\) and \(b=mean(\FF g)\), (\ref{eq:uncertainty}) can be written as
 	\[var|g|^2 \cdot var|\FF g|^2 \geq \frac{1}{4\pi},\]
 the famous Heisenberg uncertainty principle!\\	
 Physically, this result says that position distribution and momentum distribution of a quantum particle cannot be sharply peaked at the same time. Mathematically, one can say that position and momentum are Fourier transforms of one another.\\
 If we return to our example of audio signals, (\ref{eq:uncertainty}) can be understood in the following way:\\
 If the signal \(f\) ist very short, it is not possible to determine the frequencies \(\lambda\) exactly, while on the other hand sound at one exact frequency corresponds to a perfect sine wave with no beginning or ending.
+
+\subsection{Real-Life Applications}
+\label{se:real-life}
+
+\subsubsection{Audio signals}
+Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
+Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision. \\
+(Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)
+
 
 \nocite{marks02}
 \nocite{fornasier03}

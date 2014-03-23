@@ -6,3 +6,5 @@
 \contentsline {section}{\numberline {1.4}Meaning, real-life applications and limitations}{7}
 \contentsline {subsection}{\numberline {1.4.1}Meaning}{7}
 \contentsline {subsection}{\numberline {1.4.2}Uncertainty Principle}{7}
+\contentsline {subsection}{\numberline {1.4.3}Real-Life Applications}{8}
+\contentsline {subsubsection}{Audio signals}{8}
