@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  23 MAR 2014 21:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  24 MAR 2014 14:08
 entering extended mode
 **Shannon-Whittacker.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.tex
@@ -599,18 +599,18 @@ Package pdftex.def Info: Sampling-Visualisierung.pdf used on input line 77.
 (pdftex.def)             Requested size: 271.86356pt x 297.8563pt.
  [4 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Sampling-Visualisierung.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 [5] [6]
-Overfull \hbox (1.90494pt too wide) in paragraph at lines 182--188
+Overfull \hbox (1.90494pt too wide) in paragraph at lines 183--189
 \T1/lmr/m/n/10.95 Shannon-Nyquist sam-pling the-o-rem (The-o-rem 1.4.1[]) are o
 f-ten com-bined as the "Shannon-
  []
 
-[7] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.bbl
-[8]) [9
+[7] [8] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.bbl
+[9]) [10
 
 ] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.aux) ) 
 Here is how much of TeX's memory you used:
@@ -620,7 +620,7 @@ Here is how much of TeX's memory you used:
  7246 multiletter control sequences out of 15000+200000
  68650 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,11n,47p,523b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,47p,694b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/P
 rogram Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x
 86)/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/en
@@ -639,9 +639,9 @@ MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MikTeX/fonts/
 type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm
 /lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8.pfb><C:/P
 rogram Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Shannon-Whittacker.pdf (9 pages, 289481 bytes).
+Output written on Shannon-Whittacker.pdf (10 pages, 290673 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

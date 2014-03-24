@@ -77,6 +77,7 @@ The sampled function \(\tilde{f}\) of our original \(f\) is denoted by
 	\includegraphics[width=0.65\textwidth]{Sampling-Visualisierung.pdf}
 	\caption{(a) continuous function \(f\), (b) the dirac-comb, (c) sampled function as product of (a) and (b)}
 \end{figure}
+(see \cite{marks02})
 
 The following theorem will be essential for our further work:
 \begin{theorem}[perturbed sampling in \(L^2\)]
@@ -181,9 +182,9 @@ See \cite{shannon01}.
 \end{proof}
 (den Beweis abzuschreiben waere gar zu klaegliche Platzverbraucherei oder? ;))\\
 \textbf{Remark:} The Whittacker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittacker sampling theorem".\\
-The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points.\\
-Even worse they cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
-With these restrictions, the theorems seem to be of no use at all in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
+The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an Intervall \(I\) outside of which the samples are basically nearly 0. If we sample over \(I\) at the Nyquist rate, the signal is characterized well enough. (see \cite{marks02})\\
+Even worse, Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
+With these restrictions, the theorems seem to be of only small use in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
 (zumindest hoffe ich das)
 
 
