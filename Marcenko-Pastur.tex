@@ -308,24 +308,24 @@ Nun betrachtet man:
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{k=0}^{m-n} \binom{m-n}{k}  \binom{n}{l} (-\alpha -1)^{k+l} \beta_{m-n+1-k} \gamma_{n+1-l}	
 \end{align*}
 
-Für $ k > n$ gilt $ \binom{n}{k} = 0$. Dadurch kann man den Index $k$ durch $u:=k+l$ ersetzen.
+Der Index $k$ kann man durch $u:=k+l$ ersetzen.
 
-\[\sum_{n=0}^m R_{m-n} R_m = \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^\infty \sum_{u \geq l} \binom{m-n}{u-l}  \binom{n}{l} (-\alpha -1)^u \beta_{m-n+1+l-u} \gamma_{n+1-l}\]
+\[\sum_{n=0}^m R_{m-n} R_m = \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{u=l}^{m+l-n} \binom{m-n}{u-l}  \binom{n}{l} (-\alpha -1)^u \beta_{m-n+1+l-u} \gamma_{n+1-l}\]
 
 Mit $t:=n-l$ kann $l$ umgeschrieben werden.
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
-&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t \le n} \sum_{u \geq n-t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t=0}^\infty \sum_{u=0}^\infty \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m-u} \sum_{u=0}^{m+1} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=0}^m \binom{m-n}{m-u-t}  \binom{n}{t}
+&= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t=0}^n \sum_{u=n-t}^{m-t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} \sum_{n=t}^{u+t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m} \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=t}^{u+t} \binom{m-n}{m-u-t}  \binom{n}{t}
 \end{align*}
 
 Mit Formel (2.14) gilt schließlich:
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m-u} \sum_{u=0}^{m+1} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{t=0}^{m-u} \beta_{m+1-u-t} \gamma_{1+t}
 \end{align*}
 
