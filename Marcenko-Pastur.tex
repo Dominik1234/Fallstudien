@@ -303,7 +303,7 @@ Dies kann man kombinatorisch begründen. Stellt man sich das Pascalsche Dreieck 
 
 Nun betrachtet man:
 \begin{align*}
-\sum_{n=0}^m R_{m-n} R_m 
+\sum_{n=0}^m R_{m-n} R_n 
 &= \sum_{n=0}^m \sum_{k=0}^{m-n} \binom{m-n}{k} (-\alpha -1)^k \beta_{m-n+1-k} \alpha^{-1-\frac{m-n}{2}} \sum_{l=0}^n \binom{n}{l} (-\alpha -1)^l \beta_{n+1-l} \alpha^{-1-\frac{n}{2}} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{k=0}^{m-n} \binom{m-n}{k}  \binom{n}{l} (-\alpha -1)^{k+l} \beta_{m-n+1-k} \gamma_{n+1-l}	
 \end{align*}
@@ -367,6 +367,34 @@ Rekursion für $ Q_m: $
 \end{align*}
 wobei der letzte Schritt aus $ Q_n Q_{m-n}=0 $ für $ n=2k+1 $ folgt.\\
 
+Mit folgendem Theorem aus der Vorlesung kann die Aussage nun bewiesen werden.
+
+\begin{theorem}
+Sei \((\mu_n)_{n \in \NN}\) eine Folge in $\mathcal{M}(\RR)$ mit endlichen Momenten und $\mu \in \mathcal{M}(\RR)$ eindeutig durch seine Momente bestimmt. Dann gilt:
+\[\forall l \in \NN_0: m_l(\mu) \rightarrow m_l(\mu) \Rightarrow \mu_n \overset{W}{\rightarrow} \mu\]
+\end{theorem}
+
+Für $l \geq 1$ existieren $\lambda_0,...,\lambda_{l-1} \in \RR$, sodass $x^l = \sum_{n=0}^{l-1} \lambda_n x (x-\alpha-1)^n$. Daraus folgt:
+\begin{align*}
+\forall l \in \NN: \lim_{N \to \infty} m_l(\overline{L_{N}}) 
+&= \lim_{N \to \infty} \int_\RR x^l \overline{L_{N}}(dx)
+= \lim_{N \to \infty} \int_\RR \sum_{n=0}^{l-1} \lambda_n x (x-\alpha-1)^n \overline{L_{N}}(dx) \\
+&= \sum_{n=0}^{l-1} \lambda_n \lim_{N \to \infty} \int_\RR x (x-\alpha-1)^n \overline{L_{N}}(dx) \\
+&= \sum_{n=0}^{l-1} \lambda_n R_n
+= \sum_{n=0}^{l-1} \lambda_n Q_n = m_l(f_\alpha)
+\end{align*}
+
+Für den Fall l = 0 erhalten wir:
+\[\lim_{N \to \infty} m_0(\overline{L_{N}}) 
+= \lim_{N \to \infty} \int_\RR \overline{L_{N}}(dx) = 1 
+= \int_\RR f_\alpha(x)dx\]
+
+Um zu zeigen, dass $f_\alpha(x)dx \in \mathcal{M}(\RR)$ eindeutig durch seine Momente bestimmt ist, betrachtet man folgende Potenzreihe:
+
+\[\sum_{l=0}^\infty m_l(f_\alpha) \frac{z^l}{l!}\]
+
+$m_l(f_\alpha)$ auszurechnen ist wahrscheinlich auch nicht so einfach.
+
 Bleibt zu zeigen, dass damit $ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~(N \rightarrow \infty) $. \\
 Unter der Annahme, dass diese seltsamen "verallgemeinerten Momente" genauso wie die normalen Momente verwendet werden können, können wir das Theorem aus der Vorlesung anwenden, um von der Konvergenz der Momente auf die schwache Konvergenz der W-maße zu kommen. \\
 Voraussetzungen: 1. $ f_\alpha $ ist durch $ Q_n $ eindeutig bestimmt, s.o. erfüllt;\\
@@ -376,6 +404,8 @@ Voraussetzungen: 1. $ f_\alpha $ ist durch $ Q_n $ eindeutig bestimmt, s.o. erf�
 wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\
 (...okay sicher bin ich mir bei dem Ganzen nicht aber das hier ist alles mehr so als Idee aufzufassen)\\
 $ \Rightarrow $ Theorem (Woche 2, Seite 3 rechts) $ \Rightarrow $ schwache Konvergenz
+
+
 
 
 \end{document}
