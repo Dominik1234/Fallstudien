@@ -33,11 +33,15 @@
 \maketitle
 \tableofcontents
 
-\chapter{Whittaker-Shannon Interpolation formula}
+\chapter*{Indtroduction}
 
 Sampling and reconstructing a signal from its samples are probably two of the most important properties of modern communication.   Even very simple things of our daily life, like making a phone call to our dear friend Massimo, are not possible without digitalizing analog signals, for example  our voice. \\
 Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
-In the following, we'd like to try to give a small survey of the famous Whittaker-Shannon interpolation formula, ist applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
+In the following, we'd like to try to give a small survey of the Whittaker-Shannon interpolation formula, which is of high importance in communication theory. Further on we will describe its applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
+
+
+
+\chapter{Whittaker-Shannon Interpolation formula}
 
 
 \section{Preliminary notes and Sampling}
@@ -86,10 +90,10 @@ The sampled function \(\tilde{f}\) of our original \(f\) is denoted by
 \end{equation}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.65\textwidth]{Sampling-Visualisierung.pdf}
+	\includegraphics[width=0.55\textwidth]{Sampling-Visualisierung.pdf}
 	\caption{(a) continuous function \(f\), (b) the dirac-comb, (c) sampled function as product of (a) and (b)}
 \end{figure}
-(see \cite{marks02})
+(see \cite{marks02})\\
 
 The following theorem will be essential for our further work:
 \begin{theorem}[perturbed sampling in \(L^2\)]
@@ -102,6 +106,7 @@ Let \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2)\) and \\
 where \(sinc(x) = \frac{sin(\pi x)}{\pi x}\).
 \end{theorem}
 
+\newpage
 \section{The Whittaker-Shannon Interpolation formula}
 
 \begin{theorem}[Interpolation formula]
@@ -164,10 +169,12 @@ f(x) &= \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\ta
 \end{proof}
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.80\textwidth]{Rekonstruktion-Visualisierung.pdf}
+	\includegraphics[width=0.80 \textwidth]{Rekonstruktion-Visualisierung.pdf}
 	\caption{Visualisation of the interpolation formula for \(d=1\): the original signal (black line) is reconstructed by weighted and shifted sinc-functions}
 \end{figure}
 
+
+\newpage
 \section{Meaning, real-life applications and limitations}
 
 \subsection{Meaning}
@@ -186,7 +193,7 @@ See \cite{shannon01}.
 \begin{itemize}
 \item The Whittaker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittaker sampling theorem".
 \item According to \cite{landau04} the sampling theorem can be interpreted in another way,  apart from the reconstruction of a sampled signal, which we will not discuss further, but like to mention: \\
-A sequence \(\{x_n\}\in l^2\) can be transmitted with rate \(2W\) (=Nyquist-rate) per second over an ideal channal of bandwith \(W Hz\), where \(\{x_n\}\) represents the samples of a bandlimited \(L^2\) signal.
+A sequence \(\{x_n\}\in l^2\) can be transmitted with rate \(2W\) (=Nyquist-rate) per second over an ideal channel of bandwith \(W Hz\), where \(\{x_n\}\) represents the samples of a bandlimited \(L^2\) signal.
 
 \end{itemize}
 The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an Intervall \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
@@ -228,7 +235,7 @@ If the signal \(f\) ist very short, it is not possible to determine the frequenc
 
 \subsubsection{Audio signals}
 Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
-Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision. \\
+Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them anyway. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. 
 \textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter\\
 (Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)
 
