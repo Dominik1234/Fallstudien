@@ -54,7 +54,7 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 
 \newpage
 \section{Beweis des Marcenko-Pastur Gesetzes}
-Zuerst bringen wir \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form, die eine weitergehende Untersuchung ermöglicht:
+Die Konvergenz soll im Folgenden mittels der Momentenmethode gezeigt werden. Als ersten Schritt bringt man \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form, die eine weitergehende Untersuchung ermöglicht:
 \begin{equation}
 \begin{split}
 		N^{l+1} &\langle \overline{L_N}, x^l \rangle\ 
@@ -64,9 +64,9 @@ Zuerst bringen wir \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form,
 		&= N^l \sum_{j_1,...,j_l = 1}^N \EE\left[\prod_{p = 1}^l \frac{1}{N} \sum_{k = 1}^{M(N)} Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right] \\
 		&= \sum_{j_1,...,j_l = 1}^N \EE \left[\left(\sum_{k = 1}^{M(N)} Y_N(j_1,k) \cdot Y_N(j_2,k)\right) \cdot \left(\prod_{p = 2}^l \sum_{k = 1}^{M(N)} Y_N(j_p,k) \cdot Y_N(j_{p+1},k) \right) \right] \\
 		&= \sum_{j_1,...,j_l = 1}^N \EE\left[	\prod_{p = 2}^l \sum_{k_1,k_2 = 1}^{M(N)} Y_N(j_1,k_1) \cdot Y_N(j_2,k_1) \cdot Y_N(j_p,k_2) \cdot Y_N(j_{p+1},k_2) \right] \\
-		&= ... \\
+		&= (...)~ \text{(es wird analog zum vorherigen Schritt für alle p verfahren)}  \\
 		&= \sum_{j_1,...,j_l = 1}^N \sum_{k_1,...,k_l = 1}^{M(N)} \EE[Y_N(j_1,k_1) Y_N(j_2,k_1) Y_N(j_2,k_2) Y_N(j_3,k_2) ... Y_N(j_l,k_l) Y_N(j_1,k_l)]\\
- &= \sum_{r_1,r_2 = 1}^l \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)]
+ &= \sum_{s_1,s_2 = 1}^l \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)]
 \end{split}
 \end{equation}
 wobei 
@@ -74,8 +74,9 @@ wobei
 	&J=(j_1,j_2,j_2,...,j_l,j_l,j_1), K=(k_1,k_1,...,k_l,k_l),\\
 	&v: \NN^{2l}\to \NN,\ v(X) := \text{Anzahl der verschiedenen Indizes in X}
 \end{align*}
-Die einzelnen Summanden können also als Eulergraphen auf \(s_1+s_2 \)Knoten und \(2l\) Kanten interpretiert werden.
-Damit ergeben sich die drei Fälle (setze \(s = s_1+s_2\) )
+\\
+Die einzelnen Summanden können also als Eulergraphen auf \(s_1+s_2 \)verschiedenen Knoten und \(2l\) Kanten zwischen der Menge der k-Knoten und der j-Knoten für alle Paare $ (j_i, k_i), (j_{i+1},k_i) $ interpretiert werden.\\
+Setze \(s = s_1+s_2\), dann ergeben sich folgende drei Fälle:
 \begin{itemize}
 	\item \(s < l+ 1\)\\
 		\begin{equation}
@@ -89,19 +90,24 @@ Damit ergeben sich die drei Fälle (setze \(s = s_1+s_2\) )
 			\#\{J: v(J)=s_1\} &\leq \begin{pmatrix} N \\ s_1 \end{pmatrix} s_1^l \leq N^{s_1}s_1^l \\
 			\#\{K: v(K)=s_2\} &\leq \begin{pmatrix} M(N) \\ s_2 \end{pmatrix} s_2^l \leq M(N)^{s_2}s_2^l
 		\end{align}
-	Somit ergibt sich aus \((2.2) - (2.4)\): 
+	Somit ergibt sich aus \((1.2) - (1.4)\): 
 	\begin{equation}
 		\frac {1}{N^{l+1}} \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)] < C_l (l+1)^l \frac{N^{s_1} M(N)^{s_2}}{N^{l+1}} \xrightarrow{N\to\infty} 0
 	\end{equation}
 		
 	\item \(s> l+1\) \\
-		Nach Lemma aus der Vorlesung exisitert eine einfache, echte Kante und somit \(\EE[Y_N(J,K)]=0\), da die Matrixeinträge unabhängig sind.
+		Nach Lemma aus der Vorlesung existiert in diesem Fall eine einfache, echte Kante. Da die Matrixeinträge unabhängig sind, kann der Erwartungswert für diesen Matrixeintrag ausgeklammert werden. Alle Einträge sind jedoch zentriert, und damit folgt direkt \(\EE[Y_N(J,K)]=0\).
 	\item \(s=l+1\)\\
-		Es tragen also nur die Graphen auf \(l+1\) verschiedenen Knoten zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) bei. Diese Graphen haben die Struktur eines Doppelbaumes%, denen man geordnete, nicht überkreuzende Paarzerlegungen und damit auch Catalanpfade zuordnen kann.
-\end{itemize}
+		Die verbliebenen Graphen auf \(l+1\) verschiedenen Knoten haben die Struktur von Doppelbäumen und sollen im Weiteren genauer untersucht werden.\\
+\end{itemize}		
+Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) tragen nur die Graphen auf $ l+1 $ verschiedenen Knoten bei:\\
+\[\beta_l:= \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle = \lim_{N\to\infty} \dfrac{1}{N^{l+1}} \sum_{s_1,s_2 = 1}^l \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)]\] \[= \lim_{N\to\infty} \dfrac{1}{N^{l+1}}\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)]  \] \\
+
+
+\subsection*{Berechnung der $ \beta_l $ mittels Catalanpfade}
 %\textbf{Weitere Analyse von \(\beta_l\):}\\
-Diese Doppelbaumstruktur lässt sich wie folgt nutzen:\\
-Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann folgt:
+Die Doppelbaumstruktur dieser Graphen lässt sich wie folgt nutzen:\\
+Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann gilt:
 \begin{equation}
 	\begin{split}
 	\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)] = &\sum_{r=1}^{l}\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \\
@@ -109,9 +115,9 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 	%=& \sum_{r=1}^{l} \begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r! \cdot \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r}
 	\end{split}
 \end{equation}
-%Eine Formel für die Anzahl der Doppelbäume folgt aus der nachfolgenden Konstruktion (Anm: das -2 folgt immer, da die beiden Wurzelkanten fest 0 im Catalanpfad sind; Die Catalanzahl für l-r, weil von dem gesamten Pfad der Länge 2l 2r Stücke flach sind und die übrigen wie beim normalen Catalanpfad aufgeteilt werden können) \\ \\
+
 Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
-Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie bei der Tiefensuche durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:\\
+Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie hierbei durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:
 \begin{itemize}
 	\item Wird ein Knoten zum ersten Mal erreicht: \((+1)\)
 	\item Kehrt man zu einem bereits besuchten Knoten zurück :\((-1)\)
@@ -134,12 +140,12 @@ Da der Baum durch Tiefensuche durchlaufen wird, gibt die Entfernung eines Knoten
 \end{figure}
 
 %Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
-Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion, da:
+Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion:
 \begin{itemize}
- \item[•]Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
- \item[•] Surjektivität: Starte bei der Wurzel. Füge für jede Aufstiegskante einen Knoten in die nächst höhere Ebene und eine Kante als Verbindung hinzu. Füge für jede Abstiegskante eine Kante in die nächst niedrigere Ebene hinzu, bis die Doppelbaumstruktur vollständig ist. (Sollen wir das noch in Formeln übersetzen oder reicht das so? - denke das passt so). Damit ist jeder Catalanpfad Urbild eines Doppelbaums. 
+ \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
+ \item[•] Surjektivität: Starte bei der Wurzel. Füge für jede Aufstiegskante einen Knoten in die nächst höhere Ebene und eine Kante als Verbindung hinzu. Füge für jede Abstiegskante eine Kante in die nächst niedrigere Ebene hinzu, bis die Doppelbaumstruktur vollständig ist. Damit ist jeder Catalanpfad Urbild eines Doppelbaums. 
 %für jeden Catalanpfad der Länge l der Form $\lbrace s_{i} \rbrace$, $ i \leq 2l, i \in \NN $ kann ein Doppelbaum als Urbild wie folgt konstruiert werden: für i gerade: $s_{i}=-1 \rightarrow $ gehe von $j_{i/2}$abwärts, bei $s_{i}=0  $ aufwärts; für i ungerade bei $s_{i}=1 $ aufwärts, bei $s_{i}=0 $ abwärts.
-\item[•] Injektivität analog zur Übung (bzw muss man das unbedingt nochmal zeigen?)\\
+\item[•] Injektivität: kann analog zur Übung durch rekursives Entfernen von identischen Kanten gezeigt werden.\\
 \end{itemize}
 Die betrachteten Doppelbäume haben s.o. ein kombinatorisches Gewicht von 
 	\begin{equation}
@@ -415,4 +421,11 @@ wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\
 $ \Rightarrow $ Theorem anwendbar $ \Rightarrow $  $ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~(N \rightarrow \infty) $. \\
 
 
+
+\section*{Schluss}
+Könnten wir auch als Einleitung hernehmen. Oder ganz lassen.\\
+Eine Anwendung dieses berühmten Marchenko-Pastur-Gesetzes findet man zum Beispiel in der Neurobiologie. Um das Nervensystem zu erforschen, werden Impulsspitzen der Nervenzellen statistisch ausgewertet. Dies geschieht mithilfe des sogenannten "'spiked population model"'. Es handelt sich um ein multivariates statistisches Modell, bei dem die Populationsgröße sehr groß ist und die Stichprobenanzahl vergleichbar anwächst, sodass beide im Idealfall gegen Unendlich gehen. Mathematisch wird so vorgegangen, dass eine $ N \times M(N) $ Zufallsmatrix betrachtet wird, wobei N die Größe der Stichprobe und M die Größe der Population ist, sodass $ \frac{M}{N} \rightarrow \alpha$ für $N \rightarrow \infty $. Bestimmte Eigenwerte dieser Matrix werden als bekannt für diese Population vorausgesetzt, und das Ziel ist nun, die restlichen Eigenwerte bzw. deren Erwartungswert herauszufinden. Wie man sieht, ist dafür Marchenko-Pastur von großem Nutzen.\\
+
+zu finden in: J. Baik, J.W.SIlverstein: Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
+und S.Johnston u.a., Comparative Investigation into Classical and Spiking Neuorin Implementations on FPGAs, 2005
 \end{document}

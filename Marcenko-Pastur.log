@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  25 MAR 2014 12:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 01:58
 entering extended mode
 **Marcenko-Pastur.tex
 (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.tex
@@ -620,149 +620,165 @@ Overfull \hbox (13.30453pt too wide) in paragraph at lines 71--71
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 80.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 81.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 80.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 81.
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 [4]
-Overfull \hbox (16.89066pt too wide) in paragraph at lines 111--111
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 107.
+
+Overfull \hbox (16.89066pt too wide) in paragraph at lines 117--117
 [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
-
- []
-
-<Catalan-Pfad.pdf, id=29, 398.83002pt x 89.0246pt>
+[5] <Catalan-Pfad.pdf, id=33, 398.83002pt x 89.0246pt>
 File: Catalan-Pfad.pdf Graphic file (type pdf)
  <use Catalan-Pfad.pdf>
-Package pdftex.def Info: Catalan-Pfad.pdf used on input line 132.
+Package pdftex.def Info: Catalan-Pfad.pdf used on input line 138.
 (pdftex.def)             Requested size: 418.25555pt x 93.36444pt.
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 [6 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Catalan-Pfad.pdf>]
-<Rekursion-Visualisierung.pdf, id=44, 432.81857pt x 202.47118pt>
+<Rekursion-Visualisierung.pdf, id=45, 432.81857pt x 202.47118pt>
 File: Rekursion-Visualisierung.pdf Graphic file (type pdf)
 
 <use Rekursion-Visualisierung.pdf>
-Package pdftex.def Info: Rekursion-Visualisierung.pdf used on input line 219.
+Package pdftex.def Info: Rekursion-Visualisierung.pdf used on input line 225.
 (pdftex.def)             Requested size: 418.25555pt x 195.65842pt.
 
-Overfull \hbox (1.7757pt too wide) in paragraph at lines 214--223
+Overfull \hbox (1.7757pt too wide) in paragraph at lines 220--229
 \T1/lmr/m/n/10.95 Die ge-ra-den/ungeraden Ni-ve-aus im ur-sprüng-li-chen Pfad s
 ind in $[]$ un-ge-ra-de/gerade
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
-
- []
-
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
 [8 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Rekursion-Visualisierung.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--291
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--312
+Underfull \hbox (badness 10000) in paragraph at lines 316--318
 
  []
 
 
-Overfull \hbox (31.72466pt too wide) in paragraph at lines 318--318
+Overfull \hbox (31.72466pt too wide) in paragraph at lines 324--324
 [] 
  []
 
 [10]
-Overfull \hbox (38.76205pt too wide) in paragraph at lines 352--352
+Overfull \hbox (38.76205pt too wide) in paragraph at lines 358--358
 [] 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 376--378
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--416
+Underfull \hbox (badness 10000) in paragraph at lines 418--422
 
  []
 
-[13] [14] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.aux) )
- 
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+
+ []
+
+[14] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.aux) ) 
 Here is how much of TeX's memory you used:
- 4566 strings out of 494045
- 64556 string characters out of 3145963
+ 4574 strings out of 494045
+ 64667 string characters out of 3145963
  169326 words of memory out of 3000000
- 7754 multiletter control sequences out of 15000+200000
- 63330 words of font info for 64 fonts, out of 3000000 for 9000
+ 7762 multiletter control sequences out of 15000+200000
+ 70280 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 40i,21n,51p,926b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program
- Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/
-enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/l
-m/lm-mathex.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/lm/lmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on Marcenko-Pastur.pdf (14 pages, 333404 bytes).
+ 40i,21n,51p,1001b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program File
+s (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MiKTeX 
+2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathex.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/
+lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/lm/lmro10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lm
+sy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Marcenko-Pastur.pdf (14 pages, 339887 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
+ 143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
