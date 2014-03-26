@@ -5,6 +5,11 @@ Massimo Fornasier.
 \newblock Fallstudien der mathematischen modellbildung.
 \newblock 2013.
 
+\bibitem{landau04}
+H.J. Landau.
+\newblock Sampling, data transmission and the nyquist rate.
+\newblock {\em Proceedings of the IEEE, 55.10}, pages 1701--1706, 1967.
+
 \bibitem{marks02}
 Robert~J. Marks.
 \newblock {\em Introduction to Shannon Sampling and Interpolation Theory}.

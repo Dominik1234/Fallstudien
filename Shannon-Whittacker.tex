@@ -182,7 +182,13 @@ Let \(f\in L^2_Q(\RR^d)\), \(\lambda_{max}\) the highest frequency of \(f\), \(\
 See \cite{shannon01}.
 \end{proof}
 (den Beweis abzuschreiben waere gar zu klaegliche Platzverbraucherei oder? ;))\\
-\textbf{Remark:} The Whittaker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittaker sampling theorem".\\
+\textbf{Remark:}
+\begin{itemize}
+\item The Whittaker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittaker sampling theorem".
+\item According to \cite{landau04} the sampling theorem can be interpreted in another way,  apart from the reconstruction of a sampled signal, which we will not discuss further, but like to mention: \\
+A sequence \(\{x_n\}\in l^2\) can be transmitted with rate \(2W\) (=Nyquist-rate) per second over an ideal channal of bandwith \(W Hz\), where \(\{x_n\}\) represents the samples of a bandlimited \(L^2\) signal.
+
+\end{itemize}
 The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an Intervall \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
 Even worse, Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
 With these restrictions, the theorems seem to be of only small use in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
@@ -201,6 +207,12 @@ Let \(g\in L^2(\RR) \) and \(a,b \in\RR\) two arbitrary scalars. Then
 \end{theorem}
 (die hoch 1/2 im Skript sind falsch denke ich)\\
 Which means, that an analyzing function (window) cannot be arbitrarily concentrated in the time- and frequency-domain at the same time. So a signal with compact support is not bandlimited, whereas a bandlimited signal can't be compactly supported (in particular not finite).\\
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[height=0.40\textwidth]{Narrow-band-spectrogram.png}
+	\includegraphics[height=0.40\textwidth]{Wide-band-spectrogram.png}
+	\caption{Result of the uncertainty principle: it is not possible, to obtain a high time and frequency resolution at the same time: above are a narrow-band spectrogram (left), wich provides a better frequency resolution and a wide-band spectrogram(right), wich provides a better time resolution of the same signal. Source of pictures: http://cnx.org/content/m10570/latest/} 
+\end{figure}\\
 If \(g\) is a Gaussian function, then it holds 
 	\[\left(\int_{\RR} (x-a)^2|g(x)|^2 \,\mathrm{d}x\right)\left(\int_{\RR}(\omega-b)^2|\FF g(\omega)|^2\,\mathrm{d}\omega\right) = \frac{||g||_2^2}{4\pi}\]
 So the Gaussian is the function with minimal uncertainty/  which is equally concentrated in time and frequency. This property of the Gaussian function is used for example in image editing via the Gaussian filter, which is smoothing parts of a picture. (Steht bei Wikipedia, aber eine Quelle, wo der Zusammenhang mathematisch erlaeutert wird, finde ich leider nicht)\\
@@ -217,6 +229,7 @@ If the signal \(f\) ist very short, it is not possible to determine the frequenc
 \subsubsection{Audio signals}
 Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
 Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision. \\
+\textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter\\
 (Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)
 
 

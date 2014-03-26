@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  24 MAR 2014 22:12
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  26 MAR 2014 17:54
 entering extended mode
 **Shannon-Whittacker.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.tex
@@ -595,44 +595,63 @@ Chapter 1.
 File: Sampling-Visualisierung.pdf Graphic file (type pdf)
 
 <use Sampling-Visualisierung.pdf>
-Package pdftex.def Info: Sampling-Visualisierung.pdf used on input line 77.
+Package pdftex.def Info: Sampling-Visualisierung.pdf used on input line 89.
 (pdftex.def)             Requested size: 271.86356pt x 297.8563pt.
  [4 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Sampling-Visualisierung.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
  []
 
-<Rekonstruktion-Visualisierung.pdf, id=38, 459.2496pt x 134.12218pt>
+[5] <Rekonstruktion-Visualisierung.pdf, id=43, 459.2496pt x 134.12218pt>
 File: Rekonstruktion-Visualisierung.pdf Graphic file (type pdf)
 
 <use Rekonstruktion-Visualisierung.pdf>
 Package pdftex.def Info: Rekonstruktion-Visualisierung.pdf used on input line 1
-09.
+67.
 (pdftex.def)             Requested size: 334.60571pt x 97.72623pt.
- [5 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Rekonstruktion-Visualisierun
-g.pdf>] [6] [7]
-Overfull \hbox (1.90494pt too wide) in paragraph at lines 188--194
-\T1/lmr/m/n/10.95 Shannon-Nyquist sam-pling the-o-rem (The-o-rem 1.4.1[]) are o
-f-ten com-bined as the "Shannon-
- []
+ [6]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 187.
 
-[8] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.bbl
-[9]) [10
+
+("C:\Program Files (x86)\MikTeX\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 187.
+ [7 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Rekonstruktion-Visualisierun
+g.pdf>]
+<Narrow-band-spectrogram.png, id=53, 374.57013pt x 311.11354pt>
+File: Narrow-band-spectrogram.png Graphic file (type png)
+
+<use Narrow-band-spectrogram.png>
+Package pdftex.def Info: Narrow-band-spectrogram.png used on input line 212.
+(pdftex.def)             Requested size: 201.42468pt x 167.29967pt.
+
+<Wide-band-spectrogram.png, id=54, 374.57013pt x 311.11354pt>
+File: Wide-band-spectrogram.png Graphic file (type png)
+
+<use Wide-band-spectrogram.png>
+Package pdftex.def Info: Wide-band-spectrogram.png used on input line 213.
+(pdftex.def)             Requested size: 201.42468pt x 167.29967pt.
+ [8 <C:/Users/Dominik/Documents/GitHub/Fallstudien/Narrow-band-spectrogram.png>
+ <C:/Users/Dominik/Documents/GitHub/Fallstudien/Wide-band-spectrogram.png>]
+(C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.bbl [9])
+[10
 
 ] (C:\Users\Dominik\Documents\GitHub\Fallstudien\Shannon-Whittacker.aux) ) 
 Here is how much of TeX's memory you used:
- 4049 strings out of 493921
- 56402 string characters out of 3146475
- 137411 words of memory out of 3000000
- 7250 multiletter control sequences out of 15000+200000
+ 4081 strings out of 493921
+ 57053 string characters out of 3146475
+ 137413 words of memory out of 3000000
+ 7276 multiletter control sequences out of 15000+200000
  68650 words of font info for 65 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,11n,47p,729b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,9n,47p,729b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/P
-rogram Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x
-86)/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/MikTeX/fonts/en
-c/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathi
+rogram Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x86)/
+MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dv
+ips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathi
 t.enc}{C:/Program Files (x86)/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Progr
 am Files (x86)/MikTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/
 MikTeX/fonts/type1/public/lm/lmex10.pfb><C:/Program Files (x86)/MikTeX/fonts/ty
@@ -645,11 +664,12 @@ pe1/public/lm/lmr6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmr
 am Files (x86)/MikTeX/fonts/type1/public/lm/lmro10.pfb><C:/Program Files (x86)/
 MikTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MikTeX/fonts/
 type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm
-/lmsy6.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8.pfb><C:/P
-rogram Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Shannon-Whittacker.pdf (10 pages, 293919 bytes).
+/lmsy8.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb>
+
+Output written on Shannon-Whittacker.pdf (10 pages, 528236 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
