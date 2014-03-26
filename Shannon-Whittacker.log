@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 20:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 20:25
 entering extended mode
 **Shannon-Whittacker.tex
 (C:\Users\Manuela\Documents\GitHub\Fallstudien\Shannon-Whittacker.tex
@@ -673,7 +673,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--248
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
@@ -710,7 +715,7 @@ lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy
 8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/hoekwater/rsfs/rsfs10.p
 fb>
-Output written on Shannon-Whittacker.pdf (13 pages, 536319 bytes).
+Output written on Shannon-Whittacker.pdf (13 pages, 536805 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
