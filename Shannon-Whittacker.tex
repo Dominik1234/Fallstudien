@@ -64,9 +64,17 @@ If \(\FF f\in L^1(\RR^d)\), then we can define the inverse Fourier transform:
 	If \(f\in L_Q^2(\RR^d)\), then it is called \(\omega\)-bandlimited.
 \end{defi}
 
-\begin{lemma}
-Let $\omega = (\omega_1,\ldots,\omega_d) \in \RR^d$. If $f \in L^1(\RR^d)$ then the series $\sum_{k \in \ZZ^d} f(x-\omega k)$ converges in $L^1(\omega T^d)$ to the periodic function $Pf$ such that $\|Pf\|_1 \leq \|f\|_1$.
+\begin{lemma}[Bessel's inequality]
+Let X be a Hilbert space, $S \subset X$ an orthonormal system. Then one has
+\[\sum_{e \in S} |\langle x, e \rangle |^2 \leq \Vert x \Vert ^2\]
+%Let X be a separable Hilbert space with $\dim(X) = \infty$ and $\{e_k:k \in \ZZ^d\}$ an orthonormal system. Then it is equivalent:
+%\begin{itemize}
+%\item[i)] $\{e_k:k \in \ZZ^d\}$ is an orthonormal basis
+%\item[ii)] For all $x \in X$ Parseval's identity holds
+%\[\Vert x \Vert^2 = \sum_{k\in \ZZ^d} |\langle x, e_k \rangle|^2\]
+%\end{itemize}
 \end{lemma}
+
 
 \subsection{Sampling}
 To convert a continuous function \(f\) into a sequence of discrete values is called sampling. In a mathematical way, sampling can be described as a multiplication of \(f\) with a dirac-comb 
@@ -106,21 +114,43 @@ If \(f \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\
 In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is high enough! Holy Shit!\\
 (Da der Beweis jetzt nicht mehr so umfangreich ist, ist ein eigenes Kapitel so viel denke ich, ich w"'urde ihn einfach direkt nach das Theorem setzen)\\
 \begin{proof}[Proof]
-We will prove the assertion by using theorem \ref{th:perturbed sampling}.\\ Let $f \in L^2(\RR^d)$ be a $\omega$-bandlimited function and set $\tau_0 := \frac{1}{\omega} = \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)$ and $\epsilon := 0$.
+We will prove the assertion by using theorem \ref{th:perturbed sampling}.\\ Let $f \in L^2(\RR^d)$ be a $\omega$-bandlimited function and set $\tau_0 := \frac{1}{\omega} = \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)$ and $\epsilon := 0$. Besides choose $\tau \in (0,\tau_0]$ arbitrarily and define $T := \prod_{i=1}^d \left[-\frac{1}{2\tau_i} ,\frac{1}{2\tau_i}\right]$ and $Q := \prod_{i=1}^d \left[-\frac{1}{2}\omega_i ,\frac{1}{2}\omega_i\right]$.
 \begin{itemize}
-\item[i)] Since \(\FF(f)\) has a compact support and is continuous, \(\FF(f) \in L^1(\RR^d)\). Hence the fourier transform is reversible.
+\item[i)] Since \(\FF(f)\) has a compact support and is continuous, $\FF(f)$ takes a maximal value $\Vert \FF(f) \Vert_\infty$. This leads to $\int_{\RR^d}| \FF f(w)|dw = \int_Q| \FF f(w)| dw \leq \Vert \FF(f) \Vert_\infty \mathscr{L}(Q) < \infty$. Therefore $\FF(f) \in L^1(\RR^d)$ and the fourier transform is reversible.
 	 \[f(x) = \FF^{-1}(\FF(f))(x) = \int_{\RR^d}\FF(f)(\hat{x}) e^{2 \pi i (\hat{x},x)} d\hat{x}\]
 	 Hence you can differentiate $f$.
 	 \[df(x) = \left(\int_{\RR^d} \FF(f)(\hat{x}) e^{2 \pi i (\hat{x},x)} 2 \pi i \hat{x}_1 d\hat{x}, \ldots, \int_{\RR^d} \FF(f)(\hat{x}) e^{2 \pi i f t} 2 \pi i \hat{x}_d d\hat{x} \right)\]
 	 You can easily see now that \(f \in C^\infty(\RR^d)\), thus $f \in C(\RR^d) \cap L^2(\RR^d)$.
-\item[ii)] In seinem italienischen Skript auf Seite 23 steht, dass $\{\det(\tau)^{d/2}\ e^{2 \pi i (w,k \tau)}\}_{k \in \ZZ^d}$ eine Orthonormalbasis von $L^2\left(\prod_{i=1}^d \left[-\frac{1}{2\tau_i}, \frac{1}{2 \tau_i} \right] \right)$ ist. Das muss man vielleicht noch beweisen. 
+\item[ii)] Now we want to show that $\{\det(\tau)^{d/2}\ e^{2 \pi i (w,k \tau)}\}_{k \in \ZZ^d}$ is an orthonormal system of $L^2(T)$.
+\begin{align*}
+\forall k,l \in \ZZ^d: \langle e_k(w), e_l(w) \rangle 
+&= \det(\tau) \int_{T} e^{2 \pi i (\langle w,k \tau \rangle- \langle w,l \tau \rangle )}dw
+= \det(\tau) \int_{T} e^{2 \pi i \langle w,(k-l) \tau \rangle}dw \\
+&= \int_{-\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \cdots \int_{-\frac{1}{2\tau_d}}^{\frac{1}{2\tau_d}} \prod_{j=1}^d \tau_j e^{2 \pi i w_j (k_j-l_j) \tau_j}dw_1 \ldots dw_j \\
+&= \prod_{j=1}^d \int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i w_j (k_j-l_j) \tau_j}dw_j
+\end{align*}
+
+If $k \neq l$, then there is a $j \in \{1,\ldots,d\}$ such that $k_j \neq l_j$. With regard to the integral, it means:
+
+\begin{align*}
+\int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i w_j (k_j-l_j) \tau_j}dw_j
+&= \left[ \frac{1}{2 \pi i (k_j - l_j)} e^{2 \pi i w_j (k_j-l_j) \tau_j} \right]_{w_j = -\frac{1}{2 \tau_j}}^{\frac{1}{2 \tau_j}} \\
+&= \frac{1}{2 \pi i (k_j-l_j)} \left( e^{\pi i (k_j-l_j)} - e^{-\pi i (k_j-l_j)} \right) = 0
+\end{align*}
+
+In case $k = l$ we can conclude:
+\[\prod_{j=1}^d \int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i w_j (k_j-l_j) \tau_j}dw_j
+= \prod_{j=1}^d \tau_j \left(\frac{1}{2\tau_j}+\frac{1}{2\tau_j}\right) = 1\]
+
+Consequently $\{\det(\tau)^{d/2}\ e^{2 \pi i (w,k \tau)}\}_{k \in \ZZ^d}$ is an orthonormal system of $L^2(T)$. (It is even an orthonormal basis.)
+
+That's why one has Bessel's inequality.
 \begin{align*}
 \sum_{k \in \ZZ^d} |f(k \tau)|^2
-&= \sum_{k \in \ZZ^d} | \int_{\RR^d} \FF f(w) e^{2 \pi i (w,k \tau)}dw|^2 \\
-&= \sum_{k \in \ZZ^d} | \left\langle \FF f(w), e^{2 \pi i (w,k \tau)}\right\rangle |^2
-= (\det(\tau))^{-\frac{d}{2}} \Vert \FF f \Vert_{L^2(Q)}^2 < \infty
+&= \sum_{k \in \ZZ^d} | \int_{\RR^d} \FF f(w) e^{2 \pi i \langle w,k \tau \rangle}dw|^2 \\
+&= \sum_{k \in \ZZ^d} | \left\langle \FF f(w), e^{2 \pi i \langle w,k \tau \rangle}\right\rangle |^2
+\leq (\det(\tau))^{-d} \Vert \FF f \Vert_{L^2(T)}^2 < \infty
 \end{align*}
-Anstatt Q eigentlich das große Produkt von oben. \\
 So the condition $f_{|\tau\ZZ^d} \in l^2$ is fulfilled.
 
 \end{itemize}
@@ -137,69 +167,6 @@ f(x) &= \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\ta
 	\includegraphics[width=0.80\textwidth]{Rekonstruktion-Visualisierung.pdf}
 	\caption{Visualisation of the interpolation formula for \(d=1\): the original signal (black line) is reconstructed by weighted and shifted sinc-functions}
 \end{figure}
-
-
-\section{Proof of the Theorem}
-Define \(\tau_0 = \frac{1}{\omega} := \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)\) and choose \(\tau \in (0,\tau_0]\) arbitrarily. \\
-Besides denote \(\Omega := \prod_{i=1}^d \left[-\frac{1}{2}\omega_i ,\frac{1}{2}\omega_i\right]\) and \(T := \prod_{i=1}^d \left[-\frac{1}{2\tau_i} ,\frac{1}{2\tau_i}\right]\).
-
-\begin{equation}
-x \in L^2_w(\RR^d) \Rightarrow \forall f\notin \Omega: \FF(x)(f) = 0
-\end{equation}
-
-The consequence of this condition and of the linearity of \(\FF(x)\) is:
-
-\[\forall f\in T, k \in \ZZ^d: \FF(x)\left(f+\frac{k}{\tau}\right) = \FF(x)(f) + \FF(x)\underbrace{\left(\frac{k}{\tau}\right)}_{\notin \Omega} = \FF(x)(f)\]
-
-Thus the formula can be rewritten.
-
-\begin{equation}
-\forall f \in \Omega: \FF(x)(f) = \sum_{k \in \ZZ^d} \FF(x)\left( f+\frac{k}{\tau}\right)
-\end{equation} 
-
-(1.1) and (1.2) allow us to say:
-
-\[\FF(x)(f) = \chi_{T}(f) \sum_{k \in \ZZ^d} \FF(x)\left(f+\frac{k}{\tau}\right)\]
-
-For using the Poisson summation formula (Theorem 0.3) we have to check the requirements.
-
-\begin{itemize}
-	\item[i)] Since \(\FF(x)\) has a compact support and is continuous, \(\FF(x) \in L^1(\RR^d)\). Hence the fourier transform is reversible.
-	 \[x(t) = \FF^{-1}(\FF(x))(t) = \int_{\RR^d}\FF(x)(f) e^{2 \pi i f t} df\]
-	 With that in mind you can't make a secret of:
-	 \[x'(t) = \left(\int_{\RR^d} \FF(x)(f) e^{2 \pi i f t} 2 \pi i f_1 df, \ldots, \int_{\RR^d} \FF(x)(f) e^{2 \pi i f t} 2 \pi i f_d df \right)\]
-	 You can easily see now that \(x \in C^\infty(\RR^d)\)
-	 \item[ii)] Another implication of the compact support is \[\exists C,\varepsilon>0: |\FF(x)(f)| \le C (1+|f|)^{-d-\varepsilon}\]
-	 \item[iii)] Die dritte Bedingung ist schwieriger.
-\end{itemize}
-
-With the aid of the Poisson summation formula (Theorem 0.3) you can conclude:
-\begin{equation}
-\FF(x)(f) = \chi_{T}(f) \det(\tau) \sum_{n \in \ZZ^d} x(n\tau)e^{-2\pi i n\tau f}
-\end{equation}
-
-Now we want to prove that \(\FF\left( \prod_{j=1}^d sinc \left( \frac{t_j-n\tau_j}{\tau_j}\right)\right)(f) = \det(\tau)\chi_{T}(f)e^{-2\pi in\tau f}\).
-
-\begin{align*}
-\FF^{-1}\left( \det(\tau) \chi_{T}(f) e^{-2 \pi i n \tau f}\right) 
-&= \int_{\RR^d} \det(\tau) \chi_{T}(f) e^{-2 \pi i n \tau f} e^{2 \pi i f t} df \\
-&= \int_{\RR^d} \det(\tau) \chi_{T}(f) e^{2 \pi i f (t-n\tau) }df \\
-&= \int_{-\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \cdots \int_{-\frac{1}{2\tau_d}}^{\frac{1}{2\tau_d}} \prod_{j=1}^d \tau_j e^{2 \pi i f_j(t_j-n \tau_j)}df_1 \ldots df_d \\
-&= \prod_{j=1}^d \int_{-\frac{1}{2\tau_j}}^{\frac{1}{2\tau_j}} \tau_j e^{2 \pi i f_j (t_j - n \tau_j)}df_j \\
-&= \prod_{j=1}^d \left[  \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} e^{2 \pi i f_j (t_j - n \tau_j)} \right]_{f_j = -\frac{1}{2\tau_1}}^{\frac{1}{2\tau_1}} \\
-&= \prod_{j=1}^d \frac{\tau_j}{2 \pi i (t_j - n \tau_j)} \left( e^{\pi i \frac{t_j - n \tau_j}{\tau_j}} - e^{-\pi i \frac{t_j - n \tau_j}{\tau_j}} \right) \\
-&= \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
-\end{align*}
-Hence formula (1.3) is:
-
-\[\FF(x)(f) = \sum_{n \in \ZZ^d} x(n\tau) \FF\left(\prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right)(f)\]
-
-Through applying the inverse transform on both sides, the theorem is proved.
-
-\begin{align*}
-x(t) = \FF^{-1}(\FF(x))(t) &= \FF^{-1} \left( \sum_{n \in \ZZ^d} x(n \tau) \FF \left( \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right) \right) \right) \\
-&= \sum_{n \in \ZZ^d} x(n\tau) \prod_{j=1}^d sinc \left( \frac{t_j - n \tau_j}{\tau_j} \right)
-\end{align*}
 
 \section{Meaning, real-life applications and limitations}
 
