@@ -116,8 +116,8 @@ If \(f \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\
 	f(x) = \sum_{k \in \ZZ^d} f^c(\tau k) \prod_{i=1}^d sinc\left(\tau_i^{-1} x_i -k_i\right).
 \end{equation}
 \end{theorem}
-In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is high enough! Holy Shit!\\
-(Da der Beweis jetzt nicht mehr so umfangreich ist, ist ein eigenes Kapitel so viel denke ich, ich w"'urde ihn einfach direkt nach das Theorem setzen)\\
+In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its infinitely but countable many samples, if the sampling rate is high enough! Holy Shit!\\
+
 \begin{proof}[Proof]
 We will prove the assertion by using theorem \ref{th:perturbed sampling}.\\ Let $f \in L^2(\RR^d)$ be a $\omega$-bandlimited function and set $\tau_0 := \frac{1}{\omega} = \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)$ and $\epsilon := 0$. Besides choose $\tau \in (0,\tau_0]$ arbitrarily and define $T := \prod_{i=1}^d \left[-\frac{1}{2\tau_i} ,\frac{1}{2\tau_i}\right]$ and $Q := \prod_{i=1}^d \left[-\frac{1}{2}\omega_i ,\frac{1}{2}\omega_i\right]$.
 \begin{itemize}
@@ -196,7 +196,7 @@ See \cite{shannon01}.
 A sequence \(\{x_n\}\in l^2\) can be transmitted with rate \(2W\) (=Nyquist-rate) per second over an ideal channel of bandwith \(W Hz\), where \(\{x_n\}\) represents the samples of a bandlimited \(L^2\) signal.
 
 \end{itemize}
-The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an Intervall \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
+The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an interval \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
 Even worse, Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
 With these restrictions, the theorems seem to be of only small use in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
 (zumindest hoffe ich das)
@@ -227,22 +227,45 @@ If \(g\in L^2(\RR^d)\) with \(||g||_2=1\), then, because of the Plancherel equal
 	\[var|g|^2 \cdot var|\FF g|^2 \geq \frac{1}{4\pi},\]
 the famous Heisenberg uncertainty principle!\\	
 Physically, this result says that position distribution and momentum distribution of a quantum particle cannot be sharply peaked at the same time. Mathematically, one can say that position and momentum are Fourier transforms of one another.\\
+In signal analysis, the principle gives a constraint between effective bandwidth and duration of a signal.\\
 If we return to our example of audio signals, (\ref{eq:uncertainty}) can be understood in the following way:\\
 If the signal \(f\) ist very short, it is not possible to determine the frequencies \(\lambda\) exactly, while on the other hand sound at one exact frequency corresponds to a perfect sine wave with no beginning or ending.
 
 \subsection{Real-Life Applications}
 \label{se:real-life}
-
+Sampling is of great importance whenever you need to digitalize and transmit data. 
 \subsubsection{Audio signals}
 Sound or acoustic noise is produced by vibrating objects, leading to a mechanical wave of pressure through air. This air pressure fluctuations causes the eardrum to oscillate. The auditory ossicle transfer the signal to the cochlea, where parts of the intra cochlea membranes begin to vibrate. The area of the activated membrane depends on the frequency, high frequencies up to 20 kHz are perceived at the base and low frequencies up to 20 Hz at the top of the cochlea. Fine hairs on top of the sensory cells are moved. This motion is converted into an electrochemical impulse of the corresponding auditory nerve. The higher the amplitude of a tone, the higher is the frequency of the action potentials in the nerve.
-Hence our auditory organ also applies a short-time Fourier transformation. 
+Hence our auditory organ also applies a short-time Fourier transformation. \\
 
-If we consider now a sound recording as a function $f$, $f$ is obviously compactly supported (there is a strict beginning and end). Consequently the fourier transform $\hat{f}$ can't be compactly supported ($f$ is not $\omega$-bandlimited). The manner of functioning of our ear allows us to ignore frequencies above 20 kHz and below 20 Hz. Although the reverse fourier transformation $\FF^{-1}(\hat{f}|_{Q})$ does not coincide with $\FF^{-1}(\hat{f})$, for our ear it is of no importance. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision.
+If we consider now a sound recording as a function $f$, $f$ is obviously compactly supported (there is a strict beginning and end). Consequently the fourier transform $\hat{f}$ can't be compactly supported ($f$ is not $\omega$-bandlimited). The manner of functioning of our ear allows us to ignore frequencies above 20 kHz and below 20 Hz. Although the reverse fourier transformation $\FF^{-1}(\hat{f}|_{Q})$ does not coincide with $\FF^{-1}(\hat{f})$, for our ear it is of no importance. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision.\\\\
 
 Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
-Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them anyway. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. 
-\textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter\\
-(Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)
+Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them anyway. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. \\\\
+\textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter.A bandlimited function would not be affected by the filtering.\\
+More generally if we have a signal of finite area oder energy, there exists an interval of duration T, such that outside of this interval all samples would be negligible small. Then we can sample over this Interval with the Nyquist rate. The choice of T can be made by deciding which error can be tolerated.
+(Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)\\
+
+\subsubsection*{Pictures and movies}
+
+
+
+
+\subsection*{Dealing with limitations}
+As determined above, we have to deal with restrictions in real-life applications.\\
+Thus by reconstructing real functions or signals by the Whittaker-Shannon theorem, we have to examine some errors.(see[3])
+\begin{itemize}
+\item Aliasing:\\
+We get an error by sampling a not truly bandlimited function or sampling with a sampling rate below the Nyquist rate (Undersampling). Then the generated spectra would overlap. This is called aliasing. The low frequencies can be regarded, but we lost the high ones. To improve this, you need to sample with a higher rate, if this is technically possible.\\
+
+\item truncation error:\\
+Assuming the function is perfect and satisfies all required conditions in the Sampling Theorem, one will have to be content with only a finite number of samples. Let $ f_N(x) $ be the function calculated by Whittaker-Shannon with N samples sampled with the Nyquist rate $ \frac{1}{2\tau_0} $. Like we said above, we can get arbitrary near to the desired function $f(x)$ by increasing N. The remaining so called truncation error $ e_N(t)=\vert f(x)-f_N(x)\vert^2 $ satisfies the inequality \[ e_N(t) \leq N2\tau_0\]\\
+Proof see [3]
+
+\item noise:\\
+In reality, the signal $x(t) $ we want to sample can be disturbed by random noise $\chi(t)$. The sampled signal is then $ y(t)=x(t)+\chi(t) $. In 1-D, our reconstructed function \[ \tilde{y}(t) = \sum_{k \in \ZZ} y^c(\tau k)  sinc\left(\tau_i^{-1} t_i -k_i\right)=x(t)+\eta(t) \] with $ \eta(t) $ independent of the signal and with mean zero.\\
+We can reduce the noise by oversampling or filtering.
+\end{itemize}
 
 
 \nocite{marks02}
