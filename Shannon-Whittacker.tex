@@ -37,7 +37,7 @@
 
 Sampling and reconstructing a signal from its samples are probably two of the most important properties of modern communication.   Even very simple things of our daily life, like making a phone call to our dear friend Massimo, are not possible without digitalizing analog signals, for example  our voice. \\
 Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
-In the following, we'd like to try to give a small survey of the famous Whittacker-Shannon interpolation formula, ist applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
+In the following, we'd like to try to give a small survey of the famous Whittaker-Shannon interpolation formula, ist applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
 
 
 \section{Preliminary notes and Sampling}
@@ -64,6 +64,10 @@ If \(\FF f\in L^1(\RR^d)\), then we can define the inverse Fourier transform:
 	If \(f\in L_Q^2(\RR^d)\), then it is called \(\omega\)-bandlimited.
 \end{defi}
 
+\begin{lemma}
+Let $\omega = (\omega_1,\ldots,\omega_d) \in \RR^d$. If $f \in L^1(\RR^d)$ then the series $\sum_{k \in \ZZ^d} f(x-\omega k)$ converges in $L^1(\omega T^d)$ to the periodic function $Pf$ such that $\|Pf\|_1 \leq \|f\|_1$.
+\end{lemma}
+
 \subsection{Sampling}
 To convert a continuous function \(f\) into a sequence of discrete values is called sampling. In a mathematical way, sampling can be described as a multiplication of \(f\) with a dirac-comb 
 \[s(t,\Delta T) = \sum_{n\in\ZZ} \delta(t-n\Delta T), \]
@@ -87,7 +91,7 @@ Let \(Q = \prod_{i=1}^d \omega_i[-1/2, 1/2)\) and \\
 \begin{equation}
 	f(x) = \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\tau_i^{-1}x_i-k_i)+\epsilon(x), \qquad \text{in } L^2(\RR^d),
 \end{equation}
-where \(sinc(x) = \frac{sin(\pi x)}{x}\).
+where \(sinc(x) = \frac{sin(\pi x)}{\pi x}\).
 \end{theorem}
 
 \section{The Whittaker-Shannon Interpolation formula}
@@ -96,13 +100,37 @@ where \(sinc(x) = \frac{sin(\pi x)}{x}\).
 \label{th:interpolation}
 If \(f \in L^2(\RR^d)\) is a \(\omega\)-bandlimited function, there exists a \(\tau_0 > 0\) such that for all \(\tau \in \left(0,\tau_0\right]\)
 \begin{equation}
-	f(t) = \sum_{k \in \ZZ^d} f(\tau k) \prod_{i=1}^d sinc\left(\frac{t_i-k_i \tau_i}{\tau_i}\right).
+	f(x) = \sum_{k \in \ZZ^d} f^c(\tau k) \prod_{i=1}^d sinc\left(\tau_i^{-1} x_i -k_i\right).
 \end{equation}
 \end{theorem}
 In other words, every bandlimited \(L^2\) function can be perfectly reconstructed from its samples, if the sampling rate is high enough! Holy Shit!\\
 (Da der Beweis jetzt nicht mehr so umfangreich ist, ist ein eigenes Kapitel so viel denke ich, ich w"'urde ihn einfach direkt nach das Theorem setzen)\\
 \begin{proof}[Proof]
-Follows with theorem \ref{th:perturbed sampling}...
+We will prove the assertion by using theorem \ref{th:perturbed sampling}.\\ Let $f \in L^2(\RR^d)$ be a $\omega$-bandlimited function and set $\tau_0 := \frac{1}{\omega} = \left(\frac{1}{\omega_0}, \ldots, \frac{1}{\omega_d}\right)$ and $\epsilon := 0$.
+\begin{itemize}
+\item[i)] Since \(\FF(f)\) has a compact support and is continuous, \(\FF(f) \in L^1(\RR^d)\). Hence the fourier transform is reversible.
+	 \[f(x) = \FF^{-1}(\FF(f))(x) = \int_{\RR^d}\FF(f)(\hat{x}) e^{2 \pi i (\hat{x},x)} d\hat{x}\]
+	 Hence you can differentiate $f$.
+	 \[df(x) = \left(\int_{\RR^d} \FF(f)(\hat{x}) e^{2 \pi i (\hat{x},x)} 2 \pi i \hat{x}_1 d\hat{x}, \ldots, \int_{\RR^d} \FF(f)(\hat{x}) e^{2 \pi i f t} 2 \pi i \hat{x}_d d\hat{x} \right)\]
+	 You can easily see now that \(f \in C^\infty(\RR^d)\), thus $f \in C(\RR^d) \cap L^2(\RR^d)$.
+\item[ii)] In seinem italienischen Skript auf Seite 23 steht, dass $\{\det(\tau)^{d/2}\ e^{2 \pi i (w,k \tau)}\}_{k \in \ZZ^d}$ eine Orthonormalbasis von $L^2\left(\prod_{i=1}^d \left[-\frac{1}{2\tau_i}, \frac{1}{2 \tau_i} \right] \right)$ ist. Das muss man vielleicht noch beweisen. 
+\begin{align*}
+\sum_{k \in \ZZ^d} |f(k \tau)|^2
+&= \sum_{k \in \ZZ^d} | \int_{\RR^d} \FF f(w) e^{2 \pi i (w,k \tau)}dw|^2 \\
+&= \sum_{k \in \ZZ^d} | \left\langle \FF f(w), e^{2 \pi i (w,k \tau)}\right\rangle |^2
+= (\det(\tau))^{-\frac{d}{2}} \Vert \FF f \Vert_{L^2(Q)}^2 < \infty
+\end{align*}
+Anstatt Q eigentlich das große Produkt von oben. \\
+So the condition $f_{|\tau\ZZ^d} \in l^2$ is fulfilled.
+
+\end{itemize}
+
+So theorem \ref{th:perturbed sampling} is applicable and we can conclude:
+\begin{align*}
+f(x) &= \sum_{k\in\ZZ^d} (f^c(\tau k)-\epsilon^c(\tau k))\prod _{i=1}^d sinc(\tau_i^{-1}x_i-k_i)+\epsilon(x) \\
+&= \sum_{k \in \ZZ^d} f^c(\tau k) \prod_{i=1}^d sinc\left(\tau_i^{-1} x_i -k_i\right)  
+\end{align*}
+
 \end{proof}
 \begin{figure}[htpb]
 	\centering
@@ -187,7 +215,7 @@ Let \(f\in L^2_Q(\RR^d)\), \(\lambda_{max}\) the highest frequency of \(f\), \(\
 See \cite{shannon01}.
 \end{proof}
 (den Beweis abzuschreiben waere gar zu klaegliche Platzverbraucherei oder? ;))\\
-\textbf{Remark:} The Whittacker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittacker sampling theorem".\\
+\textbf{Remark:} The Whittaker-Shannon interpolation formula (Theorem  \ref{th:interpolation}) and the Shannon-Nyquist sampling theorem (Theorem \ref{th:sampling}) are often combined as the "Shannon-Nyquist-Whittaker sampling theorem".\\
 The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an Intervall \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
 Even worse, Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
 With these restrictions, the theorems seem to be of only small use in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
