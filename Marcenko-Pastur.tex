@@ -32,12 +32,12 @@
 \begin{document}
 \parindent 0pt
 \maketitle
-\tableofcontents
+%\tableofcontents
 
 
 \chapter{Das Marchenko-Pastur-Gesetz}
 
-\section{Das Marchenko-Pastur-Gesetz}
+\section*{Das Marchenko-Pastur-Gesetz}
 
 Sei \(Y_N\) eine \(N\times M(N)\)-Matrix mit unabhängigen zentrierten Einträgen mit Varianz \(1\),
 	\[\sup_{j,k,N} \EE\left[ | Y_N(j,k)|^q\right] = C_q < \infty \qquad \forall q \in \NN\]
@@ -53,7 +53,7 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 	\[f_{\alpha}(x)=\frac{1}{2\pi x}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \]
 
 \newpage
-\section{Beweis des Marcenko-Pastur Gesetzes}
+\section*{Beweis des Marcenko-Pastur Gesetzes}
 Die Konvergenz soll im Folgenden mittels der Momentenmethode gezeigt werden. Als ersten Schritt bringt man \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form, die eine weitergehende Untersuchung ermöglicht:
 \begin{equation}
 \begin{split}
@@ -100,16 +100,15 @@ Setze \(s = s_1+s_2\), dann ergeben sich folgende drei Fälle:
 	\item \(s=l+1\)\\
 		Die verbliebenen Graphen auf \(l+1\) verschiedenen Knoten haben die Struktur von Doppelbäumen und sollen im Weiteren genauer untersucht werden.\\
 \end{itemize}		
-Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) tragen nur die Graphen auf $ l+1 $ verschiedenen Knoten bei:\\
+Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) tragen nur die Graphen auf $ l+1 $ verschiedenen Knoten bei:
 
 \begin{equation}
 \begin{split}
 \beta_l:= \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle &= \lim_{N\to\infty} \dfrac{1}{N^{l+1}} \sum_{s_1,s_2 = 1}^l \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)]\\ &= \lim_{N\to\infty} \dfrac{1}{N^{l+1}}\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)]  
 \end{split}
-\end{equation}
+\end{equation}\\
 
 \subsection*{Berechnung der $ \beta_l $ mittels Catalanpfade}
-%\textbf{Weitere Analyse von \(\beta_l\):}\\
 Die Doppelbaumstruktur dieser Graphen lässt sich wie folgt nutzen:\\
 Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann gilt:
 \begin{equation}
@@ -119,8 +118,8 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 	\end{split}
 \end{equation}
 
-Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
-Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie hierbei durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:
+Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann nun in folgender Weise als Catalan-Pfad der Länge \(l\) interpretiert werden:\\\\
+Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt. Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen. Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie hierbei durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:
 \begin{itemize}
 	\item Wird ein Knoten zum ersten Mal erreicht: \((+1)\)
 	\item Kehrt man zu einem bereits besuchten Knoten zurück :\((-1)\)
@@ -128,26 +127,16 @@ Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen,
 \end{itemize}
 Da der Baum durch Tiefensuche durchlaufen wird, gibt die Entfernung eines Knotens zur Wurzel die Anzahl der nötigen Schritte wieder, die benötigt werden, um ihn zum ersten Mal zu erreichen. Da die \(j\)-Knoten in den geraden Ebenen und die \(k\)-Knoten in den ungeraden Ebenen liegen, ergibt sich, dass sich die \(j\)-Knoten stets auf den geraden Niveaus und die \(k\)-Knoten stets auf den ungeraden Niveaus des Catalan-Pfades befinden. 
 
-
-%\begin{itemize}
-%	\item Alle Kanten zwischen der Wurzel und der ersten Ebene sind Flachstücke: \((+0)\)
-%	\item Wenn eine Kante von ungerader Ebene aufwärts auf gerade Ebene führt: \((+1)\)
-%	\item Wenn eine Kante von gerader Ebene abwärts auf ungerade Ebene führt: \((-1)\)
-%	\item Die restlichen Kanten sind alle Flachstücke: \((+0)\)
-%\end{itemize}
-
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=1.00\textwidth]{Catalan-Pfad.pdf}
 	\caption{Doppelbaum auf 5 Knoten und dem zugehörigen Catalan-Pfad} 
 \end{figure}
 
-%Lässt man die Wurzel außen vor, liegen \(r\ k\)-Knoten in den ungeraden Ebenen und \(l-r\ j\)-Knoten in den geraden Ebenen. Damit ergibt sich aus dieser Konstruktion, dass \(l-r\) die Anzahl der Aufstiege (und Abstiege) und \(2r\) die Anzahl der Flachstücke im Catalan-Pfad sind.  Denn: zu jedem \(j\)-Knoten führt genau eine Kante aus einer unteren Ebene hin und es führt genau eine Kante in eine untere Ebene zurück (Doppelbaum!). \\
 Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion:
 \begin{itemize}
- \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
+ \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer auf oder überhalb des 0.Niveaus, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnte ein Doppelbaum mit Knoten {1,2,...2m} konstruiert werden, und da $ s_{2m-1}=-1  $ gilt, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt wurde also tatsächlich ein Catalanpfad konstruiert. 
  \item[•] Surjektivität: Starte bei der Wurzel. Füge für jede Aufstiegskante einen Knoten in die nächst höhere Ebene und eine Kante als Verbindung hinzu. Füge für jede Abstiegskante eine Kante in die nächst niedrigere Ebene hinzu, bis die Doppelbaumstruktur vollständig ist. Damit ist jeder Catalanpfad Urbild eines Doppelbaums. 
-%für jeden Catalanpfad der Länge l der Form $\lbrace s_{i} \rbrace$, $ i \leq 2l, i \in \NN $ kann ein Doppelbaum als Urbild wie folgt konstruiert werden: für i gerade: $s_{i}=-1 \rightarrow $ gehe von $j_{i/2}$abwärts, bei $s_{i}=0  $ aufwärts; für i ungerade bei $s_{i}=1 $ aufwärts, bei $s_{i}=0 $ abwärts.
 \item[•] Injektivität: kann analog zur Übung durch rekursives Entfernen von identischen Kanten gezeigt werden.\\
 \end{itemize}
 Damit ist die Anzahl der Doppelbäume in (1.7) gleich der Anzahl der dazugehörigen Catalanpfade.\\
@@ -171,30 +160,6 @@ wobei \(r=\#\{\text{Abstiege von ungeraden auf gerade Niveaus in } C_l\}\), und 
 !!! Explizite Formel für die Anzahl der $ p_r $ gefunden: \[ \binom{l-1}{r} \binom{l}{r} \frac{1}{r+1} \]
 Wer Spaß dran hat, kann sie beweisen. Ansonsten lassen wir sie raus, wir brauchen sie ja nicht.\\
 
-
-
-%Formel ist leider falsch. Wir brauchen die Formel aber anscheinend gar nicht.
-%Ich denke, dass die Formel nun ist: 	
-%	\[\beta_l = \sum_{r=1}^l \alpha^r\ \begin{pmatrix} l-1\\r-1\end{pmatrix} C_{l-r} \]
-%und enstrechend für \(\gamma_l\) einfach die Einträge im Binomialkoeffizienten halbieren...Was meint ihr? Die Rechnung unten funktioniert dann weiterhin genauso! :)\\
-
-%\(r = \frac 1 2 \#\{\text{Flachstücke in }C_l\} = l  - \#\{\text{Anstiege in }  C_l\}\), und $ p_{r} $ Catalanpfad mit 2r Flächenstücken.\\
-
-
-
-%An Manu: kannst du diese Formel für \(\beta_l\) genauer erklären? Ich verstehe nicht wirklich, was du da machst...\\
-
-
-%Mach ich. Also ich hab lang nicht verstanden, was das Kombinatorik-zeug vorne dran mit den Catalanpfaden zu tun hat. Du hattest glaub ich $C_l$ als Anzahl der Catalanpfade. Beim Überlegen für (10) dem nächsten Punkt hab ich mir dann die Formel für die Pfade gebaut, die im Grunde nur auf deiner Konstruktion basiert (und von der bist du ja hoffentlich überzeugt:) )\\
-%$ \longrightarrow $Also wir brauchen die Anzahl der Catalanpfade, durch die wir unsere Doppelbäume beschreiben, weil's eine Bijektion ist. Nur haben wir andere Catalanpfade als die normalen:)\\
-%Die Catalanpfade, die wir in der Vorlesung gebaut haben, mit der Anzahl $C_l$ (Catalanzahlen), sind dadurch definiert, dass du bei jedem Schritt + oder - 1 gehst, und das nichtüberkreuzend. \\ Bei unseren Catalanpfaden hast du aber noch deine "Flachstücke" mit 0 eingebaut! Und zwar 2r von denen. Also wie viele gibts von denen für ein bestimmtes r? Nach Konstruktion mit einem Knoten, sagen wir mal den j1, als Wurzel, sind der erste und letzte Schritt in dem Pfad auf jeden Fall flach, also 0. Da gibt's keine andere Möglichkeit. Von den restlichen 2l-2 Schritten im Pfad sind noch 2r-2 flach, die suchen wir als erstes raus. Das macht dann die $\begin{pmatrix} 2l-2\\2r-2\end{pmatrix} $.\\ 
-%Bleiben uns noch 2l-2-(2r-2) Schritte übrig, die mit +/-1 zu belegen sind. Und zwar nichtüberkreuzend. Was das gleiche ist wie wenn du einen l-r-langen Catalanpfad bauen willst, weil du die 2r Flachstücke einfach mal ignorierst, die ändern ja nichts. Daher kommt das $ C_{l-r} $. Und wir haben die Anzahl!\\ Über r aufsummieren, damit wir alle Fälle mit r Knoten aus M(N), Rest aus N, haben. Das übrige Kombinatorik-zeug ist ja $\alpha^r  $, und schon steht die Formel da\\
-%Die Formel für die Anzahl der Catlanpfade ist ganz praktisch für (10), für $ \beta$ selber brauchen wir sie ja erst mal nicht, deshalb wieder umcshreiben in $ \sum_{r} \alpha^{r} \#\{ \text{Catalanpfade mit 2r Flachstücke} \}$. Wenn du sie mal die Anzahl nimmst, kannst auch über alle 2r-Catalanpfade aufsummieren, das hoch r ändert sich ja nicht. Und dann $= \sum_{r=1}^{l} \sum_{p_{r} \in C_{l}} \alpha^{r} = \sum_{p\in C_l} \alpha^r $.\\ \\
-%kurze Erklärung der Schritte schreib ich auch noch irgendwann oben rein.\\
-% -> Danke für die Erklärung, davon sollten wir einiges in die spätere Endfassung ausfnehmen, damit die Formeln klarer werden! Was ich vllt hätte hinschreiben sollen ist, dass es bei mir beim vorletzten = hakt, also da, wo du die \(p_r\) einführst... \\ Jetzt mit richtiger Defintion von $ p_r $ klarer? \\
-
-%\textbf{Beweis von  $\beta_{l}= \alpha \gamma_{l}$:}
-
 \subsection*{Relation für $ \beta_l $}
 Zu zeigen ist: Mit \(\beta_0 :=1, \gamma_0:=1 \) und
 \begin{equation*}
@@ -202,31 +167,12 @@ Zu zeigen ist: Mit \(\beta_0 :=1, \gamma_0:=1 \) und
 \end{equation*}
 gelten die Relationen
 \begin{equation}
+	\label{eq:beta_l}
 	\beta_l = \alpha\gamma_l=\alpha\sum_{r=0}^{l-1}\beta_r \gamma_{l-1-r} ~~\forall l \geq 1
 \end{equation}
 (\(l-r\) ist dabei die Anzahl der Abstiegskanten von geraden auf ungerade Niveaus im Catalan-Pfad.)
 \begin{itemize}
-%	\item \begin{equation}
-%	\begin{split}
-%\alpha \gamma_{l} =& \sum_{p \in C_l} \alpha^{l+1-r},\\
-%\beta_l - \alpha \gamma_l =& \sum_{r=1}^{l} \alpha^r\ \begin{pmatrix} 2l-2\\2r-2\end{pmatrix} C_{l-r} - \sum_{r=1}^{l} \alpha^{l+1-r}\ \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} C_{r-1}   \\ 
-%\underset{\text{Symmetrie Binom.}}{=}& \sum_{r=1}^{l} \begin{pmatrix} 2l-2\\2l-2r\end{pmatrix} \left( C_{l-r} \alpha^r - C_{r-1}\alpha^{l+1-r} \right) \\
-%\overset{!}{=}& 0 \\
-%\end{split}
-%\end{equation}
-%Für die einzelnen Summenglieder folgt:
-%\begin{align*}
-%\text{i-tes Summenglied:} &\begin{pmatrix} 2l-2\\2l-2i\end{pmatrix} \left( C_{l-i} \alpha^i - C_{i-1}\alpha^{l+1-i} \right) \\
-%\text{(l+1-i)-tes Summenglied:}& \begin{pmatrix} 2l-2\\2l-2-2l+2i\end{pmatrix} \left( C_{l-1-l+i} \alpha^{l+1-i} - C_{1+l-i-1}\alpha^{l+1-1-l+i} \right)\\
-% &= - \text{i-tes Summenglied}  
-%\end{align*}
-%Ist l gerade, dann heben sich folglich alle Summenglieder weg und die Summe ist 0, ist l ungerade, bleibt nur das (l+1)/2-te Summenglied übrig:
-%\begin{align*}
-% &\begin{pmatrix} 2l-2\\l+1-2\end{pmatrix} \left( C_{l-\frac{l+1}{2}} \alpha^{\frac{l+1}{2}} - C_{\frac{l+1}{2} -1}\alpha^{l+1-\frac{l+1}{2}} \right)\\
-%&=\begin{pmatrix} 2l-2\\l-1\end{pmatrix} \left( C_{\frac{l-1}{2}} \alpha^{\frac{l+1}{2}} - C_{\frac{l-1}{2}}\alpha^{\frac{l+1}{2}} \right)=0
-%\end{align*}
 
-%Damit gilt der erste Teil von \((2.10)\)\\
 \item
 Betrachte die Position im Pfad, an der zum ersten Mal die \(0\) erreicht wird. Diese ist immer gerade, da die \(0\) genau dann erreicht wird, wenn man im zugehörigen Doppelbaum zur Wurzel zurückkehrt. Sei also \(2j\), \(j\in\{1,...,l\}\), diese Position. \\
 Teile nun den Pfad in einen vorderen Teil \(P_1\) der Länge \(2j\) und einen hinteren Teil \(P_2\) der Länge \(2l-2j\). In dem erzeugenden Baum entspricht \(P_1\) dem äußersten Teilbaum, \(P_2\) dem restlichen Baum. \(P_2\) ist also ein beliebeiger Catalan-Pfad. \(P_1\) hat die besondere Struktur, dass die \(0\) erst an letzter Position erreicht wird, die erste und letzte Kante sind somit als Auftsiegs- bzw. Abstiegskante festgelegt und können für die kombinatorische Analyse vernächlässigt werden. Löscht man diese beiden Kanten und subtrahiert \(1\) von allen Elementen von \(P_1\), erhält man einen neuen Pfad \(\tilde{P}_1\), der ein beliebiger Catalan-Pfad der Länge \(2j-2\) ist. Dies folgt direkt aus der Struktur des Doppelbaumes: \(\tilde{P}_1\) entspricht dem äußersten Teilbaum ohne die ursprüngliche Wurzel, wodurch man einen neuen, beliebigen Doppelbaum erhält. \\
@@ -255,32 +201,16 @@ Damit gilt:
 		\gamma_l &=\sum_{k=0}^l \beta_k\gamma_{l-1-k} \\
 		&= \dfrac{\beta_l}{\alpha}
 	\end{split}
-\end{equation}
-
-%Die Konstruktion der Catalan-Pfade aus der Doppelbaumstruktur ermöglicht eine weitere Interpretation von \(r\) bzw. \(l-r\):\\
-%\begin{align*}
-%	r&=\# \{\text{Schritte von gerader Ebene zu \underline{höherer} ungerader Ebene}\} \\
-%	l-r &= \#\{\text{Schritte von ungerader Ebene zu \underline{höherer} gerader Ebene}\}
-%\end{align*}
-%Seien dies die \(r\)- bzw. \(l-r\)-Kanten, die im zugehörigen Catalan-Pfad an ungerader bzw. gerader Position liegen.\\
-%Aus der Konstruktion der Catalan-Pfade aus der Doppelbaum-Struktur ergibt sich, dass das erste und letzte Element immer Flachstücke sind. Habe ein solcher Pfad der Länge l die Bezeichnung \(\tilde{C}_l\). Für so ein \(\tilde{C}_l\) gilt, dass die \(0\) zum ersten Mal (abgesehen von dem beginnenden Flachstück) nach einer ungeraden Anzahl von Schritten erreicht wird. Auf \(0\) kommt der Pfad nämlich immer nach erreichen eines Knotens in der ersten Ebene des erzeugenden Baumes, was nur nach einer ungeraden Anzahl von Kantendurchläufen möglich ist. Sei \(2j+1\) diese Position.\\
-%Teile \(\tilde{C}_l\) in zwei Teilpfade wie folgt (für \(j>0\)):\\
-%Sei \(P_1\) der Pfad von Position \(1\) bis \(2j+1\) und \(P_2\) der zusammengesetzte Pfad von Position \(0\) bis \(1\) und von \(2j+2\) bis \(2l\).\\
-% \(P_2\) hat also Länge \(2l-2j\) und hat die Eigenschaft, dass das erste und letzte Element Flachstücke sind, \(P_2\) ist also von der Form \(\tilde{C}_{l-j}\). \(P_1\) hat Länge \(2j\), wobei das erste und letzte Element als auf- bzw. absteigende Kante festgelegt sind, da die \(0\) erst an letzter Position erreicht werden soll. Löscht man nun diese beiden Kanten, hat \(P_1\) noch Länge \(2j-2\) und ist von der Form \(\tilde{C}_{j-1}\), da (falls \(j>1\)) nach einer aufsteigenden Kante stets ein Flachstück und vor einer absteigenden Kante ebenfalls stets ein Flachstück liegt. (vgl. Konstruktion). Habe dieser Pfad den Namen \(\tilde{P}_1\).\\
-%Die Kanten, die in \(P_1\) an gerader/ungerader Postion lagen, liegen auch in \(\tilde{P}_1\) an gerader/ungerader Positon, wohingegen sich bei \(P_2\) diese Eigenschaft genau umgekehrt hat, die \(r\)- und \(l-r\)-Kanten haben ihre Positionen vertauscht. Aus der Definiton von \(\beta_l\) und \(\gamma_l\) ergibt sich somit die rekursive Formel 
-%\begin{equation}
-%	\beta_l =\alpha\sum_{j=1}^l \beta_{j-1}\gamma_{l-j}=\alpha\sum_{j=0}^{l-1}\beta_j\gamma_{l-1-j}
-%\end{equation}
-%Das zusätzliche \(\alpha\) wird durch das Löschen der Aufwärtskante bei der Konstruktion von \(\tilde{P}_1\) hervorgerufen.
+\end{equation}\\
 
 \end{itemize}
 
 \subsection*{Verallgemeinerten Momente von $ f_\alpha $}
-Man betrachtet \[xf_{\alpha}(x)=\frac{1}{2\pi}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \] und vergleicht es mit dem aus der Vorlesung bekanntem Halbkreisgesetz \[ \sigma(x)= \frac{1}{2 \pi} \sqrt{(4-x^2)_+}\].
+Man betrachtet \[xf_{\alpha}(x)=\frac{1}{2\pi}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \] und vergleicht es mit dem aus der Vorlesung bekanntem Halbkreisgesetz \[ \sigma(x)= \frac{1}{2 \pi} \sqrt{(4-x^2)_+}\]
 Dabei wird ersichtlich, dass $ xf_\alpha $ als ein modifizierter Halbkreis beschrieben werden kann: Es ist null außerhalb seiner Schnittpunkte mit der x-Achse, $ xf_\alpha(1+\alpha +x)=xf_\alpha (1+\alpha -x) $, d.h. symmetrisch um seinen "'Mittelpunkt"' $ 1+\alpha $. Man kann den Graph der Funktion somit als einen um $ \alpha +1 $ verschobenen und um einen konstanten Faktor nach oben verzerrten Halbkreis beschreiben. Auch in der nun folgenden Rechnung wird durch Substitution wieder das Halbkreisgesetz erreicht. \\
-Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist ein Wahrscheinlichkeitsmaß.\\
+Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist ein Wahrscheinlichkeitsmaß.\\\\
 
-\textbf{Beweis von Formel (12)}\\
+\textbf{Beweis der Formel für $ Q_n$}
 \begin{align*}
 	Q_n :=& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
 	 =& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{(x-(1-\sqrt{\alpha})^2)((1+\sqrt{\alpha})^2-x)} (x-\alpha -1)^n \,\mathrm{d}x\\
@@ -290,7 +220,7 @@ Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist e
 	\overset{\text{Übung 1}}{=}& \sigma(z^n) = \begin{cases} 0, &n\text{ ungerade}\\
 	C_{\frac n 2}, &n\text{ gerade} \end{cases}
 \end{align*}
-%(Falls wir noch Platz füllen müssen, können wir hier die Rechnung aus der Übung auch wiederholen ;) )\\
+
 Also \begin{equation}
 Q_n=\begin{cases} 0, &n\text{ ungerade}\\
 	C_{\frac n 2}, &n\text{ gerade} \end{cases}
@@ -317,34 +247,43 @@ wobei \[ a_n=\begin{cases} 0, &n\text{ ungerade}\\
 
 Damit ist das Wahrscheinlichkeitsmaß $f_\alpha  $ eindeutig durch seine verallgemeinerten Momente bestimmt.
 
-\subsection*{Verallgemeinerte Momente von $ \overline{L_N} $}
-
+\subsection*{Verallgemeinerte Momente von $ \overline{L_N} $ für $ N \to \infty $}
+Nachdem bereits $ f_\alpha $ durch seine Momente bestimmt wurde, wird im folgenden Abschnitt der Grenzwert der verallgemeinerten Momente von $ \overline{L_N} $ untersucht. Hierfür werden die Ergebnisse für $ \beta_l $ benötigt.\\
 \begin{equation}
 R_n:=\lim_{N \to \infty} \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} 
 \end{equation}
 Anwendung des binomischen Lehrsatzes ergibt:
-\begin{align*}
+\begin{equation}
+ \begin{split}
  R_n =& \alpha^{-1-n/2} \lim_{N \to \infty} \int_{\RR}\overline{L_{N}}(dx)x \sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} x^{n-k}(-\alpha -1)^k \\
  =& \alpha^{-1-n/2} \lim_{N \to \infty} \langle \overline{L_{N}}, \sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} x^{n+1-k}(-\alpha -1)^k \rangle \\
  =& \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \beta_{n+1-k}
-\end{align*}
+ \end{split}
+\end{equation}
 
 wegen $\beta_l = \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle$ und der Linearität des Integrals.\\
 
 Um die Rekursionsformel zu zeigen benötigt man folgende Formel:
 \begin{equation}
-	\sum_{n= t}^{t+u} \binom{m-n}{m-u-t} \binom{n}{t} = \binom{m+1}{u}~~\forall 0\leq t \leq m-u
+\label{eq:binom}
+	\sum_{n= t}^{t+u} \binom{m-n}{m-u-t} \binom{n}{t} = \binom{m+1}{u}~~\forall\ t: \ 0\leq t \leq m-u
 \end{equation}
-\textbf{Beweis von (1.15)}  
+\textbf{Beweis von (1.16)}  
 Man führt den Beweis anschaulich anhand des Pascalschen Dreiecks durch. Jeder Binomialkoeffizient wird mit einem Knoten im Dreieck identifiziert, sein Wert ist gleich der Anzahl der Pfade, die zu ihm führen. \\
 Betrachte den Punkt $ \binom{m+1}{m+1-u} $. Für ein festes $t+1$ sodass $~m-u+1\geq t+1 \geq 1$ definiert man  eine Diagonale \[T=\left\lbrace  \binom{n+1}{t+1}~\vert n+1 \geq t+1 \right\rbrace  \] Jeder Pfad von $ \binom{0}{0} $ zu $ \binom{m+1}{m+1-u} $ muss diese Diagonale überqueren. \\Sei $ \binom{n+1}{t+1} $ der Punkt, an dem der Pfad $ T $ zum ersten Mal berührt. Der vorhergehende Schritt ist damit eindeutig festgelegt, er muss von $ \binom{n}{t} $ gekommen sein, sonst wäre er bereits auf $ T $ gewesen.\\ 
 Man summiert nun über alle möglichen ersten Punkte auf $ T $. Die dazugehörigen Pfade im Pascalschen Dreieck werden in zwei Teilpfade unterteilt. Der erste, um $ \binom{n+1}{t+1} $ zu erreichen, wobei der letzte Schritt vorgegeben ist. Es bleiben $ \binom{n}{t} $ Möglichkeiten für diesen Abschnitt.\\
-Der zweite zwischen dem Punkt auf $ T $ und dem Ziel hat das kombinatorische Gewicht von $\binom{m-n}{m-u-t}$\\
-Nun muss man noch betrachten, welches das größtmögliche n+1 ist, das noch einen Beitrag zu der Summe liefert. Dies ist der Fall, wenn \[ \binom{m+1-n-1}{m+1-u-t-1}=1  \], d.h. es gibt nur noch eine Möglichkeit für den zweiten Teilpfad. Dies ist gleichbedeutend mit $ m-n=m-u-t $.\\Insgesamt wurde gezeigt:
-\[ \sum_{n=t}^{t+u}\binom{m-n}{m-u-t} \binom{n}{t}= \binom{m+1}{m+1-u}=\binom{m+1}{u} \]\\
+Der zweite Teilpfad zwischen dem Punkt auf $ T $ und dem Ziel hat das kombinatorische Gewicht von $\binom{m-n}{m-u-t}$\\
+Nun muss man noch betrachten, welches das größtmögliche n+1 ist, das noch einen Beitrag zu der Summe liefert. Dies ist der Fall, wenn \[ \binom{m+1-n-1}{m+1-u-t-1}=1,  \] d.h. es gibt nur noch eine Möglichkeit für den zweiten Teilpfad. Dies ist gleichbedeutend mit $ m-n=m-u-t $.\\Insgesamt wurde gezeigt:
+\[ \sum_{n=t}^{t+u}\binom{m-n}{m-u-t} \binom{n}{t}= \binom{m+1}{m+1-u}=\binom{m+1}{u} \]
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.45\textwidth]{Parsevalsches-Dreieck.pdf}
+	\caption{Darstellung von \ref{eq:binom}}
+\end{figure}
 
 
-\textbf{Beweis der Rekursionsformel}
+\textbf{Beweis der Rekursionsformel}\\\\
 Nun betrachtet man:
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
@@ -352,81 +291,93 @@ Nun betrachtet man:
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{k=0}^{m-n} \binom{m-n}{k}  \binom{n}{l} (-\alpha -1)^{k+l} \beta_{m-n+1-k} \gamma_{n+1-l}	
 \end{align*}
 
-Der Index $k$ kann man durch $u:=k+l$ ersetzen.
+Der Index $k$ wird anschließend durch $u:=k+l$ ersetzt.
 
 \[\sum_{n=0}^m R_{m-n} R_n = \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{u=l}^{m+l-n} \binom{m-n}{u-l}  \binom{n}{l} (-\alpha -1)^u \beta_{m-n+1+l-u} \gamma_{n+1-l}\]
 
-Mit $t:=n-l$ kann $l$ umgeschrieben werden.
+Mit $t:=n-l$ kann $l$ umgeschrieben werden. Die weiteren Umformungen gelten aufgrund der Eigenschaften des Binomialkoeffizienten und $ \gamma_i=\alpha^{-1} \beta_i ~\forall i\geq1$.
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t=0}^n \sum_{u=n-t}^{m-t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} \sum_{n=t}^{u+t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m} \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=t}^{u+t} \binom{m-n}{m-u-t}  \binom{n}{t}
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \sum_{t=0}^{m-u} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=t}^{u+t} \binom{m-n}{m-u-t}  \binom{n}{t}
 \end{align*}
 
-Mit Formel (2.14) gilt schließlich:
+Mit Formel (1.16) gilt schließlich:
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \sum_{t=0}^{m-u} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{t=0}^{m-u} \beta_{m+1-u-t} \gamma_{1+t}
 \end{align*}
 
-Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (10) ergibt sich folgendes:
+Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (\ref{eq:beta_l}) und (1.15) ergibt sich Folgendes:
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n
-&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left( \sum_{r=0}^{m+1-u} \beta_r \gamma_{m+2-u-r} - \beta_0 \gamma_{m+2-u} \right) \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left( - \beta_{m+2-u} + \sum_{r=0}^{m+2-u} \beta_r \gamma_{m+2-u-r} - \alpha^{-1} \beta_{m+2-u}\right) \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left(\frac{1}{\alpha} \beta_{m+3-u} - \dfrac{\alpha +1}{\alpha}\beta_{m+2-u} \right) \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+2} \binom{m+1}{u} (-\alpha -1)^u \frac{1}{\alpha} \beta_{m+3-u} \\
+=& \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left( \sum_{r=0}^{m+1-u} \beta_r \gamma_{m+2-u-r} - \beta_0 \gamma_{m+2-u} \right) \\
+=& \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left( - \beta_{m+2-u} + \sum_{r=0}^{m+2-u} \beta_r \gamma_{m+2-u-r} - \alpha^{-1} \beta_{m+2-u}\right) \\
+=& \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \left(\frac{1}{\alpha} \beta_{m+3-u} - \dfrac{\alpha +1}{\alpha}\beta_{m+2-u} \right) \\
+=& \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+2} \binom{m+1}{u} (-\alpha -1)^u \frac{1}{\alpha} \beta_{m+3-u} \\
 &- \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \dfrac{\alpha +1}{\alpha}\beta_{m+2-u} \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+2} \left( \binom{m+2}{u} -\binom{m+1}{u-1} \right) (-\alpha -1)^u \frac{1}{\alpha} \beta_{m+3-u} \\
+=& \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+2} \left( \binom{m+2}{u} -\binom{m+1}{u-1} \right) (-\alpha -1)^u \frac{1}{\alpha} \beta_{m+3-u} \\
 &- \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \dfrac{\alpha +1}{\alpha}\beta_{m+2-u} \\
+=& R_{m+2} - \alpha^{-2-m/2}\sum_{u=0}^{m+2} \binom{m+1}{u-1}(-\alpha-1)^u\beta_{m+3-u} \\
+&- \alpha^{-2-m/2}(1+\alpha)\sum_{u=0}^{m+1}\binom{m+1}{u}(-\alpha-1)^u\beta_{m+2-u} \\
+=& R_{m+2} + \alpha^{-2-m/2}(1+\alpha)\sum_{i=0}^{m+1} \binom{m+1}{i}(-\alpha-1)^i\beta_{m+2-i} \\
+&- \alpha^{-2-m/2}(1+\alpha)\sum_{u=0}^{m+1}\binom{m+1}{u}(-\alpha-1)^u\beta_{m+2-u}
 \end{align*}
-
-(...)\\
-
-
-
-
+ Also gilt: 
+\begin{equation}
+\sum_{n=0}^m R_{m-n} R_n= R_{m+2}
+\end{equation}\\
 
 
-{$ R_m=Q_m $:}\\
-Dazu zeigen wir, dass $ R_0=Q_0 $ und $ R_1=Q_1 $, sowie dass die weiteren Folgenglieder von $ Q_m $ durch die gleiche Rekursionsformel gebildet werden können. Daraus folgt $ R_m=Q_m ~ \forall m \in \NN_0$ \\
 
-Beweis: \begin{align*}
+\subsection*{Beweis der schwachen Konvergenz}
+
+
+Nun soll gezeigt werden, dass $ R_m=Q_m $:\\
+Es wird überprüft, dass $ R_0=Q_0 $ und $ R_1=Q_1 $, sowie dass die weiteren Folgenglieder von $ Q_m $ durch die gleiche Rekursionsformel (1.17) gebildet werden können. Daraus folgt unmittelbar $ R_m=Q_m ~ \forall m \in \NN_0$ \\
+
+\begin{itemize}
+\item $ R_0=Q_0 $, $ R_1=Q_1 $: 
+\begin{align*}
 \beta_1=& \alpha \beta_0 \gamma_0 = \alpha \\
 \beta_2=& \alpha \beta_0 \gamma_1 + \alpha \beta_1 \gamma_0 = \alpha \gamma_1 + \alpha \beta_1 = \beta_1 + \alpha \beta_1  \\
 R_0 =& \lim_{N \to \infty} \alpha^{-1} \int_{\RR}\overline{L_{N}}(dx)x = \dfrac{\beta_1}{\alpha}=1 \\
 R_1 =& \alpha^{\frac{3}{2}} \lim_{N \to \infty}\int_{\RR}\overline{L_{N}}(dx)(x^2 - (\alpha +1)x)= \alpha^{\frac{3}{2}} (\beta_2 - (\alpha+1)\beta_1)=0 \\
 Q_0=& C_0 =1, ~~Q_1=0
 \end{align*}
-Rekursion für $ Q_m: $
 
+\item Rekursion für $ Q_m: $
 \begin{align*}
 \text{m ungerade:}& \sum_{n=0}^m Q_{m-n}Q_n= Q_0 \underbrace{Q_m}_{\substack{=0}} + \underbrace{Q_1}_{\substack{=0}}Q_{n-1}+....= 0=Q_{m+2}\\
 \text {m gerade:}&~ Q_{m+2}= C_{\frac{m}{2}+1}= \sum_{k=0}^{\frac{m}{2}} C_k C_{\frac{m}{2}-k}=\sum_{k=0}^{\frac{m}{2}} Q_{2k}Q_{m-2k}=\sum_{n=0}^{m}Q_n Q_{m-n}
 \end{align*}
 wobei der letzte Schritt aus $ Q_n Q_{m-n}=0 $ für $ n=2k+1 $ folgt.\\
-
+\end{itemize}
 Mit folgendem Theorem aus der Vorlesung kann das Marchenko-Pastur-Gesetz nun bewiesen werden.
 
 \begin{theorem}
 Sei \((\mu_n)_{n \in \NN}\) eine Folge in $\mathcal{M}(\RR)$ mit endlichen Momenten und $\mu \in \mathcal{M}(\RR)$ eindeutig durch seine Momente bestimmt. Dann gilt:
-\[\forall l \in \NN_0: m_l(\mu) \rightarrow m_l(\mu) \Rightarrow \mu_n \overset{W}{\rightarrow} \mu\]
+\[\forall l \in \NN_0: m_l(\mu_n) \rightarrow m_l(\mu) \Rightarrow \mu_n \overset{W}{\rightarrow} \mu\]
 \end{theorem}
 
+Die Voraussetzungen dieses Theorems werden nun überprüft.
+\begin{itemize}
+\item $ \forall l \in \NN_0: m_l(\mu_n) \to m_l(\mu) $\\
 Für $l \geq 1$ existieren $\lambda_0,...,\lambda_{l-1} \in \RR$, sodass $x^l = \sum_{n=0}^{l-1} \lambda_n x (x-\alpha-1)^n$. Daraus folgt:
-\begin{align}
+\begin{align*}
 \forall l \in \NN: \lim_{N \to \infty} m_l(\overline{L_{N}}) 
 &= \lim_{N \to \infty} \int_\RR x^l \overline{L_{N}}(dx)
 = \lim_{N \to \infty} \int_\RR \sum_{n=0}^{l-1} \lambda_n x (x-\alpha-1)^n \overline{L_{N}}(dx) \\
 &= \sum_{n=0}^{l-1} \lambda_n \lim_{N \to \infty} \int_\RR x (x-\alpha-1)^n \overline{L_{N}}(dx) \\
-&= \sum_{n=0}^{l-1} \lambda_n R_n
-= \sum_{n=0}^{l-1} \lambda_n Q_n = m_l(f_\alpha)
-\end{align}
+&= \sum_{n=0}^{l-1} \tilde{\lambda_n} R_n
+= \sum_{n=0}^{l-1} \tilde{\lambda_n} Q_n = m_l(f_\alpha)
+\end{align*}
+Wobei $ \tilde{\lambda_n}= \lambda \alpha ^{1+n/2}$\\
 
 Für den Fall l = 0 erhält man:
 \[\lim_{N \to \infty} m_0(\overline{L_{N}}) 
@@ -434,22 +385,22 @@ Für den Fall l = 0 erhält man:
 = \int_\RR f_\alpha(x)dx\]
 da $ \overline{L_N} $ nach Vorlesung ebenfalls ein Wahrscheinlichkeitsmaß ist.
 
-Es wurde bereits gezeigt, dass $ f_\alpha $ eindeutig bestimmt ist. 
-Bleibt zu zeigen, dass $ R_n $ endlich ist $ \forall n \in \NN_0 $. Daraus folgt wieder, da $ m_l(\overline{L_N}) $ endliche Linearkombination von $R_n$ ist, dass die Momente endlich sind.
+\item Es wurde bereits gezeigt, dass $ f_\alpha $ eindeutig bestimmt ist. 
+\item Es bleibt zu zeigen, dass $ R_n $ endlich ist $ \forall n \in \NN_0 $. Daraus folgt wieder, da $ m_l(\overline{L_N}) $ endliche Linearkombination von $R_n$ ist, dass die Momente endlich sind.
 
  \[ \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} = \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \langle \overline{L_N}, x^{n+1-k} \rangle \] 
 \[= \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \EE [\dfrac{1}{N} tr(W_N^{n+1-k})]
 < \infty ~\forall N,n \in \NN_0 \]\\
-wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\
-(!!!!...okay letzten schritt sollte man sich mal genauer anschaun... !!!!)\\
-$ \Rightarrow $ alle Voraussetzungen des Theorems sind erfüllt $ \Rightarrow $  $ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~(N \rightarrow \infty) $. \\
+wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\\\
+\end{itemize}
+Damit sind alle Voraussetzungen des Theorems erfüllt $ \Rightarrow $  \[ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~~(N \to \infty) \] \\
 
 
 
 \section*{Schluss}
-Könnten wir auch als Einleitung hernehmen. Oder ganz lassen.\\
+
 Eine Anwendung dieses berühmten Marchenko-Pastur-Gesetzes findet man zum Beispiel in der Neurobiologie. Um das Nervensystem zu erforschen, werden Impulsspitzen der Nervenzellen statistisch ausgewertet. Dies geschieht mithilfe des sogenannten "'spiked population model"'. Es handelt sich um ein multivariates statistisches Modell, bei dem die Populationsgröße sehr groß ist und die Stichprobenanzahl vergleichbar anwächst, sodass beide im Idealfall gegen Unendlich gehen. Mathematisch wird so vorgegangen, dass eine $ N \times M(N) $ Zufallsmatrix betrachtet wird, wobei N die Größe der Stichprobe und M die Größe der Population ist, sodass $ \frac{M}{N} \rightarrow \alpha$ für $N \rightarrow \infty $. Bestimmte Eigenwerte dieser Matrix werden als bekannt für diese Population vorausgesetzt, und das Ziel ist nun, die restlichen Eigenwerte bzw. deren Erwartungswert herauszufinden. Wie man sieht, ist dafür Marchenko-Pastur von großem Nutzen.\\
 
-zu finden in: J. Baik, J.W.SIlverstein: Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
-und S.Johnston u.a., Comparative Investigation into Classical and Spiking Neuorin Implementations on FPGAs, 2005
+Verweise: J.Baik, J.W.Silverstein, Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
+und S.Johnston, Comparative Investigation into Classical and Spiking Neuorin Implementations on FPGAs, 2005
 \end{document}
