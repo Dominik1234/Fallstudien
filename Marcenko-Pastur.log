@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 01:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 03:22
 entering extended mode
 **Marcenko-Pastur.tex
 (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.tex
@@ -641,109 +641,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 107.
+(Font)              <12> on input line 111.
 
-Overfull \hbox (16.89066pt too wide) in paragraph at lines 117--117
+Overfull \hbox (16.89066pt too wide) in paragraph at lines 120--120
 [] 
  []
 
 [5] <Catalan-Pfad.pdf, id=33, 398.83002pt x 89.0246pt>
 File: Catalan-Pfad.pdf Graphic file (type pdf)
  <use Catalan-Pfad.pdf>
-Package pdftex.def Info: Catalan-Pfad.pdf used on input line 138.
+Package pdftex.def Info: Catalan-Pfad.pdf used on input line 141.
 (pdftex.def)             Requested size: 418.25555pt x 93.36444pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 [6 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Catalan-Pfad.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
+ []
+
 <Rekursion-Visualisierung.pdf, id=45, 432.81857pt x 202.47118pt>
 File: Rekursion-Visualisierung.pdf Graphic file (type pdf)
 
 <use Rekursion-Visualisierung.pdf>
-Package pdftex.def Info: Rekursion-Visualisierung.pdf used on input line 225.
+Package pdftex.def Info: Rekursion-Visualisierung.pdf used on input line 236.
 (pdftex.def)             Requested size: 418.25555pt x 195.65842pt.
 
-Overfull \hbox (1.7757pt too wide) in paragraph at lines 220--229
+Overfull \hbox (1.7757pt too wide) in paragraph at lines 231--240
 \T1/lmr/m/n/10.95 Die ge-ra-den/ungeraden Ni-ve-aus im ur-sprüng-li-chen Pfad s
 ind in $[]$ un-ge-ra-de/gerade
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 [8 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Rekursion-Visualisierung.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
-
- []
-
-
-Overfull \hbox (31.72466pt too wide) in paragraph at lines 324--324
-[] 
  []
 
 [10]
-Overfull \hbox (38.76205pt too wide) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
+
+ []
+
+
+Overfull \hbox (31.72466pt too wide) in paragraph at lines 345--345
 [] 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Overfull \hbox (38.76205pt too wide) in paragraph at lines 379--379
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--422
+Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+Underfull \hbox (badness 10000) in paragraph at lines 439--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
 
  []
 
@@ -755,7 +759,7 @@ Here is how much of TeX's memory you used:
  7762 multiletter control sequences out of 15000+200000
  70280 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 40i,21n,51p,1001b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,21n,51p,1001b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program File
 s (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files (x86)/MiKTeX 
@@ -776,7 +780,7 @@ lic/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lm
 sy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Marcenko-Pastur.pdf (14 pages, 339887 bytes).
+Output written on Marcenko-Pastur.pdf (14 pages, 343175 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
