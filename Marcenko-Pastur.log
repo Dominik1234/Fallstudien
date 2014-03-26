@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  26 MAR 2014 15:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.2)  26 MAR 2014 19:00
 entering extended mode
 **Marcenko-Pastur.tex
 (C:\Users\Dominik\Documents\GitHub\Fallstudien\Marcenko-Pastur.tex
@@ -658,11 +658,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--159
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-
- []
-
 <Rekursion-Visualisierung.pdf, id=42, 432.81857pt x 202.47118pt>
 File: Rekursion-Visualisierung.pdf Graphic file (type pdf)
 
@@ -800,7 +795,7 @@ pe1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm
 /lmsy10.pfb><C:/Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy6.pfb><C:/
 Program Files (x86)/MikTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x
 86)/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Marcenko-Pastur.pdf (15 pages, 361377 bytes).
+Output written on Marcenko-Pastur.pdf (15 pages, 361161 bytes).
 PDF statistics:
  161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
