@@ -237,12 +237,15 @@ If the signal \(f\) ist very short, it is not possible to determine the frequenc
 Sound or acoustic noise is produced by vibrating objects, leading to a mechanical wave of pressure through air. This air pressure fluctuations causes the eardrum to oscillate. The auditory ossicle transfer the signal to the cochlea, where parts of the intra cochlea membranes begin to vibrate. The area of the activated membrane depends on the frequency, high frequencies up to 20 kHz are perceived at the base and low frequencies up to 20 Hz at the top of the cochlea. Fine hairs on top of the sensory cells are moved. This motion is converted into an electrochemical impulse of the corresponding auditory nerve. The higher the amplitude of a tone, the higher is the frequency of the action potentials in the nerve.
 Hence our auditory organ also applies a short-time Fourier transformation. 
 
-If we consider now a sound recording as a function $f$, $f$ is obviously compactly supported (there is a strict beginning and end). Consequently the fourier transform $\hat{f}$ can't be compactly supported ($f$ is not $\omega$-bandlimited). The manner of functioning of our ear allows us to ignore frequencies above 20 kHz and below 20 Hz. Although the reverse fourier transformation $\FF^{-1}(\hat{f}|_{Q})$ does not coincide with $\FF^{-1}(\hat{f})$, for our ear it is of no importance. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision.
+If we consider now a sound recording as a function $x$, $x$ is obviously compactly supported (there is a strict beginning and end). Consequently the fourier transform $X$ can't be compactly supported ($x$ is not $\omega$-bandlimited). The manner of functioning of our ear allows us to ignore frequencies above 20 kHz and below 20 Hz. Although the reverse fourier transformation $\FF^{-1}(X|_{Q})$ does not coincide with $\FF^{-1}(X)$, for our ear it is of no importance. So by Theorem \ref{th:interpolation}, we can reconstruct such prepared signals with arbitrary precision.
 
-Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
-Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them anyway. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. 
-\textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter\\
-(Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)
+\begin{figure}[htpb]
+\centering
+\includegraphics[height=0.20\textwidth]{x(t).png}
+\includegraphics[height=0.80\textwidth]{X(f).png}
+\caption{Hallo}
+
+\end{figure}
 
 
 \nocite{marks02}
