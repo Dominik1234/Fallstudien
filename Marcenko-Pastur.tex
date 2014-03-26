@@ -100,13 +100,13 @@ Setze \(s = s_1+s_2\), dann ergeben sich folgende drei Fälle:
 	\item \(s=l+1\)\\
 		Die verbliebenen Graphen auf \(l+1\) verschiedenen Knoten haben die Struktur von Doppelbäumen und sollen im Weiteren genauer untersucht werden.\\
 \end{itemize}		
-Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) tragen nur die Graphen auf $ l+1 $ verschiedenen Knoten bei:\\
+Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) tragen nur die Graphen auf $ l+1 $ verschiedenen Knoten bei:
 
 \begin{equation}
 \begin{split}
 \beta_l:= \lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle &= \lim_{N\to\infty} \dfrac{1}{N^{l+1}} \sum_{s_1,s_2 = 1}^l \sum_{\substack{J:v(J)=s_1\\ K:v(K)=s_2 }} \EE[Y_N(J,K)]\\ &= \lim_{N\to\infty} \dfrac{1}{N^{l+1}}\sum_{J,K: v(J)+v(K) = l+1} \EE[Y_N(J,K)]  
 \end{split}
-\end{equation}
+\end{equation}\\
 
 \subsection*{Berechnung der $ \beta_l $ mittels Catalanpfade}
 Die Doppelbaumstruktur dieser Graphen lässt sich wie folgt nutzen:\\
@@ -118,8 +118,8 @@ Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Kno
 	\end{split}
 \end{equation}
 
-Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann wie folgt als Catalan-Pfad der Länge \(l\) interpretiert werden:\\
-Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt.(Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen) Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie hierbei durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:
+Ein Doppelbaum mit \(r\  k\)-Knoten und \((l+1-r)\ j\)-Knoten kann nun in folgender Weise als Catalan-Pfad der Länge \(l\) interpretiert werden:\\\\
+Wähle als Wurzel des Baumes einen \(j\)-Knoten und gliedere den Baum in Ebenen, wobei die Wurzel in der 0.Ebene liegt. Die \(k\)-Knoten liegen also in ungeraden Ebenen, die \(j\)-Knoten in geradenen Ebenen. Verweise jede Kante mit einer Richtung, sodass bei jeder Doppelkante eine Kante von dem Knoten wegführt und eine zu ihm hinführt. Durchlaufe den Baum mit Hilfe der Tiefensuche und nummeriere die Kanten in der Reihenfolge, wie sie hierbei durchlaufen werden. Konstruiere den Catalan-Pfad wie folgt:
 \begin{itemize}
 	\item Wird ein Knoten zum ersten Mal erreicht: \((+1)\)
 	\item Kehrt man zu einem bereits besuchten Knoten zurück :\((-1)\)
@@ -135,7 +135,7 @@ Da der Baum durch Tiefensuche durchlaufen wird, gibt die Entfernung eines Knoten
 
 Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion:
 \begin{itemize}
- \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer über 0, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnten wir einen Doppelbaum mit Knoten {1,2,...2m} konstruieren, und da $ s_{2m-1}=-1  $ ist, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt haben wir also einen Catalanpfad konstruiert. 
+ \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer auf oder überhalb des 0.Niveaus, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnte ein Doppelbaum mit Knoten {1,2,...2m} konstruiert werden, und da $ s_{2m-1}=-1  $ gilt, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt wurde also tatsächlich ein Catalanpfad konstruiert. 
  \item[•] Surjektivität: Starte bei der Wurzel. Füge für jede Aufstiegskante einen Knoten in die nächst höhere Ebene und eine Kante als Verbindung hinzu. Füge für jede Abstiegskante eine Kante in die nächst niedrigere Ebene hinzu, bis die Doppelbaumstruktur vollständig ist. Damit ist jeder Catalanpfad Urbild eines Doppelbaums. 
 \item[•] Injektivität: kann analog zur Übung durch rekursives Entfernen von identischen Kanten gezeigt werden.\\
 \end{itemize}
@@ -201,22 +201,21 @@ Damit gilt:
 		\gamma_l &=\sum_{k=0}^l \beta_k\gamma_{l-1-k} \\
 		&= \dfrac{\beta_l}{\alpha}
 	\end{split}
-\end{equation}
+\end{equation}\\
 
 \end{itemize}
 
 \subsection*{Verallgemeinerten Momente von $ f_\alpha $}
-Man betrachtet \[xf_{\alpha}(x)=\frac{1}{2\pi}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \] und vergleicht es mit dem aus der Vorlesung bekanntem Halbkreisgesetz \[ \sigma(x)= \frac{1}{2 \pi} \sqrt{(4-x^2)_+}\].
+Man betrachtet \[xf_{\alpha}(x)=\frac{1}{2\pi}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \] und vergleicht es mit dem aus der Vorlesung bekanntem Halbkreisgesetz \[ \sigma(x)= \frac{1}{2 \pi} \sqrt{(4-x^2)_+}\]
 Dabei wird ersichtlich, dass $ xf_\alpha $ als ein modifizierter Halbkreis beschrieben werden kann: Es ist null außerhalb seiner Schnittpunkte mit der x-Achse, $ xf_\alpha(1+\alpha +x)=xf_\alpha (1+\alpha -x) $, d.h. symmetrisch um seinen "'Mittelpunkt"' $ 1+\alpha $. Man kann den Graph der Funktion somit als einen um $ \alpha +1 $ verschobenen und um einen konstanten Faktor nach oben verzerrten Halbkreis beschreiben. Auch in der nun folgenden Rechnung wird durch Substitution wieder das Halbkreisgesetz erreicht. \\
-Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist ein Wahrscheinlichkeitsmaß.\\
+Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist ein Wahrscheinlichkeitsmaß.\\\\
 
-\textbf{Beweis von Formel (12)}\\
+\textbf{Beweis der Formel für $ Q_n$}
 \begin{align*}
 	Q_n :=& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
 	 =& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{(x-(1-\sqrt{\alpha})^2)((1+\sqrt{\alpha})^2-x)} (x-\alpha -1)^n \,\mathrm{d}x\\
 	=& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{(1-\sqrt{\alpha})^2}^{(1+\sqrt{\alpha})^2} \sqrt{-\alpha^2+2\alpha x+2\alpha -x^2+2x-1}(x-\alpha-1)^n \,\mathrm{d}x\\
 	\overset{x=y+\alpha+1}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \int_{-2\sqrt{\alpha}}^{2\sqrt{\alpha}} \sqrt{4\alpha -y^2} y^n \,\mathrm{d}y\\
-	\displaybreak
 	\overset{y=2\sqrt{\alpha}z}{=}& \frac{1}{2\pi}\alpha^{-1-n/2} \cdot 2^n \alpha^{n/2}\cdot4\sqrt{\alpha}\int_{-1}^{1} \sqrt{1-z^2}z^n \,\mathrm{d}z = \frac{2}{\pi} \cdot 2^n\int_{-1}^{1} \sqrt{1-z^2}z^n\,\mathrm{d}z \\
 	\overset{\text{Übung 1}}{=}& \sigma(z^n) = \begin{cases} 0, &n\text{ ungerade}\\
 	C_{\frac n 2}, &n\text{ gerade} \end{cases}
@@ -273,7 +272,7 @@ Um die Rekursionsformel zu zeigen benötigt man folgende Formel:
 Man führt den Beweis anschaulich anhand des Pascalschen Dreiecks durch. Jeder Binomialkoeffizient wird mit einem Knoten im Dreieck identifiziert, sein Wert ist gleich der Anzahl der Pfade, die zu ihm führen. \\
 Betrachte den Punkt $ \binom{m+1}{m+1-u} $. Für ein festes $t+1$ sodass $~m-u+1\geq t+1 \geq 1$ definiert man  eine Diagonale \[T=\left\lbrace  \binom{n+1}{t+1}~\vert n+1 \geq t+1 \right\rbrace  \] Jeder Pfad von $ \binom{0}{0} $ zu $ \binom{m+1}{m+1-u} $ muss diese Diagonale überqueren. \\Sei $ \binom{n+1}{t+1} $ der Punkt, an dem der Pfad $ T $ zum ersten Mal berührt. Der vorhergehende Schritt ist damit eindeutig festgelegt, er muss von $ \binom{n}{t} $ gekommen sein, sonst wäre er bereits auf $ T $ gewesen.\\ 
 Man summiert nun über alle möglichen ersten Punkte auf $ T $. Die dazugehörigen Pfade im Pascalschen Dreieck werden in zwei Teilpfade unterteilt. Der erste, um $ \binom{n+1}{t+1} $ zu erreichen, wobei der letzte Schritt vorgegeben ist. Es bleiben $ \binom{n}{t} $ Möglichkeiten für diesen Abschnitt.\\
-Der zweite zwischen dem Punkt auf $ T $ und dem Ziel hat das kombinatorische Gewicht von $\binom{m-n}{m-u-t}$\\
+Der zweite Teilpfad zwischen dem Punkt auf $ T $ und dem Ziel hat das kombinatorische Gewicht von $\binom{m-n}{m-u-t}$\\
 Nun muss man noch betrachten, welches das größtmögliche n+1 ist, das noch einen Beitrag zu der Summe liefert. Dies ist der Fall, wenn \[ \binom{m+1-n-1}{m+1-u-t-1}=1,  \] d.h. es gibt nur noch eine Möglichkeit für den zweiten Teilpfad. Dies ist gleichbedeutend mit $ m-n=m-u-t $.\\Insgesamt wurde gezeigt:
 \[ \sum_{n=t}^{t+u}\binom{m-n}{m-u-t} \binom{n}{t}= \binom{m+1}{m+1-u}=\binom{m+1}{u} \]
 
@@ -284,7 +283,7 @@ Nun muss man noch betrachten, welches das größtmögliche n+1 ist, das noch ein
 \end{figure}
 
 
-\textbf{Beweis der Rekursionsformel}
+\textbf{Beweis der Rekursionsformel}\\\\
 Nun betrachtet man:
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
@@ -292,24 +291,24 @@ Nun betrachtet man:
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{k=0}^{m-n} \binom{m-n}{k}  \binom{n}{l} (-\alpha -1)^{k+l} \beta_{m-n+1-k} \gamma_{n+1-l}	
 \end{align*}
 
-Der Index $k$ kann man durch $u:=k+l$ ersetzen.
+Der Index $k$ wird anschließend durch $u:=k+l$ ersetzt.
 
 \[\sum_{n=0}^m R_{m-n} R_n = \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{l=0}^n \sum_{u=l}^{m+l-n} \binom{m-n}{u-l}  \binom{n}{l} (-\alpha -1)^u \beta_{m-n+1+l-u} \gamma_{n+1-l}\]
 
-Mit $t:=n-l$ kann $l$ umgeschrieben werden.
+Mit $t:=n-l$ kann $l$ umgeschrieben werden. Die weiteren Umformungen gelten aufgrund der Eigenschaften des Binomialkoeffizienten und $ \gamma_i=\alpha^{-1} \beta_i ~\forall i\geq1$.
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
 &= \alpha^{-1-\frac{m}{2}} \sum_{n=0}^m \sum_{t=0}^n \sum_{u=n-t}^{m-t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} \sum_{n=t}^{u+t} \binom{m-n}{u-n+t}  \binom{n}{t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \\
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^{m} \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=t}^{u+t} \binom{m-n}{m-u-t}  \binom{n}{t}
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \sum_{t=0}^{m-u} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \sum_{n=t}^{u+t} \binom{m-n}{m-u-t}  \binom{n}{t}
 \end{align*}
 
 Mit Formel (1.16) gilt schließlich:
 
 \begin{align*}
 \sum_{n=0}^m R_{m-n} R_n 
-&= \alpha^{-1-\frac{m}{2}} \sum_{t=0}^m \sum_{u=0}^{m-t} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
+&= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \sum_{t=0}^{m-u} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{t=0}^{m-u} \beta_{m+1-u-t} \gamma_{1+t}
 \end{align*}
 
@@ -327,9 +326,12 @@ Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (\ref{eq:beta
 =& R_{m+2} - \alpha^{-2-m/2}\sum_{u=0}^{m+2} \binom{m+1}{u-1}(-\alpha-1)^u\beta_{m+3-u} \\
 &- \alpha^{-2-m/2}(1+\alpha)\sum_{u=0}^{m+1}\binom{m+1}{u}(-\alpha-1)^u\beta_{m+2-u} \\
 =& R_{m+2} + \alpha^{-2-m/2}(1+\alpha)\sum_{i=0}^{m+1} \binom{m+1}{i}(-\alpha-1)^i\beta_{m+2-i} \\
-&- \alpha^{-2-m/2}(1+\alpha)\sum_{u=0}^{m+1}\binom{m+1}{u}(-\alpha-1)^u\beta_{m+2-u} \\
-=& R_{m+2}
+&- \alpha^{-2-m/2}(1+\alpha)\sum_{u=0}^{m+1}\binom{m+1}{u}(-\alpha-1)^u\beta_{m+2-u}
 \end{align*}
+ Also gilt: 
+\begin{equation}
+\sum_{n=0}^m R_{m-n} R_n= R_{m+2}
+\end{equation}\\
 
 
 
@@ -337,23 +339,25 @@ Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (\ref{eq:beta
 
 
 Nun soll gezeigt werden, dass $ R_m=Q_m $:\\
-Es wird überprüft, dass $ R_0=Q_0 $ und $ R_1=Q_1 $, sowie dass die weiteren Folgenglieder von $ Q_m $ durch die gleiche Rekursionsformel gebildet werden können. Daraus folgt $ R_m=Q_m ~ \forall m \in \NN_0$ \\
+Es wird überprüft, dass $ R_0=Q_0 $ und $ R_1=Q_1 $, sowie dass die weiteren Folgenglieder von $ Q_m $ durch die gleiche Rekursionsformel (1.17) gebildet werden können. Daraus folgt unmittelbar $ R_m=Q_m ~ \forall m \in \NN_0$ \\
 
-Beweis: \begin{align*}
+\begin{itemize}
+\item $ R_0=Q_0 $, $ R_1=Q_1 $: 
+\begin{align*}
 \beta_1=& \alpha \beta_0 \gamma_0 = \alpha \\
 \beta_2=& \alpha \beta_0 \gamma_1 + \alpha \beta_1 \gamma_0 = \alpha \gamma_1 + \alpha \beta_1 = \beta_1 + \alpha \beta_1  \\
 R_0 =& \lim_{N \to \infty} \alpha^{-1} \int_{\RR}\overline{L_{N}}(dx)x = \dfrac{\beta_1}{\alpha}=1 \\
 R_1 =& \alpha^{\frac{3}{2}} \lim_{N \to \infty}\int_{\RR}\overline{L_{N}}(dx)(x^2 - (\alpha +1)x)= \alpha^{\frac{3}{2}} (\beta_2 - (\alpha+1)\beta_1)=0 \\
 Q_0=& C_0 =1, ~~Q_1=0
 \end{align*}
-Rekursion für $ Q_m: $
 
+\item Rekursion für $ Q_m: $
 \begin{align*}
 \text{m ungerade:}& \sum_{n=0}^m Q_{m-n}Q_n= Q_0 \underbrace{Q_m}_{\substack{=0}} + \underbrace{Q_1}_{\substack{=0}}Q_{n-1}+....= 0=Q_{m+2}\\
 \text {m gerade:}&~ Q_{m+2}= C_{\frac{m}{2}+1}= \sum_{k=0}^{\frac{m}{2}} C_k C_{\frac{m}{2}-k}=\sum_{k=0}^{\frac{m}{2}} Q_{2k}Q_{m-2k}=\sum_{n=0}^{m}Q_n Q_{m-n}
 \end{align*}
 wobei der letzte Schritt aus $ Q_n Q_{m-n}=0 $ für $ n=2k+1 $ folgt.\\
-
+\end{itemize}
 Mit folgendem Theorem aus der Vorlesung kann das Marchenko-Pastur-Gesetz nun bewiesen werden.
 
 \begin{theorem}
@@ -361,6 +365,9 @@ Sei \((\mu_n)_{n \in \NN}\) eine Folge in $\mathcal{M}(\RR)$ mit endlichen Momen
 \[\forall l \in \NN_0: m_l(\mu_n) \rightarrow m_l(\mu) \Rightarrow \mu_n \overset{W}{\rightarrow} \mu\]
 \end{theorem}
 
+Die Voraussetzungen dieses Theorems werden nun überprüft.
+\begin{itemize}
+\item $ \forall l \in \NN_0: m_l(\mu_n) \to m_l(\mu) $\\
 Für $l \geq 1$ existieren $\lambda_0,...,\lambda_{l-1} \in \RR$, sodass $x^l = \sum_{n=0}^{l-1} \lambda_n x (x-\alpha-1)^n$. Daraus folgt:
 \begin{align*}
 \forall l \in \NN: \lim_{N \to \infty} m_l(\overline{L_{N}}) 
@@ -378,22 +385,22 @@ Für den Fall l = 0 erhält man:
 = \int_\RR f_\alpha(x)dx\]
 da $ \overline{L_N} $ nach Vorlesung ebenfalls ein Wahrscheinlichkeitsmaß ist.
 
-Es wurde bereits gezeigt, dass $ f_\alpha $ eindeutig bestimmt ist. 
-Bleibt zu zeigen, dass $ R_n $ endlich ist $ \forall n \in \NN_0 $. Daraus folgt wieder, da $ m_l(\overline{L_N}) $ endliche Linearkombination von $R_n$ ist, dass die Momente endlich sind.
+\item Es wurde bereits gezeigt, dass $ f_\alpha $ eindeutig bestimmt ist. 
+\item Es bleibt zu zeigen, dass $ R_n $ endlich ist $ \forall n \in \NN_0 $. Daraus folgt wieder, da $ m_l(\overline{L_N}) $ endliche Linearkombination von $R_n$ ist, dass die Momente endlich sind.
 
  \[ \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} = \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \langle \overline{L_N}, x^{n+1-k} \rangle \] 
 \[= \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \EE [\dfrac{1}{N} tr(W_N^{n+1-k})]
 < \infty ~\forall N,n \in \NN_0 \]\\
-wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\
-(!!!!...okay letzten schritt sollte man sich mal genauer anschaun... !!!!)\\
-$ \Rightarrow $ Damit sind alle Voraussetzungen des Theorems erfüllt $ \Rightarrow $  $ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~(N \rightarrow \infty) $. \\
+wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\\\
+\end{itemize}
+Damit sind alle Voraussetzungen des Theorems erfüllt $ \Rightarrow $  \[ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~~(N \to \infty) \] \\
 
 
 
 \section*{Schluss}
-Könnten wir auch als Einleitung hernehmen. Oder ganz lassen.\\
+
 Eine Anwendung dieses berühmten Marchenko-Pastur-Gesetzes findet man zum Beispiel in der Neurobiologie. Um das Nervensystem zu erforschen, werden Impulsspitzen der Nervenzellen statistisch ausgewertet. Dies geschieht mithilfe des sogenannten "'spiked population model"'. Es handelt sich um ein multivariates statistisches Modell, bei dem die Populationsgröße sehr groß ist und die Stichprobenanzahl vergleichbar anwächst, sodass beide im Idealfall gegen Unendlich gehen. Mathematisch wird so vorgegangen, dass eine $ N \times M(N) $ Zufallsmatrix betrachtet wird, wobei N die Größe der Stichprobe und M die Größe der Population ist, sodass $ \frac{M}{N} \rightarrow \alpha$ für $N \rightarrow \infty $. Bestimmte Eigenwerte dieser Matrix werden als bekannt für diese Population vorausgesetzt, und das Ziel ist nun, die restlichen Eigenwerte bzw. deren Erwartungswert herauszufinden. Wie man sieht, ist dafür Marchenko-Pastur von großem Nutzen.\\
 
-zu finden in: J. Baik, J.W.SIlverstein: Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
-und S.Johnston u.a., Comparative Investigation into Classical and Spiking Neuorin Implementations on FPGAs, 2005
+Verweise: J.Baik, J.W.Silverstein, Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
+und S.Johnston, Comparative Investigation into Classical and Spiking Neuorin Implementations on FPGAs, 2005
 \end{document}

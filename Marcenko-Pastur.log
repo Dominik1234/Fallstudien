@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 13:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.8)  26 MAR 2014 14:24
 entering extended mode
 **Marcenko-Pastur.tex
 (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.tex
@@ -631,7 +631,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--102
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
@@ -640,6 +640,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 Overfull \hbox (16.89066pt too wide) in paragraph at lines 119--119
 [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
  []
 
 [4] <Catalan-Pfad.pdf, id=30, 398.83002pt x 89.0246pt>
@@ -681,32 +686,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
 [7 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Rekursion-Visualisierung.pdf>
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
@@ -714,48 +724,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
 File: Parsevalsches-Dreieck.pdf Graphic file (type pdf)
 
 <use Parsevalsches-Dreieck.pdf>
-Package pdftex.def Info: Parsevalsches-Dreieck.pdf used on input line 282.
+Package pdftex.def Info: Parsevalsches-Dreieck.pdf used on input line 281.
 (pdftex.def)             Requested size: 188.21371pt x 155.0472pt.
 
-Overfull \hbox (31.72466pt too wide) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Overfull \hbox (31.72466pt too wide) in paragraph at lines 292--292
 [] 
  []
 
 [11 <C:/Users/Manuela/Documents/GitHub/Fallstudien/Parsevalsches-Dreieck.pdf>]
-Overfull \hbox (35.72044pt too wide) in paragraph at lines 332--332
+Overfull \hbox (35.72044pt too wide) in paragraph at lines 330--330
 [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
-
- []
-
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 354--356
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 386--390
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--396
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
 
  []
 
-[14] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.aux) ) 
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
+
+ []
+
+[15] (C:\Users\Manuela\Documents\GitHub\Fallstudien\Marcenko-Pastur.aux) ) 
 Here is how much of TeX's memory you used:
  4568 strings out of 494045
  64465 string characters out of 3145963
- 168349 words of memory out of 3000000
+ 171349 words of memory out of 3000000
  7758 multiletter control sequences out of 15000+200000
  70280 words of font info for 71 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -780,9 +810,9 @@ lic/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lm
 sy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Marcenko-Pastur.pdf (14 pages, 359587 bytes).
+Output written on Marcenko-Pastur.pdf (15 pages, 361920 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
+ 161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
