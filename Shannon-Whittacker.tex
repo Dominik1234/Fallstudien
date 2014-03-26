@@ -196,10 +196,19 @@ See \cite{shannon01}.
 A sequence \(\{x_n\}\in l^2\) can be transmitted with rate \(2W\) (=Nyquist-rate) per second over an ideal channel of bandwith \(W Hz\), where \(\{x_n\}\) represents the samples of a bandlimited \(L^2\) signal.
 
 \end{itemize}
-The problem with Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an interval \(I\) outside of which the samples are basically 0. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
+The problem about Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} is that they are highly theoretical and could only be used in an ideal environment. The perfect reconstruction of a signal is not possible, since we would need infinitely many sampling points. But we can interpolate the original signal with arbitrary precision, if we just add enough sampling points. This is true because \(f(t)\to 0\) for \(t\to\pm\infty\), since \(f\in L^2\). So there is an interval \(I\) outside of which the samples are negligible small. If we sample over \(I\) at the Nyquist rate (or higher), the signal is characterized well enough, for \(I\) sufficiently large. (see \cite{marks02})\\
 Even worse, Theorem  \ref{th:interpolation} and Theorem \ref{th:sampling} cannot be used for discontinuous signals or periodical signals, which are not in \(L^2\). As we will see later (see section \ref{se:uncertainty} Uncertainty principle), they even can't be used for finite signals, because finite signals are not bandlimited. \\
-With these restrictions, the theorems seem to be of only small use in real life, but in section \ref{se:real-life} we will see the potential sleeping in them.\\
-(zumindest hoffe ich das)
+
+
+In order to reduce the amount of data, you might try to sample a signal with a frequency below the Nyquist rate (undersampling). However, a possible risk is to receive a deficient reconstruction of the digitalized function. We want to illustrate this by following example.
+
+Examine $f:\RR \rightarrow \RR, f(x) = \cos(x)$ and the sample rate $\tau = 2 \pi$. For the sample function you obtain:
+\[g(x) = \sum_{k \in \ZZ} f(2\pi k) sinc(\frac{x}{2 \pi}- k) = \sum_{k \in \ZZ} sinc(\frac{x}{2 \pi}- k)\]
+
+\begin{figure}[htpb]
+\centering
+	\includegraphics[height=0.2\textwidth]{SampleFunction.png}
+\end{figure}
 
 
 \subsection{Uncertainty Principle}
@@ -240,18 +249,18 @@ If we consider now a sound recording as a function $x$, $x$ is obviously compact
 
 \begin{figure}[htpb]
 \centering
-\includegraphics[height=0.20\textwidth]{x(t).png}
-\includegraphics[height=0.80\textwidth]{X(f).png}
-\caption{The frequency of $x$ is 2 kHz, thus in our hearable frequency range. Below you can see the Fourier transform of \(x\).}
+\includegraphics[height=0.3\textwidth]{x(t).png}
+\caption{The frequency of $x$ is 2 kHz, thus in our hearable frequency range}
+\end{figure}
+\begin{figure}[htpb]
+\centering
+\includegraphics[height=0.646\textwidth]{X(f).png}
+\caption{Here you can see the Fourier transform of \(x\).}
 
 \end{figure}
 
-
-Normal audio signals, for example music or voice recordings, are rather "nice" functions because of their continuity. Besides, the human hearing is rather bad in comparison to that of many animals, which allows us to execute some simplifications:\\
-Earlier we mentioned that finite signals are not bandlimited. But in this special case we don't have to operate with frequencies below 20 Hz or above 20 kHz, since we can't hear them anyway. So if we "cut off" the frequencies outside our hearable frequency range, we don't lose significant information and achieve the signal to be bandlimited. \\\\
+\newpage
 \textbf{Remark}:The cutting of the Frequencies can be realized with a bandpass-filter, a combination of a lowpass- and highpass-filter.A bandlimited function would not be affected by the filtering.\\
-More generally if we have a signal of finite area oder energy, there exists an interval of duration T, such that outside of this interval all samples would be negligible small. Then we can sample over this Interval with the Nyquist rate. The choice of T can be made by deciding which error can be tolerated.
-(Sollen wir hier noch weiter auf Komprimierungsmoeglichkeiten eingehen? Finde ich recht interessant, hat aber nicht wirklich was mit dem Thema zu tun...)\\
 
 \subsubsection*{Pictures and movies}
 In the two-dimensional case, one speaks of raster sampling. \\
