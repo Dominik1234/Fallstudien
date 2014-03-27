@@ -54,6 +54,8 @@ im Raum der Wahrscheinlichkeitsmaße auf \(\RR\), wobei
 
 \newpage
 \section*{Beweis des Marcenko-Pastur Gesetzes}
+
+\student{Andreas}
 Die Konvergenz soll im Folgenden mittels der Momentenmethode gezeigt werden. Als ersten Schritt bringt man \(N^{l+1} \langle \overline{L_N}, x^l \rangle\) in eine Form, die eine weitergehende Untersuchung ermöglicht:
 \begin{equation}
 \begin{split}
@@ -75,6 +77,7 @@ wobei
 	&v: \NN^{2l}\to \NN,\ v(X) := \text{Anzahl der verschiedenen Indizes in X}
 \end{align*}
 \\
+\student{Manuela}
 Die einzelnen Summanden können also als Eulergraphen auf \(s_1+s_2 \)verschiedenen Knoten und \(2l\) Kanten zwischen der Menge der k-Knoten und der j-Knoten für alle Paare $ (j_i, k_i), (j_{i+1},k_i) $ interpretiert werden.\\
 Setze \(s = s_1+s_2\), dann ergeben sich folgende drei Fälle:
 \begin{itemize}
@@ -109,6 +112,7 @@ Zusammenfassung: Zu \(\lim_{N\to\infty} \langle \overline{L_N}, x^l \rangle \) t
 \end{equation}\\
 
 \subsection*{Berechnung der $ \beta_l $ mittels Catalanpfade}
+\student{Dominik}
 Die Doppelbaumstruktur dieser Graphen lässt sich wie folgt nutzen:\\
 Wähle für einen Doppelbaum \(r\) Knoten aus den \(k\)-Knoten und \(l+1-r\) Knoten aus den \(j\)-Knoten. Dann gilt:
 \begin{equation}
@@ -133,6 +137,7 @@ Da der Baum durch Tiefensuche durchlaufen wird, gibt die Entfernung eines Knoten
 	\caption{Doppelbaum auf 5 Knoten und dem zugehörigen Catalan-Pfad} 
 \end{figure}
 
+\student{Manuela}
 Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion:
 \begin{itemize}
  \item[•]Wohldefiniertheit: Da der Graph eulersch ist, ist $ \sum_{i=1}^{2l} $ =0; Der Graph ist immer auf oder überhalb des 0.Niveaus, ansonsten würde es ein m geben, sodass $ \sum_{i=1}^{2m-1}s^{i}=-1, ~\sum_{i=1}^{2m}s^{i}=0, ~ s_{2m-1}=-1  $. Also könnte ein Doppelbaum mit Knoten {1,2,...2m} konstruiert werden, und da $ s_{2m-1}=-1  $ gilt, würde eine Kante von diesem Knoten zurück zu einem der ersten 2m Knoten gehen, was dem Aufbau eines Doppelbaums widersprechen würde. Insgesamt wurde also tatsächlich ein Catalanpfad konstruiert. 
@@ -140,6 +145,7 @@ Die Abbildung von den Doppelbäumen auf die Catalanpfade ist eine Bijektion:
 \item[•] Injektivität: kann analog zur Übung durch rekursives Entfernen von identischen Kanten gezeigt werden.\\
 \end{itemize}
 Damit ist die Anzahl der Doppelbäume in (1.7) gleich der Anzahl der dazugehörigen Catalanpfade.\\
+\student{Andreas}
 Die betrachteten Doppelbäume haben nach (1.7) ein kombinatorisches Gewicht von 
 	\begin{equation}
 		\begin{pmatrix} N\\ l+1-r\end{pmatrix} (l+1-r)! \begin{pmatrix} M(N)\\r\end{pmatrix} r!
@@ -159,7 +165,7 @@ wobei \(r=\#\{\text{Abstiege von ungeraden auf gerade Niveaus in } C_l\}\), und 
 
 %!!! Explizite Formel für die Anzahl der $ p_r $ gefunden: \[ \binom{l-1}{r} \binom{l}{r} \frac{1}{r+1} \]
 %Wer Spaß dran hat, kann sie beweisen. Ansonsten lassen wir sie raus, wir brauchen sie ja nicht.\\
-
+\student{Dominik}
 \subsection*{Relation für $ \beta_l $}
 Zu zeigen ist: Mit \(\beta_0 :=1, \gamma_0:=1 \) und
 \begin{equation*}
@@ -206,10 +212,12 @@ Damit gilt:
 \end{itemize}
 
 \subsection*{Verallgemeinerten Momente von $ f_\alpha $}
+\student{Andreas}
 Man betrachtet \[xf_{\alpha}(x)=\frac{1}{2\pi}\sqrt{(x-(1-\sqrt{\alpha})^2_{+}((1+\sqrt{\alpha})^2_{+}} \] und vergleicht es mit dem aus der Vorlesung bekanntem Halbkreisgesetz \[ \sigma(x)= \frac{1}{2 \pi} \sqrt{(4-x^2)_+}\]
 Dabei wird ersichtlich, dass $ xf_\alpha $ als ein modifizierter Halbkreis beschrieben werden kann: Es ist null außerhalb seiner Schnittpunkte mit der x-Achse, $ xf_\alpha(1+\alpha +x)=xf_\alpha (1+\alpha -x) $, d.h. symmetrisch um seinen "'Mittelpunkt"' $ 1+\alpha $. Man kann den Graph der Funktion somit als einen um $ \alpha +1 $ verschobenen und um einen konstanten Faktor nach oben verzerrten Halbkreis beschreiben. Auch in der nun folgenden Rechnung wird durch Substitution wieder das Halbkreisgesetz erreicht. \\
 Anmerkung: Berechnung liefert $ \int_{\RR} f_\alpha(x)dx=1 $, $ f_\alpha $ ist ein Wahrscheinlichkeitsmaß.\\\\
 
+\student{Dominik}
 \textbf{Beweis der Formel für $ Q_n$}
 \begin{align*}
 	Q_n :=& \alpha^{-1-n/2}\int_{\RR} f_{\alpha}(x)x(x-\alpha -1)^n\,\mathrm{d}x \\
@@ -249,6 +257,7 @@ wobei \[ a_n=\begin{cases} 0, &n\text{ ungerade}\\
 Damit ist das Wahrscheinlichkeitsmaß $f_\alpha  $ eindeutig durch seine verallgemeinerten Momente bestimmt.
 
 \subsection*{Verallgemeinerte Momente von $ \overline{L_N} $ für $ N \to \infty $}
+\student{Manuela}
 Nachdem bereits $ f_\alpha $ durch seine Momente bestimmt wurde, wird im folgenden Abschnitt der Grenzwert der verallgemeinerten Momente von $ \overline{L_N} $ untersucht. Hierfür werden die Ergebnisse für $ \beta_l $ benötigt.\\
 \begin{equation}
 R_n:=\lim_{N \to \infty} \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} 
@@ -283,7 +292,7 @@ Nun muss man noch betrachten, welches das größtmögliche n+1 ist, das noch ein
 	\caption{Darstellung von \ref{eq:binom}}
 \end{figure}
 
-
+\student{Andreas}
 \textbf{Beweis der Rekursionsformel}\\\\
 Nun betrachtet man:
 \begin{align*}
@@ -312,7 +321,7 @@ Mit Formel (1.16) gilt schließlich:
 &= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \sum_{t=0}^{m-u} (-\alpha -1)^u \beta_{m+1-u-t} \gamma_{1+t} \binom{m+1}{u} \\
 &= \alpha^{-1-\frac{m}{2}} \sum_{u=0}^{m+1} \binom{m+1}{u} (-\alpha -1)^u \sum_{t=0}^{m-u} \beta_{m+1-u-t} \gamma_{1+t}
 \end{align*}
-
+\student{Manuela}
 Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (\ref{eq:beta_l}) und (1.15) ergibt sich Folgendes:
 
 \begin{align*}
@@ -338,7 +347,7 @@ Durch die Substitution $r := m+1-u-t$ und die Anwendung von Formel (\ref{eq:beta
 
 
 \subsection*{Beweis der schwachen Konvergenz}
-
+\student{Andreas}
 
 Nun soll gezeigt werden, dass $ R_m=Q_m $:\\
 Es wird überprüft, dass $ R_0=Q_0 $ und $ R_1=Q_1 $, sowie dass die weiteren Folgenglieder von $ Q_m $ durch die gleiche Rekursionsformel (1.17) gebildet werden können. Daraus folgt unmittelbar $ R_m=Q_m ~ \forall m \in \NN_0$ \\
@@ -388,6 +397,7 @@ Für den Fall l = 0 erhält man:
 da $ \overline{L_N} $ nach Vorlesung ebenfalls ein Wahrscheinlichkeitsmaß ist.
 
 \item Es wurde bereits gezeigt, dass $ f_\alpha $ eindeutig bestimmt ist. 
+\student{Manuela}
 \item Es bleibt zu zeigen, dass $ R_n $ endlich ist $ \forall n \in \NN_0 $. Daraus folgt wieder, da $ m_l(\overline{L_N}) $ endliche Linearkombination von $R_n$ ist, dass die Momente endlich sind.
 
  \[ \alpha^{-1-n/2} \int_{\RR}\overline{L_{N}}(dx)x(x-\alpha-1)^{n} = \alpha^{-1-n/2}\sum_{k=0}^n \begin{pmatrix} n\\k\end{pmatrix} (-\alpha -1)^k \langle \overline{L_N}, x^{n+1-k} \rangle \] 
@@ -398,8 +408,8 @@ wegen $ \sup_{j,k,N} \EE[\vert Y_N(j,k)\vert ^{q}]< \infty$ \\\\
 Damit sind alle Voraussetzungen des Theorems erfüllt $ \Rightarrow $  \[ \overline{L_N} \overset{w}{\rightarrow} f_\alpha (x)dx~~(N \to \infty) \]
 
 \newpage
-\section*{Schluss}
-
+\section*{Ausblick}
+\student{gemeinsam}
 Eine Anwendung dieses berühmten Marchenko-Pastur-Gesetzes findet man zum Beispiel in der Neurobiologie. Um das Nervensystem zu erforschen, werden Impulsspitzen der Nervenzellen statistisch ausgewertet. Dies geschieht mithilfe des sogenannten "'spiked population model"'. Es handelt sich um ein multivariates statistisches Modell, bei dem die Populationsgröße sehr groß ist und die Stichprobenanzahl vergleichbar anwächst, sodass beide im Idealfall gegen Unendlich gehen. Mathematisch wird so vorgegangen, dass eine $ N \times M(N) $ Zufallsmatrix betrachtet wird, wobei N die Größe der Stichprobe und M die Größe der Population ist, sodass $ \frac{M}{N} \rightarrow \alpha$ für $N \rightarrow \infty $. Bestimmte Eigenwerte dieser Matrix werden als bekannt für diese Population vorausgesetzt, und das Ziel ist nun, die restlichen Eigenwerte bzw. deren Erwartungswert herauszufinden. Wie man sieht, ist dafür Marchenko-Pastur von großem Nutzen.\\
 
 Verweise: J.Baik, J.W.Silverstein, Eigenvalues of Large Sample Covariance Matrices of Spiked Population Models, 2004\\
