@@ -33,10 +33,20 @@
 \maketitle
 \tableofcontents
 
-\chapter*{Indtroduction}
+\chapter*{Introduction}
+\begin{quotation}
+When you can measure what you are talking about and express it in numbers, you know something about it – Lord W. T. Kelvin
+\end{quotation}
 
-Sampling and reconstructing a signal from its samples are probably two of the most important properties of modern communication.   Even very simple things of our daily life, like making a phone call to our dear friend Massimo, are not possible without digitalizing analog signals, for example  our voice. \\
-Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
+Digitalization of analog signals plays an essential role in our technology-driven society. Even simple things of our daily life, like making a phone call, are not possible without digitalizing analog signals, for example our voice. \\
+\newline
+Analog digital converters (short: ADC) are the interface between human and machine. Thousands of research papers have been published on the solution of this problem, bringing together mathematicians, physicists and engineers. \\
+Fourier analysis provides a powerful tool for handling the task by transforming a signal from the time domain into the frequency domain. The conversion provides several advantages. Processing and Transmission of the transform is more efficient and reliable. Moreover not only the reconstruction of it is more accurate, but also it can be stored more compactly.
+
+Often the output signal has to be analog, requiring a digital analog converter (DAC). This implies the necessity of precisely reconstructing the signal. 
+Considering the special case of bandlimited \(L^2\) functions, Shannn and Whittaker were able to find a method to reconstruct functions from  sequences of real numbers. \\
+\newline
+%Whereas digitalizing can be done rather  straightforward by sampling, the real art is regaining the original signal from these samples or assessing the information lost in the sampling process.\\
 In the following, we'd like to try to give a small survey of the Whittaker-Shannon interpolation formula, which is of high importance in communication theory. Further on we will describe its applications in real-life but also its limitations, keeping in mind the relationship of Fourier transform and the Heisenberg uncertainty principle.
 
 
@@ -254,7 +264,7 @@ If we consider now a sound recording as a function $x$, $x$ is obviously compact
 \end{figure}
 \begin{figure}[htpb]
 \centering
-\includegraphics[height=0.646\textwidth]{X(f).png}
+\includegraphics[height=0.646001\textwidth]{X(f).png}
 \caption{Here you can see the Fourier transform of \(x\).}
 
 \end{figure}
